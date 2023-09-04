@@ -9,6 +9,7 @@ images_dir = "images"
 javascripts_dir = "javascripts"
 asset_cache_buster = :none
 cache = false
+line_comments = false
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
@@ -17,7 +18,7 @@ cache = false
 # relative_assets = true
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
-# line_comments = false
+# 
 
 
 # If you prefer the indented syntax, you might want to regenerate this

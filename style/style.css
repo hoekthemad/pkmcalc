@@ -2,29 +2,24 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 9, sass/style.scss */
 body .static {
   position: static !important;
 }
-/* line 12, sass/style.scss */
 body div.header {
   height: 100px;
   background-color: #BABABA;
   color: #000000;
 }
-/* line 13, sass/style.scss */
 body div.header.sticky {
   top: 0;
   left: 0;
   right: 0;
 }
-/* line 23, sass/style.scss */
 body div.header h3.header-text {
   font-size: 30px;
   padding-top: 30px;
   padding-left: 30px;
 }
-/* line 30, sass/style.scss */
 body div.content {
   position: absolute !important;
   top: 100px;
