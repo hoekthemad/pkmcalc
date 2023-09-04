@@ -3,4 +3,35 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-//@import "compass/reset";
+@import "inc/variables";
+
+body {
+    .static {
+        position: static !important;
+    }
+    div.header {
+        &.sticky {
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        height: 100px;
+        background-color: $header_bg_color;
+        color: $header_text_color;
+
+        h3.header-text {
+            font-size: 30px;
+            padding-top: 30px;
+            padding-left: 30px;
+        }
+    }
+
+    div.content {
+        position: absolute !important;
+        top: 100px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
