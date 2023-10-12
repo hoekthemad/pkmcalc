@@ -23,22 +23,61 @@
         </div>
 
         <div class="col-sm-12 col-md-12">
-            <div class="row align-items-start">
-                <div class="col-sm-6 col-md-6">
-                    <form action="#">
+            <form action="#">
+                <div class="row align-items-start">
+                    <div class="col-sm-6 col-md-6">
+                        <div class="mb-3">
+                            <select class="form-select" aria-label="Select Skill">
+                                <optgroup label="The Order">
+                                    <option value="order_faith">Faith</option>
+                                    <option value="order_zeal">Zeal</option>
+                                    <option value="order_devotion">Devotion</option>
+                                    <option value="order_fervour">Fervour</option>
+                                </optgroup>
+                                <optgroup label="Fundamentals">
+                                    <option value="funda_productivity">Productivity</option>
+                                    <option value="funda_concentration">Concentration</option>
+                                    <option value="funda_bargaining">Bargaining</option>
+                                    <option value="funda_meditation">Meditation</option>
+                                </optgroup>
+                                <optgroup label="Combat">
+                                    <option value="combat_strength">Strength</option>
+                                    <option value="combat_battletactics">Battle Tactics</option>
+                                    <option value="combat_musclememory">Muscle Memory</option>
+                                </optgroup>
+                                <optgroup label="Magic">
+                                    <option value="magic_manacontrol">Mana Control</option>
+                                    <option value="magic_lifeessence">Life Essence</option>
+                                    <option value="magic_resiliance">Resiliance</option>
+                                </optgroup>
+                                <optgroup label="Dark Magic">
+                                    <option value="dm_fanaticaldevotion">Fanatical Devotion</option>
+                                    <option value="dm_ardentbelief">Ardent Belief</option>
+                                    <option value="dm_zealousconviction">Cealous Conviction</option>
+                                    <option value="dm_extremepiety">Extreme Piety</option>
+                                    <option value="dm_absolutefaith">Absolute Faith</option>
+                                    <option value="db_devoutmastery">Devour Mastery</option>
+                                    <option value="db_doggedperseverance">Dogged Perseverance</option>
+                                </optgroup>
+                            </select>
+                        </div>
                         <div class="mb-3">
                             <label for="target_skill_level" class="form-label">Target Skill Level: </label>
                             <input type="number" class="form-control" id="target_skill_level" name="target_skill_level" />
                             <div id="help_target_skill_level" class="form-text">The skill level you want to find the price of</div>
                         </div>
-                    </form>
-                </div>
+                    </div>
 
-                <div class="col-sm-6 col-md-6">
-                    <span id="calculated_skill_price_text">The cost of the skill will be: </span>
-                    <span id="calculated_skill_price">0</span>
+                    <div class="col-sm-6 col-md-6">
+                        <div class="col-sm-12 col-md-12">
+                            <button class="btn btn-primary">Calculate Skill Price</button>
+                            
+                            <span id="calculated_skill_price_text">The cost of the skill will be: </span>
+                            <span id="calculated_skill_price">0</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </body>
 </html>
