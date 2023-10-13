@@ -50,11 +50,11 @@ let calc = {
     }
 }
 
-// $(document).ready(function () {
-//     $("#target_skill_level").val(1027);
-//     $("#price_modifier").val(1468843.95);
-//     $("#happiness_modifier").val(12386044369413.70);
-//     $("#is_boost_active").prop("checked", "checked");
-//     $("#curr_relic_level").val(2570);
-//     $("#fanaticism").val(6024.30);
-// })
+$(document).ready(function () {
+    $("#target_skill_level").val(1027);
+    $("#price_modifier").val(1468843.95);
+    $("#happiness_modifier").val(12386044369413.70);
+    $("#is_boost_active").prop("checked", "checked");
+    $("#curr_relic_level").val(2570);
+    $("#fanaticism").val(6024.30);
+})
