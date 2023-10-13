@@ -53,7 +53,7 @@ let calc = {
 // $(document).ready(function () {
 //     $("#target_skill_level").val(1026);
 //     $("#price_modifier").val(1468843.95);
-//     $("#happiness_modifier").val(12386044369413.70);
+//     $("#happiness_modifier").val(1238604436941.70);
 //     $("#is_boost_active").prop("checked", "checked");
 //     $("#curr_relic_level").val(2570);
 //     $("#fanaticism").val(6024.30);
