@@ -38,7 +38,7 @@ let calc = {
         if (calc.isBoostEnabled) calc.happiness = calc.happiness / 2;
 
         jQuery("#calculated_skill_price").html(getSkillPrice(
-            calc.targetSkillLevel,
+            calc.targetSkillLevel-1,
             isTheOrder,
             calc.allPriceModifier,
             calc.happiness,
