@@ -11,8 +11,7 @@
     <body class="col-bg-12 col-md-12 col-sm-12">
         <div class="col-bg-12 col-md-12 col-sm-12 header static">
             <h3 class="header-text">
-                <?= "Hello, world"; ?>
-            </h3>
+welp            </h3>
         </div>
         <div class="col-bg-12 col-md-12 col-sm-12 content">
         </div>
