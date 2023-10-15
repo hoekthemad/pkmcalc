@@ -48,6 +48,11 @@ let calc = {
             calc.isBoostEnabled
         ));
 
+        if (isNaN(skillPrice)) {
+            alert("Please enter valid values.");
+            return;
+        }
+
         let splitPrice = skillPrice.toString().split("");
 
         let count = 0;

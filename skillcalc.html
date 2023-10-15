@@ -27,6 +27,20 @@
         <div class="col-sm-12 col-md-12">
             <div class="row align-items-start">
                 <div class="col-sm-6 col-md-6">
+                    <div class="col-sm-12 col-md-12">
+                        <span id="calculated_skill_price_text">The cost of the skill will be: </span>
+                        <span id="calculated_skill_price">0</span>
+                        <br />
+                        <button class="btn btn-primary" onclick="calc.doCalc();">Calculate Skill Price</button>
+                        <br />
+                        <br />
+                        <label for="base64stats" class="form-label">Import your stats from PK:M here</label>
+                        <textarea class="form-control" id="base64stats" rows="3"></textarea>
+                        <div id="help_base64stats" class="form-text">The stats can be exported from PK:M using the skill ettects.<br />Just open this up, go to the bottom, click "EXPORT STATS" and copy and paste here.</div>
+                        <button class="btn btn-primary" onclick="dataImporter.forSkills();">Import Stats</button>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
                     <div class="mb-3">
                         <label for="skill_name" class="form-label">Target Skill Level: </label>
                         <select class="form-select" aria-label="Select Skill" id="skill_name" name="skill_name">
@@ -70,6 +84,11 @@
                         <div id="help_target_skill_level" class="form-text">The skill level you want to find the price of</div>
                     </div>
                     <div class="mb-3">
+                        <label for="curr_relic_level">Relic Level: </label>
+                        <input type="number" class="form-control" id="curr_relic_level" name="curr_relic_level" />
+                        <div id="help_curr_relic_level" class="form-text">Your current relic level</div>
+                    </div>
+                    <div class="mb-3">
                         <label for="price_modifier">All Prices: </label>
                         <input type="number" class="form-control" id="price_modifier" name="price_modifier" />
                         <div id="help_price_modifier" class="form-text">Your current all price modifier</div>
@@ -87,31 +106,9 @@
                         <div id="help_is_boost_active" class="form-text">Turn this on if you have the happiness boost switched on</div>
                     </div>
                     <div class="mb-3">
-                        <label for="curr_relic_level">Relic Level: </label>
-                        <input type="number" class="form-control" id="curr_relic_level" name="curr_relic_level" />
-                        <div id="help_curr_relic_level" class="form-text">Your current relic level</div>
-                    </div>
-                    <div class="mb-3">
                         <label for="fanaticism">Fanaticism: </label>
                         <input type="number" class="form-control" id="fanaticism" name="fanaticism" />
                         <div id="help_fanaticism" class="form-text">Your current fanaticism</div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-6">
-                    <div class="col-sm-12 col-md-12">
-                        <label for="base64stats" class="form-label">Import your stats from PK:M here</label>
-                        <textarea class="form-control" id="base64stats" rows="3"></textarea>
-                        <div id="help_base64stats" class="form-text">The stats can be exported from PK:M using the skill ettects.<br />Just open this up, go to the bottom, click "EXPORT STATS" and copy and paste here.</div>
-                        <button class="btn btn-primary" onclick="dataImporter.forSkills();">Import Stats</button>
-                        <br />
-                        <br />
-                        <button class="btn btn-primary" onclick="calc.doCalc();">Calculate Skill Price</button>
-                        <br />
-                        <br />
-                        <span id="calculated_skill_price_text">The cost of the skill will be: </span>
-                        <br />
-                        <span id="calculated_skill_price">0</span>
                     </div>
                 </div>
             </div>
