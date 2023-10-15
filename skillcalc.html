@@ -100,6 +100,12 @@
 
                 <div class="col-sm-6 col-md-6">
                     <div class="col-sm-12 col-md-12">
+                        <label for="base64stats" class="form-label">Import your stats from PK:M here</label>
+                        <textarea class="form-control" id="base64stats" rows="3"></textarea>
+                        <div id="help_base64stats" class="form-text">The stats can be exported from PK:M using the skill ettects.<br />Just open this up, go to the bottom, click "EXPORT STATS" and copy and paste here.</div>
+                        <button class="btn btn-primary" onclick="dataImporter.forSkills();">Import Stats</button>
+                        <br />
+                        <br />
                         <button class="btn btn-primary" onclick="calc.doCalc();">Calculate Skill Price</button>
                         <br />
                         <br />
