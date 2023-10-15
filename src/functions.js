@@ -91,7 +91,7 @@ let calc = {
 
 let dataImporter = {
     decode: (base64) => {
-        const binString = atob(base64);
+        const binString = atob(base64.replace(/[^\x00-\x7F]/g, ""));
         let ret = JSON.parse(binString);
         return ret;
     },
