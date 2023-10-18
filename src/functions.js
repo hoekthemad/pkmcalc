@@ -97,7 +97,7 @@ let calc = {
         if (calc.isBoostEnabled) calc.happiness = calc.happiness / 2;
 
         console.log(
-            "skillLevel "+calc.targetSkillLevel-1, 
+            "skillLevel "+(calc.targetSkillLevel-1), 
             "isTheOrder "+isTheOrder, 
             "priceModifier "+calc.allPriceModifier, 
             "happiness "+calc.happiness, 
