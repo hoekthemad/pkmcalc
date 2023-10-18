@@ -98,6 +98,7 @@ let calc = {
             calc.fana,
             calc.isBoostEnabled
         ));
+        console.log(skillPrice);
 
         if (isNaN(skillPrice)) {
             alert("Please enter valid values.");
