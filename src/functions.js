@@ -71,7 +71,7 @@ let calc = {
         
         calc.skills['mana control'] = { level: skills['mana control'].level, rlevel: skills['mana control'].relivLevel };
         calc.skills['life essence'] = { level: skills['life essence'].level, rlevel: skills['life essence'].relivLevel };
-        calc.skills['resiliance'] = { level: skills['resiliance'].level, rlevel: skills['resiliance'].relivLevel };
+        calc.skills['resilience'] = { level: skills['resilience'].level, rlevel: skills['resilience'].relivLevel };
         
         calc.skills['fanatical devotion'] = { level: skills['fanatical devotion'].level, rlevel: skills['fanatical devotion'].relivLevel };
         calc.skills['ardent belief'] = { level: skills['ardent belief'].level, rlevel: skills['ardent belief'].relivLevel };
