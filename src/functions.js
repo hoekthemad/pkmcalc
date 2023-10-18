@@ -191,5 +191,6 @@ let dataImporter = {
         let skillName = $("#skill_name option:selected").val();
         $("#target_skill_level").val(calc.skills[skillName].level);
         $("#curr_relic_level").val(calc.skills[skillName].rlevel);
+         $("#skill_name").trigger("change")
     }
 }
