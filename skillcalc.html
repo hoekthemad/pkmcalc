@@ -43,37 +43,37 @@
                 <div class="col-sm-6 col-md-6">
                     <div class="mb-3">
                         <label for="skill_name" class="form-label">Target Skill Level: </label>
-                        <select class="form-select" aria-label="Select Skill" id="skill_name" name="skill_name">
+                        <select class="form-select" aria-label="Select Skill" id="skill_name" name="skill_name" onchange="calc.changeSkills()">
                             <optgroup label="The Order">
-                                <option value="order_faith">Faith</option>
-                                <option value="order_zeal">Zeal</option>
-                                <option value="order_devotion">Devotion</option>
-                                <option value="order_fervour">Fervour</option>
+                                <option value="faith">Faith</option>
+                                <option value="zeal">Zeal</option>
+                                <option value="devotion">Devotion</option>
+                                <option value="fervour">Fervour</option>
                             </optgroup>
                             <optgroup label="Fundamentals">
-                                <option value="funda_productivity">Productivity</option>
-                                <option value="funda_concentration">Concentration</option>
-                                <option value="funda_bargaining">Bargaining</option>
-                                <option value="funda_meditation">Meditation</option>
+                                <option value="productivity">Productivity</option>
+                                <option value="concentration">Concentration</option>
+                                <option value="bargaining">Bargaining</option>
+                                <option value="meditation">Meditation</option>
                             </optgroup>
                             <optgroup label="Combat">
-                                <option value="combat_strength">Strength</option>
-                                <option value="combat_battletactics">Battle Tactics</option>
-                                <option value="combat_musclememory">Muscle Memory</option>
+                                <option value="strength">Strength</option>
+                                <option value="battle tactics">Battle Tactics</option>
+                                <option value="muscle memory">Muscle Memory</option>
                             </optgroup>
                             <optgroup label="Magic">
-                                <option value="magic_manacontrol">Mana Control</option>
-                                <option value="magic_lifeessence">Life Essence</option>
-                                <option value="magic_resiliance">Resiliance</option>
+                                <option value="manacontrol">Mana Control</option>
+                                <option value="life essence">Life Essence</option>
+                                <option value="resilience">Resilience</option>
                             </optgroup>
                             <optgroup label="Dark Magic">
-                                <option value="dm_fanaticaldevotion">Fanatical Devotion</option>
-                                <option value="dm_ardentbelief">Ardent Belief</option>
-                                <option value="dm_zealousconviction">Cealous Conviction</option>
-                                <option value="dm_extremepiety">Extreme Piety</option>
-                                <option value="dm_absolutefaith">Absolute Faith</option>
-                                <option value="db_devoutmastery">Devour Mastery</option>
-                                <option value="db_doggedperseverance">Dogged Perseverance</option>
+                                <option value="fanatical devotion">Fanatical Devotion</option>
+                                <option value="ardent belief">Ardent Belief</option>
+                                <option value="zealous conviction">Cealous Conviction</option>
+                                <option value="extreme piety">Extreme Piety</option>
+                                <option value="absolute faith">Absolute Faith</option>
+                                <option value="devout mastery">Devour Mastery</option>
+                                <option value="dogged perseverance">Dogged Perseverance</option>
                             </optgroup>
                         </select>
                         <div id="help_skill_name" class="form-text">The skill level you want to find the price of</div>
