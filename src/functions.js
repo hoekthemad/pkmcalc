@@ -55,31 +55,31 @@ let calc = {
     },
 
     setSkils: (skills) => {
-        calc.skills['faith'] = { level: skills['faith'].level, rlevel: skills['faith'].relivLevel };
-        calc.skills['zeal'] = { level: skills['zeal'].level, rlevel: skills['zeal'].relivLevel };
-        calc.skills['devotion'] = { level: skills['devotion'].level, rlevel: skills['devotion'].relivLevel };
-        calc.skills['fervour'] = { level: skills['fervour'].level, rlevel: skills['fervour'].relivLevel };
+        calc.skills['faith'] = { level: skills['faith'].level, rlevel: skills['faith'].relicLevel };
+        calc.skills['zeal'] = { level: skills['zeal'].level, rlevel: skills['zeal'].relicLevel };
+        calc.skills['devotion'] = { level: skills['devotion'].level, rlevel: skills['devotion'].relicLevel };
+        calc.skills['fervour'] = { level: skills['fervour'].level, rlevel: skills['fervour'].relicLevel };
         
-        calc.skills['productivity'] = { level: skills['productivity'].level, rlevel: skills['productivity'].relivLevel };
-        calc.skills['concentration'] = { level: skills['concentration'].level, rlevel: skills['concentration'].relivLevel };
-        calc.skills['bargaining'] = { level: skills['bargaining'].level, rlevel: skills['bargaining'].relivLevel };
-        calc.skills['meditation'] = { level: skills['meditation'].level, rlevel: skills['meditation'].relivLevel };
+        calc.skills['productivity'] = { level: skills['productivity'].level, rlevel: skills['productivity'].relicLevel };
+        calc.skills['concentration'] = { level: skills['concentration'].level, rlevel: skills['concentration'].relicLevel };
+        calc.skills['bargaining'] = { level: skills['bargaining'].level, rlevel: skills['bargaining'].relicLevel };
+        calc.skills['meditation'] = { level: skills['meditation'].level, rlevel: skills['meditation'].relicLevel };
         
-        calc.skills['strength'] = { level: skills['strength'].level, rlevel: skills['strength'].relivLevel };
-        calc.skills['battle tactics'] = { level: skills['battle tactics'].level, rlevel: skills['battle tactics'].relivLevel };
-        calc.skills['muscle memory'] = { level: skills['muscle memory'].level, rlevel: skills['muscle memory'].relivLevel };
+        calc.skills['strength'] = { level: skills['strength'].level, rlevel: skills['strength'].relicLevel };
+        calc.skills['battle tactics'] = { level: skills['battle tactics'].level, rlevel: skills['battle tactics'].relicLevel };
+        calc.skills['muscle memory'] = { level: skills['muscle memory'].level, rlevel: skills['muscle memory'].relicLevel };
         
-        calc.skills['mana control'] = { level: skills['mana control'].level, rlevel: skills['mana control'].relivLevel };
-        calc.skills['life essence'] = { level: skills['life essence'].level, rlevel: skills['life essence'].relivLevel };
-        calc.skills['resilience'] = { level: skills['resilience'].level, rlevel: skills['resilience'].relivLevel };
+        calc.skills['mana control'] = { level: skills['mana control'].level, rlevel: skills['mana control'].relicLevel };
+        calc.skills['life essence'] = { level: skills['life essence'].level, rlevel: skills['life essence'].relicLevel };
+        calc.skills['resilience'] = { level: skills['resilience'].level, rlevel: skills['resilience'].relicLevel };
         
-        calc.skills['fanatical devotion'] = { level: skills['fanatical devotion'].level, rlevel: skills['fanatical devotion'].relivLevel };
-        calc.skills['ardent belief'] = { level: skills['ardent belief'].level, rlevel: skills['ardent belief'].relivLevel };
-        calc.skills['zealous conviction'] = { level: skills['zealous conviction'].level, rlevel: skills['zealous conviction'].relivLevel };
-        calc.skills['extreme piety'] = { level: skills['extreme piety'].level, rlevel: skills['extreme piety'].relivLevel };
-        calc.skills['absolute faith'] = { level: skills['absolute faith'].level, rlevel: skills['absolute faith'].relivLevel };
-        calc.skills['devout mastery'] = { level: skills['devout mastery'].level, rlevel: skills['devout mastery'].relivLevel };
-        calc.skills['dogged perseverance'] = { level: skills['dogged perseverance'].level, rlevel: skills['dogged perseverance'].relivLevel };
+        calc.skills['fanatical devotion'] = { level: skills['fanatical devotion'].level, rlevel: skills['fanatical devotion'].relicLevel };
+        calc.skills['ardent belief'] = { level: skills['ardent belief'].level, rlevel: skills['ardent belief'].relicLevel };
+        calc.skills['zealous conviction'] = { level: skills['zealous conviction'].level, rlevel: skills['zealous conviction'].relicLevel };
+        calc.skills['extreme piety'] = { level: skills['extreme piety'].level, rlevel: skills['extreme piety'].relicLevel };
+        calc.skills['absolute faith'] = { level: skills['absolute faith'].level, rlevel: skills['absolute faith'].relicLevel };
+        calc.skills['devout mastery'] = { level: skills['devout mastery'].level, rlevel: skills['devout mastery'].relicLevel };
+        calc.skills['dogged perseverance'] = { level: skills['dogged perseverance'].level, rlevel: skills['dogged perseverance'].relicLevel };
     },
 
     doCalc: () => {
