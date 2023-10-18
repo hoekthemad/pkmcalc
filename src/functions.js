@@ -161,7 +161,7 @@ let dataImporter = {
         }
         let stats = dataImporter.decode(b64string);
         console.log(stats);
-        calc.setSkils(stas['skills']);
+        calc.setSkils(stats['skills']);
         console.log(calc.skills);
 
         let dateNow = Date.now();
