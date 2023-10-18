@@ -183,8 +183,8 @@ let dataImporter = {
             $("#is_boost_active").prop("checked", "checked");
         }
 
-        $("#price_modifier").val(happiness);
-        $("#happiness_modifier").val(stats['stats']['allPrices']);
+        $("#price_modifier").val(stats['stats']['allPrices']);
+        $("#happiness_modifier").val(happiness);
         $("#fanaticism").val(stats['fanaticism']);
         
         let skillName = $("#skill_name option:selected").val();
