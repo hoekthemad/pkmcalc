@@ -8,6 +8,8 @@ let calc = {
     relicLevel: 0,
     fana: 0,
 
+    skills: {},
+
     getBaseInformation: () => {
         calc.skillName = $("#skill_name option:selected").val();
         calc.targetSkillLevel = 1*$("#target_skill_level").val();
@@ -22,12 +24,62 @@ let calc = {
         let found = calc.skillName.match(/order_/);
         if (null == found) return false;
         else return found.length >= 1;
+        // -------------------------------- \\
+        if (
+            "faith" == calc.skillName || 
+            "zeal" == calc.skillName || 
+            "devotion" == calc.skillName || 
+            "fervour" == calc.skillName
+        ) {
+            return true;
+        }
+        return false;
     },
 
     checkIsDM: () => {
         let found = calc.skillName.match(/dm_/);
         if (null == found) return false;
         else return found.length >= 1;
+        // -------------------------------- \\
+        if (
+            "faith" == calc.skillName || 
+            "zeal" == calc.skillName || 
+            "devotion" == calc.skillName || 
+            "devotion" == calc.skillName || 
+            "devotion" == calc.skillName || 
+            "devotion" == calc.skillName || 
+            "fervour" == calc.skillName
+        ) {
+            return true;
+        }
+    },
+
+    setSkils: (skills) => {
+        calc.skills['faith'] = { level: skills['faith'].level, rlevel: skills['faith'].relivLevel };
+        calc.skills['zeal'] = { level: skills['zeal'].level, rlevel: skills['zeal'].relivLevel };
+        calc.skills['devotion'] = { level: skills['devotion'].level, rlevel: skills['devotion'].relivLevel };
+        calc.skills['fervour'] = { level: skills['fervour'].level, rlevel: skills['fervour'].relivLevel };
+        
+        calc.skills['productivity'] = { level: skills['productivity'].level, rlevel: skills['productivity'].relivLevel };
+        calc.skills['concentration'] = { level: skills['concentration'].level, rlevel: skills['concentration'].relivLevel };
+        calc.skills['bargaining'] = { level: skills['bargaining'].level, rlevel: skills['bargaining'].relivLevel };
+        calc.skills['meditation'] = { level: skills['meditation'].level, rlevel: skills['meditation'].relivLevel };
+        
+        calc.skills['stength'] = { level: skills['stength'].level, rlevel: skills['stength'].relivLevel };
+        calc.skills['battle tactics'] = { level: skills['battle tactics'].level, rlevel: skills['battle tactics'].relivLevel };
+        calc.skills['muscle memory'] = { level: skills['muscle memory'].level, rlevel: skills['muscle memory'].relivLevel };
+        
+        calc.skills['mana control'] = { level: skills['mana control'].level, rlevel: skills['mana control'].relivLevel };
+        calc.skills['life essence'] = { level: skills['life essence'].level, rlevel: skills['life essence'].relivLevel };
+        calc.skills['resiliance'] = { level: skills['resiliance'].level, rlevel: skills['resiliance'].relivLevel };
+        
+        calc.skills['fanatical devotion'] = { level: skills['fanatical devotion'].level, rlevel: skills['fanatical devotion'].relivLevel };
+        calc.skills['ardent belief'] = { level: skills['ardent belief'].level, rlevel: skills['ardent belief'].relivLevel };
+        calc.skills['zealous conviction'] = { level: skills['zealous conviction'].level, rlevel: skills['zealous conviction'].relivLevel };
+        calc.skills['extreme piety'] = { level: skills['extreme piety'].level, rlevel: skills['extreme piety'].relivLevel };
+        calc.skills['abolute faith'] = { level: skills['abolute faith'].level, rlevel: skills['abolute faith'].relivLevel };
+        calc.skills['devout mastery'] = { level: skills['devout mastery'].level, rlevel: skills['devout mastery'].relivLevel };
+        calc.skills['degged perseverance'] = { level: skills['degged perseverance'].level, rlevel: skills['degged perseverance'].relivLevel };
     },
 
     doCalc: () => {
@@ -109,6 +161,8 @@ let dataImporter = {
         }
         let stats = dataImporter.decode(b64string);
         console.log(stats);
+        calc.setSkils(stas['skills']);
+        console.log(calc.skills);
 
         let dateNow = Date.now();
         let happinessBoostEnd = Date.parse(stats['boosts']['happiness']);
