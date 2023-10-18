@@ -42,13 +42,13 @@ let calc = {
         else return found.length >= 1;*/
         // -------------------------------- \\
         if (
-            "faith" == calc.skillName || 
-            "zeal" == calc.skillName || 
-            "devotion" == calc.skillName || 
-            "devotion" == calc.skillName || 
-            "devotion" == calc.skillName || 
-            "devotion" == calc.skillName || 
-            "fervour" == calc.skillName
+            "fanatical devotion" == calc.skillName || 
+            "ardent belief" == calc.skillName || 
+            "zealous conviction" == calc.skillName || 
+            "extreme piety" == calc.skillName || 
+            "absolute faith" == calc.skillName || 
+            "devout mastery" == calc.skillName || 
+            "dogged perseverance" == calc.skillName
         ) {
             return true;
         }
