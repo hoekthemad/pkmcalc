@@ -77,9 +77,9 @@ let calc = {
         calc.skills['ardent belief'] = { level: skills['ardent belief'].level, rlevel: skills['ardent belief'].relivLevel };
         calc.skills['zealous conviction'] = { level: skills['zealous conviction'].level, rlevel: skills['zealous conviction'].relivLevel };
         calc.skills['extreme piety'] = { level: skills['extreme piety'].level, rlevel: skills['extreme piety'].relivLevel };
-        calc.skills['abolute faith'] = { level: skills['abolute faith'].level, rlevel: skills['abolute faith'].relivLevel };
+        calc.skills['absolute faith'] = { level: skills['absolute faith'].level, rlevel: skills['absolute faith'].relivLevel };
         calc.skills['devout mastery'] = { level: skills['devout mastery'].level, rlevel: skills['devout mastery'].relivLevel };
-        calc.skills['degged perseverance'] = { level: skills['degged perseverance'].level, rlevel: skills['degged perseverance'].relivLevel };
+        calc.skills['dogged perseverance'] = { level: skills['dogged perseverance'].level, rlevel: skills['dogged perseverance'].relivLevel };
     },
 
     doCalc: () => {
