@@ -52,6 +52,7 @@ let calc = {
         ) {
             return true;
         }
+        return false;
     },
 
     setSkils: (skills) => {
