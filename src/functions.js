@@ -21,10 +21,6 @@ let calc = {
     },
 
     checkIsOrder: () => {
-        /*let found = calc.skillName.match(/order_/);
-        if (null == found) return false;
-        else return found.length >= 1;*/
-        // -------------------------------- \\
         if (
             "faith" == calc.skillName || 
             "zeal" == calc.skillName || 
@@ -37,10 +33,6 @@ let calc = {
     },
 
     checkIsDM: () => {
-        /*let found = calc.skillName.match(/dm_/);
-        if (null == found) return false;
-        else return found.length >= 1;*/
-        // -------------------------------- \\
         if (
             "fanatical devotion" == calc.skillName || 
             "ardent belief" == calc.skillName || 
@@ -96,16 +88,6 @@ let calc = {
 
         if (calc.isBoostEnabled) calc.happiness = calc.happiness / 2;
 
-        console.log(
-            "skillLevel ", (calc.targetSkillLevel-1), 
-            "isTheOrder "+isTheOrder, 
-            "priceModifier "+calc.allPriceModifier, 
-            "happiness "+calc.happiness, 
-            "relicLevel "+calc.relicLevel, 
-            "isDarkMagic "+isDarkMagic, 
-            "fana "+calc.fana, 
-            "isBoostEnabled "+calc.isBoostEnabled
-        );
         let skillPrice = Math.floor(getSkillPrice(
             calc.targetSkillLevel-1,
             isTheOrder,
@@ -116,7 +98,6 @@ let calc = {
             calc.fana,
             calc.isBoostEnabled
         ));
-        console.log(skillPrice);
 
         if (isNaN(skillPrice)) {
             alert("Please enter valid values.");
@@ -178,9 +159,7 @@ let dataImporter = {
             return;
         }
         let stats = dataImporter.decode(b64string);
-        console.log(stats);
         calc.setSkils(stats['skills']);
-        console.log(calc.skills);
 
         let dateNow = Date.now();
         let happinessBoostEnd = Date.parse(stats['boosts']['happiness']);
