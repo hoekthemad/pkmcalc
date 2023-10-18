@@ -56,36 +56,36 @@ let calc = {
     },
 
     setSkils: (skills) => {
-        calc.skills['faith'] = { level: 1*skills['faith'].level-1, rlevel: 1*skills['faith'].relicLevel };
-        calc.skills['zeal'] = { level: 1*skills['zeal'].level-1, rlevel: 1*skills['zeal'].relicLevel };
-        calc.skills['devotion'] = { level: 1*skills['devotion'].level-1, rlevel: 1*skills['devotion'].relicLevel };
-        calc.skills['fervour'] = { level: 1*skills['fervour'].level-1, rlevel: 1*skills['fervour'].relicLevel };
+        calc.skills['faith'] = { level: 1*skills['faith'].level+1, rlevel: 1*skills['faith'].relicLevel };
+        calc.skills['zeal'] = { level: 1*skills['zeal'].level+1, rlevel: 1*skills['zeal'].relicLevel };
+        calc.skills['devotion'] = { level: 1*skills['devotion'].level+1, rlevel: 1*skills['devotion'].relicLevel };
+        calc.skills['fervour'] = { level: 1*skills['fervour'].level+1, rlevel: 1*skills['fervour'].relicLevel };
         
-        calc.skills['productivity'] = { level: 1*skills['productivity'].level-1, rlevel: 1*skills['productivity'].relicLevel };
-        calc.skills['concentration'] = { level: 1*skills['concentration'].level-1, rlevel: 1*skills['concentration'].relicLevel };
-        calc.skills['bargaining'] = { level: 1*skills['bargaining'].level-1, rlevel: 1*skills['bargaining'].relicLevel };
-        calc.skills['meditation'] = { level: 1*skills['meditation'].level-1, rlevel: 1*skills['meditation'].relicLevel };
+        calc.skills['productivity'] = { level: 1*skills['productivity'].level+1, rlevel: 1*skills['productivity'].relicLevel };
+        calc.skills['concentration'] = { level: 1*skills['concentration'].level+1, rlevel: 1*skills['concentration'].relicLevel };
+        calc.skills['bargaining'] = { level: 1*skills['bargaining'].level+1, rlevel: 1*skills['bargaining'].relicLevel };
+        calc.skills['meditation'] = { level: 1*skills['meditation'].level+1, rlevel: 1*skills['meditation'].relicLevel };
         
-        calc.skills['strength'] = { level: 1*skills['strength'].level-1, rlevel: 1*skills['strength'].relicLevel };
-        calc.skills['battle tactics'] = { level: 1*skills['battle tactics'].level-1, rlevel: 1*skills['battle tactics'].relicLevel };
-        calc.skills['muscle memory'] = { level: 1*skills['muscle memory'].level-1, rlevel: 1*skills['muscle memory'].relicLevel };
+        calc.skills['strength'] = { level: 1*skills['strength'].level+1, rlevel: 1*skills['strength'].relicLevel };
+        calc.skills['battle tactics'] = { level: 1*skills['battle tactics'].level+1, rlevel: 1*skills['battle tactics'].relicLevel };
+        calc.skills['muscle memory'] = { level: 1*skills['muscle memory'].level+1, rlevel: 1*skills['muscle memory'].relicLevel };
         
-        calc.skills['mana control'] = { level: 1*skills['mana control'].level-1, rlevel: 1*skills['mana control'].relicLevel };
-        calc.skills['life essence'] = { level: 1*skills['life essence'].level-1, rlevel: 1*skills['life essence'].relicLevel };
-        calc.skills['resilience'] = { level: 1*skills['resilience'].level-1, rlevel: 1*skills['resilience'].relicLevel };
+        calc.skills['mana control'] = { level: 1*skills['mana control'].level+1, rlevel: 1*skills['mana control'].relicLevel };
+        calc.skills['life essence'] = { level: 1*skills['life essence'].level+1, rlevel: 1*skills['life essence'].relicLevel };
+        calc.skills['resilience'] = { level: 1*skills['resilience'].level+1, rlevel: 1*skills['resilience'].relicLevel };
         
-        calc.skills['fanatical devotion'] = { level: 1*skills['fanatical devotion'].level-1, rlevel: 1*skills['fanatical devotion'].relicLevel };
-        calc.skills['ardent belief'] = { level: 1*skills['ardent belief'].level-1, rlevel: 1*skills['ardent belief'].relicLevel };
-        calc.skills['zealous conviction'] = { level: 1*skills['zealous conviction'].level-1, rlevel: 1*skills['zealous conviction'].relicLevel };
-        calc.skills['extreme piety'] = { level: 1*skills['extreme piety'].level-1, rlevel: 1*skills['extreme piety'].relicLevel };
-        calc.skills['absolute faith'] = { level: 1*skills['absolute faith'].level-1, rlevel: 1*skills['absolute faith'].relicLevel };
-        calc.skills['devout mastery'] = { level: 1*skills['devout mastery'].level-1, rlevel: 1*skills['devout mastery'].relicLevel };
-        calc.skills['dogged perseverance'] = { level: 1*skills['dogged perseverance'].level-1, rlevel: 1*skills['dogged perseverance'].relicLevel };
+        calc.skills['fanatical devotion'] = { level: 1*skills['fanatical devotion'].level+1, rlevel: 1*skills['fanatical devotion'].relicLevel };
+        calc.skills['ardent belief'] = { level: 1*skills['ardent belief'].level+1, rlevel: 1*skills['ardent belief'].relicLevel };
+        calc.skills['zealous conviction'] = { level: 1*skills['zealous conviction'].level+1, rlevel: 1*skills['zealous conviction'].relicLevel };
+        calc.skills['extreme piety'] = { level: 1*skills['extreme piety'].level+1, rlevel: 1*skills['extreme piety'].relicLevel };
+        calc.skills['absolute faith'] = { level: 1*skills['absolute faith'].level+1, rlevel: 1*skills['absolute faith'].relicLevel };
+        calc.skills['devout mastery'] = { level: 1*skills['devout mastery'].level+1, rlevel: 1*skills['devout mastery'].relicLevel };
+        calc.skills['dogged perseverance'] = { level: 1*skills['dogged perseverance'].level+1, rlevel: 1*skills['dogged perseverance'].relicLevel };
     },
 
     changeSkill: () => {
         let skillName = $("#skill_name option:selected").val();
-        $("#target_skill_level").val((1*calc.skills[skillName].level-1)+1);
+        $("#target_skill_level").val((1*calc.skills[skillName].level+1)+1);
         $("#curr_relic_level").val(calc.skills[skillName].rlevel);
     },
 
@@ -201,7 +201,7 @@ let dataImporter = {
         $("#fanaticism").val(stats['fanaticism']);
         
         let skillName = $("#skill_name option:selected").val();
-        $("#target_skill_level").val(calc.skills[skillName].level-1);
+        $("#target_skill_level").val(calc.skills[skillName].level+1);
         $("#curr_relic_level").val(calc.skills[skillName].rlevel);
          $("#skill_name").trigger("change")
     }
