@@ -65,7 +65,7 @@ let calc = {
         calc.skills['bargaining'] = { level: skills['bargaining'].level, rlevel: skills['bargaining'].relivLevel };
         calc.skills['meditation'] = { level: skills['meditation'].level, rlevel: skills['meditation'].relivLevel };
         
-        calc.skills['stength'] = { level: skills['stength'].level, rlevel: skills['stength'].relivLevel };
+        calc.skills['strength'] = { level: skills['strength'].level, rlevel: skills['strength'].relivLevel };
         calc.skills['battle tactics'] = { level: skills['battle tactics'].level, rlevel: skills['battle tactics'].relivLevel };
         calc.skills['muscle memory'] = { level: skills['muscle memory'].level, rlevel: skills['muscle memory'].relivLevel };
         
