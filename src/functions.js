@@ -201,7 +201,7 @@ let dataImporter = {
         $("#fanaticism").val(stats['fanaticism']);
         
         let skillName = $("#skill_name option:selected").val();
-        $("#target_skill_level").val(calc.skills[skillName].level);
+        $("#target_skill_level").val(1*calc.skills[skillName].level+1);
         $("#curr_relic_level").val(calc.skills[skillName].rlevel);
         $("#skill_name").trigger("change")
     }
