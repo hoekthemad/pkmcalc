@@ -21,9 +21,9 @@ let calc = {
     },
 
     checkIsOrder: () => {
-        let found = calc.skillName.match(/order_/);
+        /*let found = calc.skillName.match(/order_/);
         if (null == found) return false;
-        else return found.length >= 1;
+        else return found.length >= 1;*/
         // -------------------------------- \\
         if (
             "faith" == calc.skillName || 
@@ -37,9 +37,9 @@ let calc = {
     },
 
     checkIsDM: () => {
-        let found = calc.skillName.match(/dm_/);
+        /*let found = calc.skillName.match(/dm_/);
         if (null == found) return false;
-        else return found.length >= 1;
+        else return found.length >= 1;*/
         // -------------------------------- \\
         if (
             "faith" == calc.skillName || 
@@ -80,6 +80,12 @@ let calc = {
         calc.skills['absolute faith'] = { level: skills['absolute faith'].level, rlevel: skills['absolute faith'].relicLevel };
         calc.skills['devout mastery'] = { level: skills['devout mastery'].level, rlevel: skills['devout mastery'].relicLevel };
         calc.skills['dogged perseverance'] = { level: skills['dogged perseverance'].level, rlevel: skills['dogged perseverance'].relicLevel };
+    },
+
+    changeSkill: () => {
+        let skillName = $("#skill_name option:selected").val();
+        $("#target_skill_level").val(calc.skills[skillName].level);
+        $("#curr_relic_level").val(calc.skills[skillName].rlevel);
     },
 
     doCalc: () => {
@@ -180,5 +186,9 @@ let dataImporter = {
         $("#price_modifier").val(happiness);
         $("#happiness_modifier").val(stats['stats']['allPrices']);
         $("#fanaticism").val(stats['fanaticism']);
+        
+        let skillName = $("#skill_name option:selected").val();
+        $("#target_skill_level").val(calc.skills[skillName].level);
+        $("#curr_relic_level").val(calc.skills[skillName].rlevel);
     }
 }
