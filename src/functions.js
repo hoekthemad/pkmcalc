@@ -183,6 +183,7 @@ let dataImporter = {
             $("#is_boost_active").prop("checked", "checked");
         }
 
+        // why
         $("#price_modifier").val(stats['stats']['allPrices']);
         $("#happiness_modifier").val(happiness);
         $("#fanaticism").val(stats['fanaticism']);
