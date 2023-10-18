@@ -107,6 +107,8 @@ let calc = {
             calc.isBoostEnabled
         ));
 
+        consoloe.log(skillPrice);
+
         if (isNaN(skillPrice)) {
             alert("Please enter valid values.");
             return;
