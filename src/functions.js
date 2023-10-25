@@ -81,23 +81,32 @@ let calc = {
         $("#curr_relic_level").val(calc.skills[skillName].rlevel);
     },
 
-    doCalc: () => {
+    doPlusTFifty: () => {},
+
+    doCalc: (amount) => {
+        amount = amount || 1;
         calc.getBaseInformation();
         let isTheOrder = calc.checkIsOrder();
         let isDarkMagic = calc.checkIsDM();
 
         if (calc.isBoostEnabled) calc.happiness = calc.happiness / 2;
 
-        let skillPrice = Math.floor(getSkillPrice(
-            calc.targetSkillLevel-1,
-            isTheOrder,
-            calc.allPriceModifier,
-            calc.happiness,
-            calc.relicLevel,
-            isDarkMagic,
-            calc.fana,
-            calc.isBoostEnabled
-        ));
+        let skillPrice = 0;
+        let tsl = calc.targetSkillLevel-1;
+
+        for (let i = 0; i < amount; i++) {
+            skillPrice = Math.floor(getSkillPrice(
+                tsl,
+                isTheOrder,
+                calc.allPriceModifier,
+                calc.happiness,
+                calc.relicLevel,
+                isDarkMagic,
+                calc.fana,
+                calc.isBoostEnabled
+            ));
+            tsl++;
+        }
         console.log(skillPrice);
 
         if (isNaN(skillPrice)) {
@@ -141,7 +150,11 @@ let calc = {
             count++;
         }
 
+        if (1==amount) calc.doDisplay(theprice);
+        return theprice;
+    },
 
+    doDisplay: (theprice) => {
         jQuery("#calculated_skill_price").html(theprice);
     }
 }
