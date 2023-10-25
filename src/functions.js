@@ -94,7 +94,7 @@ let calc = {
         let skillPrice = 0;
         let tsl = calc.targetSkillLevel-1;
 
-        for (let i = 0; i < amount; i++) {
+        /*for (let i = 0; i < amount; i++) {
             skillPrice = Math.floor(getSkillPrice(
                 tsl,
                 isTheOrder,
@@ -106,7 +106,17 @@ let calc = {
                 calc.isBoostEnabled
             ));
             tsl++;
-        }
+        }*/
+        skillPrice = Math.floor(getSkillPrice(
+            tsl + (1==amount?0:amount),
+            isTheOrder,
+            calc.allPriceModifier,
+            calc.happiness,
+            calc.relicLevel,
+            isDarkMagic,
+            calc.fana,
+            calc.isBoostEnabled
+        ));
         console.log(skillPrice);
 
         if (isNaN(skillPrice)) {
