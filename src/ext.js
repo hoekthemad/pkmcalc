@@ -19,3 +19,11 @@ let getSkillPrice = (level, isTheOrder, priceModifier, happinessModifier, relicL
 
     return 1 + a / b
 }
+
+const getEffect = (baseValue, level, skillEffects, isSkillEffects) => {
+    return 0.01 * Math.round(100 * Math.pow(
+        (1 + baseValue *
+            (isSkillEffects ? 1 : skillEffects) *
+            (level - 1)),
+        0.6))
+}
