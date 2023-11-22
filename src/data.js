@@ -143,7 +143,7 @@ const servants = {
     }
 }
 
-const skills = {
+const skillEffects = {
     theorder: {
         faith: 0.205,
         zeal: 0.12,
