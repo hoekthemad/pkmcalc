@@ -6,39 +6,39 @@ const properties = {
             effect: 1
         },
         wooden_hut: {
-            base_price: 7.50e+01,
+            base_price: 75,
             effect: 2
         },
         cottage: {
-            base_price: 4.69e+04,
+            base_price: 46875,
             effect: 3
         },
         house: {
-            base_price: 2.93e+06,
+            base_price: 29296875,
             effect: 4
         },
         large_house: {
-            base_price: 1.83e+10,
+            base_price: 18310546875,
             effect: 5
         },
         small_palace: {
-            base_price: 1.14e+13,
+            base_price: 11444091796875,
             effect: 6
         },
         grand_palace: {
-            base_price: 7.15e+15,
+            base_price: 7152557373046875,
             effect: 7
         },
         town_ruler: {
-            base_price: 4.47e+18,
+            base_price: 4470348358154296300n,
             effect: 8
         },
         city_ruler: {
-            base_price: 2.79e+21,
+            base_price: 2793967723846436000000n,
             effect: 9
         },
         kingdom_minister: {
-            base_price: 6.99e+22,
+            base_price: 69849193096160890000000n,
             effect: 10
         }
     }
@@ -48,52 +48,52 @@ const trinkets = {
     coin_pouch: {
         effect_type: "income",
         effect_value: 2.5,
-        base_price: 5.90e+01,
+        base_price: 59,
     },
     wooden_crown: {
         effect_type: "shopprices",
         effect_value: 2,
-        base_price: 1.67e+05,
+        base_price: 166772,
     },
     dumbells: {
         effect_type: "atkduration",
         effect_value: 1.5,
-        base_price: 8.86e+06,
+        base_price: 8862938,
     },
     lucky_charm: {
         effect_type: "income",
         effect_value: 3,
-        base_price: 0,
+        base_price: 471012870,
     },
     pendulum: {
         effect_type: "bonusrelic",
         effect_value: 0.2,
-        base_price: 0,
+        base_price: 25031555050,
     },
     silver_ring: {
         effect_type: "allprices",
         effect_value: 2,
-        base_price: 0,
+        base_price: 1330279464729,
     },
     ceremony_knife: {
         effect_type: "happiness",
         effect_value: 1.5,
-        base_price: 0,
+        base_price: 70696504901511,
     },
     magic_pebbles: {
         effect_type: "shopprices",
         effect_value: 1.5,
-        base_price: 0,
+        base_price: 3757102126136372,
     },
     shiny_lamp: {
         effect_type: "allprices",
         effect_value: 2,
-        base_price: 0,
+        base_price: 199667811101603970n,
     },
     golden_hourglass: {
         effect_type: "bonusrelic",
         effect_value: 1.5,
-        base_price: 0,
+        base_price: 10611166119964754000n,
     }
 }
 
@@ -101,37 +101,37 @@ const weapons = {
     small_shield: {
         effect_type: "enatkduration",
         effect_value: 2,
-        base_price : 6.26e+02
+        base_price : 626
     },
     war_paint: {
         effect_type: "atkresistance",
         effect_value: 1.5,
-        base_price : 1.30e+05
+        base_price : 130434
     },
     short_bow: {
         effect_type: "enatkduration",
         effect_value: 2,
-        base_price : 0
+        base_price : 27197214
     },
     steel_longsword: {
         effect_type: "atkduration",
         effect_value: 2,
-        base_price : 0
+        base_price : 5670988944
     },
     knight_armor: {
         effect_type: "atkresistance",
         effect_value: 1.5,
-        base_price : 0
+        base_price : 1182478320247
     },
     war_horse: {
         effect_type: "atkpower",
         effect_value: 2,
-        base_price : 0
+        base_price : 246562811476569
     },
     magic_sword: {
         effect_type: "shopprices",
         effect_value: 1.5,
-        base_price : 0
+        base_price : 51411699447100780n
     },
 }
 
@@ -139,7 +139,37 @@ const servants = {
     squire: {
         effect_type: "shopprices",
         effect_value: 1.5,
-        base_price: 3.48e+03
+        base_price: 3476
+    },
+    bookeeper: {
+        effect_type: "income",
+        effect_value: 2,
+        base_price: 982146
+    },
+    butler: {
+        effect_type: "happiness",
+        effect_value: 1.5,
+        base_price: 277530931
+    },
+    banker: {
+        effect_type: "allprices",
+        effect_value: 2,
+        base_price: 22160637303640
+    },
+    seer: {
+        effect_type: "bonusrelic",
+        effect_value: 1,
+        base_price: 6262066462777030
+    },
+    bodyguard: {
+        effect_type: "atkresistance",
+        effect_value: 2,
+        base_price: 1769510318992327700n
+    },
+    holyman: {
+        effect_type: "shopprices",
+        effect_value: 1.5,
+        base_price: 500021324850607700000n
     }
 }
 

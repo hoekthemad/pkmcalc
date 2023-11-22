@@ -1,5 +1,5 @@
 let _import = {
-    allstats: {
+    stats: {
         balance: 0,
         fanaticism: 0,
         brands: 0,
@@ -9,6 +9,19 @@ let _import = {
                 tavern: Date.now()
             },
             happiness: Date.now()
+        },
+        playerStats: {
+            income: 1,
+            happiness: 1,
+            allprices: 1,
+            shopprices: 1,
+            skilleffects: 1,
+            bonusrelic: 0,
+            flatincome: 0,
+            atkduration: 1,
+            atkpower: 1,
+            atkresistance: 1,
+            insanitythreshold: 1
         },
         skills: {
             theorder: {
@@ -97,8 +110,8 @@ let _import = {
                 url: "http://api.ezagdev.net/player-data/"+data,
                 type: "GET",
                 async: false,
-                success: function (resilience) {
-                    stats = resilience;
+                success: function (xhr) {
+                    stats = xhr;
                 }
             });
         }
@@ -107,172 +120,189 @@ let _import = {
             stats = JSON.parse(binString);
         }
 
-        _import.allstats.boosts.happiness = Date,parse(stats.playerData['boosts']['happiness'][0]) ?? Date.now();
-        _import.allstats.boosts.income.ad = Date.parse(stats.playerData['boosts']['income'][0]) ?? Date.now();
-        _import.allstats.boosts.income.tavern = Date.parse(stats.playerData['boosts']['income'][1]) ?? Date.now();
+        _import.stats.boosts.happiness = Date.parse(stats.playerData['boosts']['happiness'][0]) ?? Date.now();
+        _import.stats.boosts.income.ad = Date.parse(stats.playerData['boosts']['income'][0]) ?? Date.now();
+        _import.stats.boosts.income.tavern = Date.parse(stats.playerData['boosts']['income'][1]) ?? Date.now();
 
-        _import.allstats.fanaticism = 1*stats.playerData['fanaticism'];
+        _import.stats.fanaticism = stats.playerData['fanaticism'];
 
         let shop = stats.playerData.shop;
         //#region Properties
         {
-            _import.allstats.shop.properties.tent = shop['tent'] ?? false;
-            _import.allstats.shop.properties.woodenhut = shop['wooden hut'] ?? false;
-            _import.allstats.shop.properties.cottage = shop['cottage'] ?? false;
-            _import.allstats.shop.properties.house = shop['house'] ?? false;
-            _import.allstats.shop.properties.largehouse = shop['large house'] ?? false;
-            _import.allstats.shop.properties.smallpalace = shop['small palace'] ?? false;
-            _import.allstats.shop.properties.grandpalace = shop['grand palace'] ?? false;
-            _import.allstats.shop.properties.townruler = shop['town ruler'] ?? false;
-            _import.allstats.shop.properties.cityruler = shop['city ruler'] ?? false;
-            _import.allstats.shop.properties.kingdomminister = shop['kindom minister'] ?? false;
+            _import.stats.shop.properties.tent = shop['tent'] ?? false;
+            _import.stats.shop.properties.woodenhut = shop['wooden hut'] ?? false;
+            _import.stats.shop.properties.cottage = shop['cottage'] ?? false;
+            _import.stats.shop.properties.house = shop['house'] ?? false;
+            _import.stats.shop.properties.largehouse = shop['large house'] ?? false;
+            _import.stats.shop.properties.smallpalace = shop['small palace'] ?? false;
+            _import.stats.shop.properties.grandpalace = shop['grand palace'] ?? false;
+            _import.stats.shop.properties.townruler = shop['town ruler'] ?? false;
+            _import.stats.shop.properties.cityruler = shop['city ruler'] ?? false;
+            _import.stats.shop.properties.kingdomminister = shop['kindom minister'] ?? false;
         }
         //#endregion
         
         //#region Trinkets
         {
-            _import.allstats.shop.trinkets.coinpouch = shop['coin pouch'] ?? false;
-            _import.allstats.shop.trinkets.woodencrown = shop['wooden crown'] ?? false;
-            _import.allstats.shop.trinkets.dumbbells = shop['dumbbells'] ?? false;
-            _import.allstats.shop.trinkets.luckycharm = shop['lucky charm'] ?? false;
-            _import.allstats.shop.trinkets.pendulum = shop['pendulum'] ?? false;
-            _import.allstats.shop.trinkets.silverring = shop['silver ring'] ?? false;
-            _import.allstats.shop.trinkets.ceremonyknife = shop['ceremony knife'] ?? false;
-            _import.allstats.shop.trinkets.magicpebbles = shop['magic pebbles'] ?? false;
-            _import.allstats.shop.trinkets.shinylamp = shop['shiny lamp'] ?? false;
-            _import.allstats.shop.trinkets.goldenhourglass = shop['golden hourglass'] ?? false;
+            _import.stats.shop.trinkets.coinpouch = shop['coin pouch'] ?? false;
+            _import.stats.shop.trinkets.woodencrown = shop['wooden crown'] ?? false;
+            _import.stats.shop.trinkets.dumbbells = shop['dumbbells'] ?? false;
+            _import.stats.shop.trinkets.luckycharm = shop['lucky charm'] ?? false;
+            _import.stats.shop.trinkets.pendulum = shop['pendulum'] ?? false;
+            _import.stats.shop.trinkets.silverring = shop['silver ring'] ?? false;
+            _import.stats.shop.trinkets.ceremonyknife = shop['ceremony knife'] ?? false;
+            _import.stats.shop.trinkets.magicpebbles = shop['magic pebbles'] ?? false;
+            _import.stats.shop.trinkets.shinylamp = shop['shiny lamp'] ?? false;
+            _import.stats.shop.trinkets.goldenhourglass = shop['golden hourglass'] ?? false;
         }
         //#endregion
         
         //#region Weapons
         {
-            _import.allstats.shop.weapons.smallshield = shop['small shield'] ?? false;
-            _import.allstats.shop.weapons.warpaint = shop['war paint'] ?? false;
-            _import.allstats.shop.weapons.shortbow = shop['short bow'] ?? false;
-            _import.allstats.shop.weapons.steellongsword = shop['steel longsword'] ?? false;
-            _import.allstats.shop.weapons.knightarmor = shop['knight armor'] ?? false;
-            _import.allstats.shop.weapons.warhorse = shop['war horse'] ?? false;
-            _import.allstats.shop.weapons.magicsword = shop['magic sword'] ?? false;
+            _import.stats.shop.weapons.smallshield = shop['small shield'] ?? false;
+            _import.stats.shop.weapons.warpaint = shop['war paint'] ?? false;
+            _import.stats.shop.weapons.shortbow = shop['short bow'] ?? false;
+            _import.stats.shop.weapons.steellongsword = shop['steel longsword'] ?? false;
+            _import.stats.shop.weapons.knightarmor = shop['knight armor'] ?? false;
+            _import.stats.shop.weapons.warhorse = shop['war horse'] ?? false;
+            _import.stats.shop.weapons.magicsword = shop['magic sword'] ?? false;
         }
         //#endregion
         
         //#region Servants
         {
-            _import.allstats.shop.servants.squire = shop['squire'] ?? false;
-            _import.allstats.shop.servants.bookkeeper = shop['bookkeeper'] ?? false;
-            _import.allstats.shop.servants.butler = shop['butler'] ?? false;
-            _import.allstats.shop.servants.banker = shop['banker'] ?? false;
-            _import.allstats.shop.servants.seer = shop['seer'] ?? false;
-            _import.allstats.shop.servants.bodyguard = shop['bodyguard'] ?? false;
-            _import.allstats.shop.servants.holyman = shop['holyman'] ?? false;
+            _import.stats.shop.servants.squire = shop['squire'] ?? false;
+            _import.stats.shop.servants.bookkeeper = shop['bookkeeper'] ?? false;
+            _import.stats.shop.servants.butler = shop['butler'] ?? false;
+            _import.stats.shop.servants.banker = shop['banker'] ?? false;
+            _import.stats.shop.servants.seer = shop['seer'] ?? false;
+            _import.stats.shop.servants.bodyguard = shop['bodyguard'] ?? false;
+            _import.stats.shop.servants.holyman = shop['holyman'] ?? false;
         }
         //#endregion
 
         let skills = stats.playerData.skills;
         //#region The Order
         {
-            _import.allstats.skills.theorder.faith.level = skills['faith']['level'];
-            _import.allstats.skills.theorder.faith.reliclevel = skills['faith']['relicLevel'];
-            _import.allstats.skills.theorder.faith.effect = skills['faith']['value'];
+            _import.stats.skills.theorder.faith.level = skills['faith']['level'];
+            _import.stats.skills.theorder.faith.reliclevel = skills['faith']['relicLevel'];
+            _import.stats.skills.theorder.faith.effect = skills['faith']['value'];
 
-            _import.allstats.skills.theorder.zeal.level = skills['zeal']['level'];
-            _import.allstats.skills.theorder.zeal.reliclevel = skills['zeal']['relicLevel'];
-            _import.allstats.skills.theorder.zeal.effect = skills['zeal']['value'];
+            _import.stats.skills.theorder.zeal.level = skills['zeal']['level'];
+            _import.stats.skills.theorder.zeal.reliclevel = skills['zeal']['relicLevel'];
+            _import.stats.skills.theorder.zeal.effect = skills['zeal']['value'];
 
-            _import.allstats.skills.theorder.devotion.level = skills['devotion']['level'];
-            _import.allstats.skills.theorder.devotion.reliclevel = skills['devotion']['relicLevel'];
-            _import.allstats.skills.theorder.devotion.effect = skills['devotion']['value'];
+            _import.stats.skills.theorder.devotion.level = skills['devotion']['level'];
+            _import.stats.skills.theorder.devotion.reliclevel = skills['devotion']['relicLevel'];
+            _import.stats.skills.theorder.devotion.effect = skills['devotion']['value'];
 
-            _import.allstats.skills.theorder.fervour.level = skills['fervour']['level'];
-            _import.allstats.skills.theorder.fervour.reliclevel = skills['fervour']['relicLevel'];
-            _import.allstats.skills.theorder.fervour.effect = skills['fervour']['value'];
+            _import.stats.skills.theorder.fervour.level = skills['fervour']['level'];
+            _import.stats.skills.theorder.fervour.reliclevel = skills['fervour']['relicLevel'];
+            _import.stats.skills.theorder.fervour.effect = skills['fervour']['value'];
         }
         //#endregion
         
         //#region Fundamentals
         {
-            _import.allstats.skills.fundamentals.productivity.level = skills['productivity']['level'];
-            _import.allstats.skills.fundamentals.productivity.reliclevel = skills['productivity']['relicLevel'];
-            _import.allstats.skills.fundamentals.productivity.effect = skills['productivity']['value'];
+            _import.stats.skills.fundamentals.productivity.level = skills['productivity']['level'];
+            _import.stats.skills.fundamentals.productivity.reliclevel = skills['productivity']['relicLevel'];
+            _import.stats.skills.fundamentals.productivity.effect = skills['productivity']['value'];
 
-            _import.allstats.skills.fundamentals.concentration.level = skills['concentration']['level'];
-            _import.allstats.skills.fundamentals.concentration.reliclevel = skills['concentration']['relicLevel'];
-            _import.allstats.skills.fundamentals.concentration.effect = skills['concentration']['value'];
+            _import.stats.skills.fundamentals.concentration.level = skills['concentration']['level'];
+            _import.stats.skills.fundamentals.concentration.reliclevel = skills['concentration']['relicLevel'];
+            _import.stats.skills.fundamentals.concentration.effect = skills['concentration']['value'];
 
-            _import.allstats.skills.fundamentals.bargaining.level = skills['bargaining']['level'];
-            _import.allstats.skills.fundamentals.bargaining.reliclevel = skills['bargaining']['relicLevel'];
-            _import.allstats.skills.fundamentals.bargaining.effect = skills['bargaining']['value'];
+            _import.stats.skills.fundamentals.bargaining.level = skills['bargaining']['level'];
+            _import.stats.skills.fundamentals.bargaining.reliclevel = skills['bargaining']['relicLevel'];
+            _import.stats.skills.fundamentals.bargaining.effect = skills['bargaining']['value'];
 
-            _import.allstats.skills.fundamentals.meditation.level = skills['meditation']['level'];
-            _import.allstats.skills.fundamentals.meditation.reliclevel = skills['meditation']['relicLevel'];
-            _import.allstats.skills.fundamentals.meditation.effect = skills['meditation']['value'];
+            _import.stats.skills.fundamentals.meditation.level = skills['meditation']['level'];
+            _import.stats.skills.fundamentals.meditation.reliclevel = skills['meditation']['relicLevel'];
+            _import.stats.skills.fundamentals.meditation.effect = skills['meditation']['value'];
         }
         //#endregion
         
         //#region Combat
         {
-            _import.allstats.skills.combat.strength.level = skills['strength']['level'];
-            _import.allstats.skills.combat.strength.reliclevel = skills['strength']['relicLevel'];
-            _import.allstats.skills.combat.strength.effect = skills['strength']['value'];
+            _import.stats.skills.combat.strength.level = skills['strength']['level'];
+            _import.stats.skills.combat.strength.reliclevel = skills['strength']['relicLevel'];
+            _import.stats.skills.combat.strength.effect = skills['strength']['value'];
 
-            _import.allstats.skills.combat.battletactics.level = skills['battle tactics']['level'];
-            _import.allstats.skills.combat.battletactics.reliclevel = skills['battle tactics']['relicLevel'];
-            _import.allstats.skills.combat.battletactics.effect = skills['battle tactics']['value'];
+            _import.stats.skills.combat.battletactics.level = skills['battle tactics']['level'];
+            _import.stats.skills.combat.battletactics.reliclevel = skills['battle tactics']['relicLevel'];
+            _import.stats.skills.combat.battletactics.effect = skills['battle tactics']['value'];
 
-            _import.allstats.skills.combat.musclememory.level = skills['muscle memory']['level'];
-            _import.allstats.skills.combat.musclememory.reliclevel = skills['muscle memory']['relicLevel'];
-            _import.allstats.skills.combat.musclememory.effect = skills['muscle memory']['value'];
+            _import.stats.skills.combat.musclememory.level = skills['muscle memory']['level'];
+            _import.stats.skills.combat.musclememory.reliclevel = skills['muscle memory']['relicLevel'];
+            _import.stats.skills.combat.musclememory.effect = skills['muscle memory']['value'];
         }
         //#endregion
         
         //#region Magic
         {
-            _import.allstats.skills.magic.manacontrol.level = skills['mana control']['level'];
-            _import.allstats.skills.magic.manacontrol.reliclevel = skills['mana control']['relicLevel'];
-            _import.allstats.skills.magic.manacontrol.effect = skills['mana control']['value'];
+            _import.stats.skills.magic.manacontrol.level = skills['mana control']['level'];
+            _import.stats.skills.magic.manacontrol.reliclevel = skills['mana control']['relicLevel'];
+            _import.stats.skills.magic.manacontrol.effect = skills['mana control']['value'];
 
-            _import.allstats.skills.magic.lifeessence.level = skills['life essence']['level'];
-            _import.allstats.skills.magic.lifeessence.reliclevel = skills['life essence']['relicLevel'];
-            _import.allstats.skills.magic.lifeessence.effect = skills['life essence']['value'];
+            _import.stats.skills.magic.lifeessence.level = skills['life essence']['level'];
+            _import.stats.skills.magic.lifeessence.reliclevel = skills['life essence']['relicLevel'];
+            _import.stats.skills.magic.lifeessence.effect = skills['life essence']['value'];
 
-            _import.allstats.skills.magic.resilience.level = skills['resilience']['level'];
-            _import.allstats.skills.magic.resilience.reliclevel = skills['resilience']['relicLevel'];
-            _import.allstats.skills.magic.resilience.effect = skills['resilience']['value'];
+            _import.stats.skills.magic.resilience.level = skills['resilience']['level'];
+            _import.stats.skills.magic.resilience.reliclevel = skills['resilience']['relicLevel'];
+            _import.stats.skills.magic.resilience.effect = skills['resilience']['value'];
         }
         //#endregion
         
         //#region Dark Magic
         {
-            _import.allstats.skills.darkmagic.fanaticaldevotion.level = skills['fanatical devotion']['level'];
-            _import.allstats.skills.darkmagic.fanaticaldevotion.reliclevel = skills['fanatical devotion']['relicLevel'];
-            _import.allstats.skills.darkmagic.fanaticaldevotion.effect = skills['fanatical devotion']['value'];
+            _import.stats.skills.darkmagic.fanaticaldevotion.level = skills['fanatical devotion']['level'];
+            _import.stats.skills.darkmagic.fanaticaldevotion.reliclevel = skills['fanatical devotion']['relicLevel'];
+            _import.stats.skills.darkmagic.fanaticaldevotion.effect = skills['fanatical devotion']['value'];
 
-            _import.allstats.skills.darkmagic.ardentbelief.level = skills['ardent belief']['level'];
-            _import.allstats.skills.darkmagic.ardentbelief.reliclevel = skills['ardent belief']['relicLevel'];
-            _import.allstats.skills.darkmagic.ardentbelief.effect = skills['ardent belief']['value'];
+            _import.stats.skills.darkmagic.ardentbelief.level = skills['ardent belief']['level'];
+            _import.stats.skills.darkmagic.ardentbelief.reliclevel = skills['ardent belief']['relicLevel'];
+            _import.stats.skills.darkmagic.ardentbelief.effect = skills['ardent belief']['value'];
 
-            _import.allstats.skills.darkmagic.zealousconviction.level = skills['zealous conviction']['level'];
-            _import.allstats.skills.darkmagic.zealousconviction.reliclevel = skills['zealous conviction']['relicLevel'];
-            _import.allstats.skills.darkmagic.zealousconviction.effect = skills['zealous conviction']['value'];
+            _import.stats.skills.darkmagic.zealousconviction.level = skills['zealous conviction']['level'];
+            _import.stats.skills.darkmagic.zealousconviction.reliclevel = skills['zealous conviction']['relicLevel'];
+            _import.stats.skills.darkmagic.zealousconviction.effect = skills['zealous conviction']['value'];
 
-            _import.allstats.skills.darkmagic.extremepiety.level = skills['extreme piety']['level'];
-            _import.allstats.skills.darkmagic.extremepiety.reliclevel = skills['extreme piety']['relicLevel'];
-            _import.allstats.skills.darkmagic.extremepiety.effect = skills['extreme piety']['value'];
+            _import.stats.skills.darkmagic.extremepiety.level = skills['extreme piety']['level'];
+            _import.stats.skills.darkmagic.extremepiety.reliclevel = skills['extreme piety']['relicLevel'];
+            _import.stats.skills.darkmagic.extremepiety.effect = skills['extreme piety']['value'];
 
-            _import.allstats.skills.darkmagic.absolutefaith.level = skills['absolute faith']['level'];
-            _import.allstats.skills.darkmagic.absolutefaith.reliclevel = skills['absolute faith']['relicLevel'];
-            _import.allstats.skills.darkmagic.absolutefaith.effect = skills['absolute faith']['value'];
+            _import.stats.skills.darkmagic.absolutefaith.level = skills['absolute faith']['level'];
+            _import.stats.skills.darkmagic.absolutefaith.reliclevel = skills['absolute faith']['relicLevel'];
+            _import.stats.skills.darkmagic.absolutefaith.effect = skills['absolute faith']['value'];
 
-            _import.allstats.skills.darkmagic.devoutmastery.level = skills['devout mastery']['level'];
-            _import.allstats.skills.darkmagic.devoutmastery.reliclevel = skills['devout mastery']['relicLevel'];
-            _import.allstats.skills.darkmagic.devoutmastery.effect = skills['devout mastery']['value'];
+            _import.stats.skills.darkmagic.devoutmastery.level = skills['devout mastery']['level'];
+            _import.stats.skills.darkmagic.devoutmastery.reliclevel = skills['devout mastery']['relicLevel'];
+            _import.stats.skills.darkmagic.devoutmastery.effect = skills['devout mastery']['value'];
 
-            _import.allstats.skills.darkmagic.doggedperseverance.level = skills['dogged perseverance']['level'];
-            _import.allstats.skills.darkmagic.doggedperseverance.reliclevel = skills['dogged perseverance']['relicLevel'];
-            _import.allstats.skills.darkmagic.doggedperseverance.effect = skills['dogged perseverance']['value'];
+            _import.stats.skills.darkmagic.doggedperseverance.level = skills['dogged perseverance']['level'];
+            _import.stats.skills.darkmagic.doggedperseverance.reliclevel = skills['dogged perseverance']['relicLevel'];
+            _import.stats.skills.darkmagic.doggedperseverance.effect = skills['dogged perseverance']['value'];
         }
         //#endregion
 
-        console.log(_import.allstats);
+        let _playerStats = stats.playerData.stats;
+        //#region playerStats
+        {
+            _import.stats.playerStats.income = _playerStats['income'] ?? 1;
+            _import.stats.playerStats.happiness = _playerStats['happiness'] ?? 1;
+            _import.stats.playerStats.allprices = _playerStats['allPrices'] ?? 1;
+            _import.stats.playerStats.shopprices = _playerStats['shopPrices'] ?? 1;
+            _import.stats.playerStats.skilleffects = _playerStats['skillEffects'] ?? 1;
+            _import.stats.playerStats.bonusrelic = _playerStats['bonusRelic'] ?? 0;
+            _import.stats.playerStats.flatincome = _playerStats['flatIncome'] ?? 0;
+            _import.stats.playerStats.atkduration = _playerStats['atkDuration'] ?? 1;
+            _import.stats.playerStats.atkpower = _playerStats['atkPower'] ?? 1;
+            _import.stats.playerStats.atkresistance = _playerStats['atkResistance'] ?? 1;
+            _import.stats.playerStats.insanitythreshold = _playerStats['insanityThreshold'] ?? 1;
+        }
+        //#endregion
+
+        console.log(_import.stats);
     }
 }
