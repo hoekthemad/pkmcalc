@@ -19,9 +19,58 @@
         <script src="src/data.js"></script>
         <script src="src/utils.js"></script>
         <script src="src/import.js"></script>
+        <script src="src/_stats.js"></script>
     </head>
 
     <body class="container">
-        <textarea id="import"></textarea><button onclick="_import.go(jQuery('#import').val())">Import</button>
+        <div class="col-sm-12 col-md-12">
+            <div class="row align-items-start">
+                <h3>Import</h3><hr>
+                <div class="col-sm-12 col-md-12">
+                    <label class="form-label" for="import">Import your stats from PK:M</label>
+                    <textarea class="form-control" id="import"></textarea>
+                    
+                    <button class="btn btn-primary" onclick="stats()">Import</button>
+                    <div id="help_import" class="form-text">
+                        There are 2 ways to get your stats
+                        <ol>
+                            <li>User ID</li>
+                            <li>Exported Stats</li>
+                        </ol>
+                        In the first instance, simply type your User ID (found in the menu) and click import, after this go to PK:M and accept the request<br>
+                        Secondly, copy & paste the stats from the buttom of effect details
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class="row align-items-start">
+                <div class="col-sm-12 col-md-12">
+                    <h3>Stats</h3><hr>
+                    <span class="form-text">Current Fanaticism: </span><span class="form-text" id="current_fana">0</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="form-text">Total Brands: </span><span class="form-text" id="total_brands">0</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="form-text">Relic Touches: </span><span class="form-text" id="relic_touches">0</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                <div class="col-sm-12 col-md-12" id="skill_form">
+                    <h3>Skills</h3><hr>
+                    <div class="input-group">
+                        <span class="input-group-text">Faith</span>
+                        <input class="form-control" type="number" value="1" id="faith_level">
+                        <span class="input-group-text">Relic Level</span>
+                        <input class="form-control" type="number" value="1" id="faith_relic_level">
+                        <span class="input-group-text">Skill Effect - Income</span>
+                        <input class="form-control" type="text" value="0.205" id="faith_skill_effect" disabled>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text">Zeal</span>
+                        <input class="form-control" type="number" value="1" id="zeal_level">
+                        <span class="input-group-text">Relic Level</span>
+                        <input class="form-control" type="number" value="1" id="zeal_relic_level">
+                        <span class="input-group-text">Skill Effect - All prices</span>
+                        <input class="form-control" type="text" value="0.12" id="zeal_skill_effect" disabled>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
