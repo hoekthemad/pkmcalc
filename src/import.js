@@ -108,7 +108,7 @@ let _import = {
         var stats;
         if (10 > data.toString().length) {
             jQuery.ajax({
-                url: "http://api.ezagdev.net/player-data/"+data,
+                url: "https://api.ezagdev.net/player-data/"+data,
                 type: "GET",
                 async: false,
                 success: function (xhr) {
