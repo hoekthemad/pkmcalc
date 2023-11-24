@@ -25,5 +25,5 @@ const getEffect = (baseValue, level, skillEffects, isSkillEffects) => {
         (1 + baseValue *
             (isSkillEffects ? 1 : skillEffects) *
             (level - 1)),
-        0.6))
+        0.6)).toFixed(2)
 }
