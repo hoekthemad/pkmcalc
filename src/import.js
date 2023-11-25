@@ -110,7 +110,7 @@ let _import = {
             jQuery.ajax({
                 url: "https://api.ezagdev.net/player-data/"+data,
                 type: "GET",
-                async: true,
+                async: false,
                 success: function (xhr) {
                     stats = xhr;
 
