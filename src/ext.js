@@ -3,6 +3,11 @@
  * @author Gawaak
  */
 let getSkillPrice = (level, isTheOrder, priceModifier, happinessModifier, relicLevel, isDarkMagic, fanaticism, isBoostActive) => {
+    level = 1*level;
+    priceModifier = 1*priceModifier;
+    happinessModifier = 1* happinessModifier;
+    relicLevel = 1*relicLevel;
+    fanaticism = 1*fanaticism;
     const a = (0.001 * Math.pow(level,
             Math.log((level * Math.sqrt(level)) / (isTheOrder ? 1 : 3.27)))
     )

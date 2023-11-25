@@ -16,6 +16,7 @@ let stats = () => {
     jQuery("#faith_level").val(theStats.skills.theorder.faith.level);
     jQuery("#faith_relic_level").val(theStats.skills.theorder.faith.reliclevel);
     jQuery("#faith_skill_effect").val(getEffect(1*skillEffects.theorder.faith, theStats.skills.theorder.faith.level, 1*theStats.playerStats.skilleffects, false));
+    jQuery("#faith_skill_price").val(convertIntToCurrency(Math.floor(getSkillPrice(theStats.skills.theorder.faith.level, true, theStats.playerStats.allprices, theStats.playerStats.happiness, theStats.skills.theorder.faith.reliclevel, false, theStats.fanaticism, true))))
     
     jQuery("#zeal_level").val(theStats.skills.theorder.zeal.level);
     jQuery("#zeal_relic_level").val(theStats.skills.theorder.zeal.reliclevel);
