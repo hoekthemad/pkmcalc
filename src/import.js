@@ -110,7 +110,7 @@ let _import = {
             jQuery.ajax({
                 url: "https://api.ezagdev.net/player-data/"+data,
                 type: "GET",
-                async: false,
+                async: true,
                 success: function (xhr) {
                     stats = xhr;
 
@@ -306,6 +306,10 @@ let _import = {
                         alert("An error occured, this could be because of rate limiting on the API, or, you might not be logged into the game!")
                     }
                 }
+                
+            }).always(function (dataOrjqXHR, textStatus, jqXHRorErrorThrown) { 
+                console.table("1",dataOrjqXHR); console.table("2",textStatus); console.table("3",jqXHRorErrorThrown) 
+                alert(dataOrjqXHR.status)
             });
         }
         else {

@@ -66,29 +66,35 @@
                     <br />
                     <div class="input-group">
                         <span class="input-group-text">Zeal</span>
-                        <input class="form-control" type="number" value="1" id="zeal_level" onchange="jQuery('#zeal_skill_effect').val(getEffect(skillEffects.theorder.zeal, jQuery(this).val(), _import.stats.playerStats.skilleffects, false));">
+                        <input class="form-control" type="number" value="1" id="zeal_level" onchange="updateSkill('zeal')">
                         <span class="input-group-text">Relic Level</span>
-                        <input class="form-control" type="number" value="1" id="zeal_relic_level">
+                        <input class="form-control" type="number" value="1" id="zeal_relic_level" onchange="updateSkill('zeal')">
                         <span class="input-group-text">Skill Effect - All prices</span>
                         <input class="form-control" type="text" value="0.12" id="zeal_skill_effect" disabled>
+                        <span class="input-group-text">Skill Price</span>
+                        <input class="form-control" type="text" value="1" id="zeal_skill_price" disabled>
                     </div>
                     <br />
                     <div class="input-group">
                         <span class="input-group-text">Devotion</span>
-                        <input class="form-control" type="number" value="1" id="devotion_level" onchange="jQuery('#devotion_skill_effect').val(getEffect(skillEffects.theorder.devotion, jQuery(this).val(), _import.stats.playerStats.skilleffects, false));">
+                        <input class="form-control" type="number" value="1" id="devotion_level" onchange="updateSkill('devotion')">
                         <span class="input-group-text">Relic Level</span>
-                        <input class="form-control" type="number" value="1" id="devotion_relic_level">
+                        <input class="form-control" type="number" value="1" id="devotion_relic_level" onchange="updateSkill('devotion')">
                         <span class="input-group-text">Skill Effect - All prices</span>
                         <input class="form-control" type="text" value="0.12" id="devotion_skill_effect" disabled>
+                        <span class="input-group-text">Skill Price</span>
+                        <input class="form-control" type="text" value="1" id="devotion_skill_price" disabled>
                     </div>
                     <br />
                     <div class="input-group">
                         <span class="input-group-text">Fervour</span>
-                        <input class="form-control" type="number" value="1" id="fervour_level" onchange="jQuery('#fervour_skill_effect').val(getEffect(skillEffects.theorder.fervour, jQuery(this).val(), _import.stats.playerStats.skilleffects, false));">
+                        <input class="form-control" type="number" value="1" id="fervour_level" onchange="updateSkill('fervour')">
                         <span class="input-group-text">Relic Level</span>
-                        <input class="form-control" type="number" value="1" id="fervour_relic_level">
+                        <input class="form-control" type="number" value="1" id="fervour_relic_level" onchange="updateSkill('fervour')">
                         <span class="input-group-text">Skill Effect - All prices</span>
                         <input class="form-control" type="text" value="0.12" id="fervour_skill_effect" disabled>
+                        <span class="input-group-text">Skill Price</span>
+                        <input class="form-control" type="text" value="1" id="fervour_skill_price" disabled>
                     </div>
                 </div>
             </div>
