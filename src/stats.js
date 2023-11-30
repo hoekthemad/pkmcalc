@@ -34,3 +34,23 @@ let stats = () => {
     updateSkill("fervour");
     //#endregion
 }
+
+let updateSkill = (skillname) => {
+    jQuery('#'+skillname+'_skill_effect').val(
+        getEffect(skillEffects.theorder[skillname], jQuery('#'+skillname+'_level').val(), _import.stats.playerStats.skilleffects, false)
+    );
+    jQuery('#'+skillname+'_skill_price').val(
+        convertIntToCurrency(
+            Math.floor(getSkillPrice(
+                jQuery('#'+skillname+'_level').val(), 
+                checkIsOrder(skillname), 
+                _import.stats.playerStats.allprices, 
+                _import.stats.playerStats.happiness,
+                jQuery('#'+skillname+'_relic_level').val(),
+                checkIsDM(skillname),
+                _import.stats.fanaticism,
+                true
+            ))
+        )
+    )
+}

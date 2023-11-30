@@ -22,20 +22,17 @@
         <script src="src/data.js"></script>
         <script src="src/utils.js"></script>
         <script src="src/import.js"></script>
-        <script src="src/stats.js"></script>
+        <script src="src/stats2.js"></script>
         <script>
             let importStats = () => {
                 let userID = prompt("Please enter your user ID");
-                _import.go(userID);
+                stats(userID);
             }
         </script>
     </head>
 
     <body class="container-fluid">
-        <div class="bg-dark p-5 rounded-lg m-3">
-            <h1 class="display-4">PK:M</h1>
-            <p class="lead">Your one stop shop for your stats!</p>
-        </div>
+        <br />
         <div class="row align-items-start">
             <button class="btn btn-primary" onclick="importStats()">Import your stats</button><br />
             <p class="">Your current fanaticism: <span id="current_fana">0</span> | Your total brands: <span id="total_brands">0</span> | Your relic touches: <span id="relic_touches">0</span></p>
@@ -58,14 +55,14 @@
                                         <label for="faith_skill_level" class="col-form-label">Faith: Skill Level</label>
                                     </div>
                                     <div class="col">
-                                        <input type="number" id="faith_skill_level" class="form-control" value="1">
+                                        <input type="number" id="faith_skill_level" class="form-control" value="1" onchange="updateSkill('faith')">
                                     </div>
 
                                     <div class="col">
                                         <label for="faith_relic_level" class="col-form-label">Relic Level</label>
                                     </div>
                                     <div class="col">
-                                        <input type="number" id="faith_relic_level" class="form-control" value="1">
+                                        <input type="number" id="faith_relic_level" class="form-control" value="1" onchange="updateSkill('faith')">
                                     </div>
 
                                     <div class="col">
@@ -83,14 +80,14 @@
                                         <label for="zeal_skill_level" class="col-form-label">Zeal: Skill Level</label>
                                     </div>
                                     <div class="col">
-                                        <input type="number" id="zeal_skill_level" class="form-control" value="1">
+                                        <input type="number" id="zeal_skill_level" class="form-control" value="1" onchange="updateSkill('zeal')">
                                     </div>
 
                                     <div class="col">
                                         <label for="zeal_relic_level" class="col-form-label">Relic Level</label>
                                     </div>
                                     <div class="col">
-                                        <input type="number" id="zeal_relic_level" class="form-control" value="1">
+                                        <input type="number" id="zeal_relic_level" class="form-control" value="1" onchange="updateSkill('zeal')">
                                     </div>
 
                                     <div class="col">
@@ -108,14 +105,14 @@
                                         <label for="devotion_skill_level" class="col-form-label">Devotion: Skill Level</label>
                                     </div>
                                     <div class="col">
-                                        <input type="number" id="devotion_skill_level" class="form-control" value="1">
+                                        <input type="number" id="devotion_skill_level" class="form-control" value="1" onchange="updateSkill('devotion')">
                                     </div>
 
                                     <div class="col">
                                         <label for="devotion_relic_level" class="col-form-label">Relic Level</label>
                                     </div>
                                     <div class="col">
-                                        <input type="number" id="devotion_relic_level" class="form-control" value="1">
+                                        <input type="number" id="devotion_relic_level" class="form-control" value="1" onchange="updateSkill('devotion')">
                                     </div>
 
                                     <div class="col">
@@ -133,14 +130,14 @@
                                         <label for="fervour_skill_level" class="col-form-label">Fervour: Skill Level</label>
                                     </div>
                                     <div class="col">
-                                        <input type="number" id="fervour_skill_level" class="form-control" value="1">
+                                        <input type="number" id="fervour_skill_level" class="form-control" value="1" onchange="updateSkill('fervour')">
                                     </div>
 
                                     <div class="col">
                                         <label for="fervour_relic_level" class="col-form-label">Relic Level</label>
                                     </div>
                                     <div class="col">
-                                        <input type="number" id="fervour_relic_level" class="form-control" value="1">
+                                        <input type="number" id="fervour_relic_level" class="form-control" value="1" onchange="updateSkill('fervour')">
                                     </div>
 
                                     <div class="col">
@@ -204,7 +201,7 @@
                                         <label for="concentration_relic_level" class="col-form-label">Relic Level</label>
                                     </div>
                                     <div class="col">
-                                        <input type="number" id="concentrationl_relic_level" class="form-control" value="1">
+                                        <input type="number" id="concentration_relic_level" class="form-control" value="1">
                                     </div>
 
                                     <div class="col">
@@ -273,6 +270,7 @@
                 </div>
             </div>
         </div>
+        <br />
     </body>
 
 </html>
