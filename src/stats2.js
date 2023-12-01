@@ -9,42 +9,42 @@ let stats = (userid) => {
     //#region Set skills
     jQuery("#faith_skill_level").val(theStats.skills.theorder.faith.level);
     jQuery("#faith_relic_level").val(theStats.skills.theorder.faith.reliclevel);
-    jQuery("#faith_skill_effect").text(getEffect(1*skillEffects.theorder.faith, theStats.skills.theorder.faith.level, 1*theStats.playerStats.skilleffects, false));
+    jQuery("#faith_skill_effect").text(getEffect(1*skillEffects.theorder.faith, 1*theStats.skills.theorder.faith.level, 1*theStats.playerStats.skilleffects, false));
     updateSkill("faith");
     
     jQuery("#zeal_skill_level").val(theStats.skills.theorder.zeal.level);
     jQuery("#zeal_relic_level").val(theStats.skills.theorder.zeal.reliclevel);
-    jQuery("#zeal_skill_effect").text(getEffect(1*skillEffects.theorder.zeal, theStats.skills.theorder.zeal.level, 1*theStats.playerStats.skilleffects, false));
+    jQuery("#zeal_skill_effect").text(getEffect(1*skillEffects.theorder.zeal, 1*theStats.skills.theorder.zeal.level, 1*theStats.playerStats.skilleffects, false));
     updateSkill("zeal");
     
     jQuery("#devotion_skill_level").val(theStats.skills.theorder.devotion.level);
     jQuery("#devotion_relic_level").val(theStats.skills.theorder.devotion.reliclevel);
-    jQuery("#devotion_skill_effect").text(getEffect(1*skillEffects.theorder.devotion, theStats.skills.theorder.devotion.level, 1*theStats.playerStats.skilleffects, false));
+    jQuery("#devotion_skill_effect").text(getEffect(1*skillEffects.theorder.devotion, 1*theStats.skills.theorder.devotion.level, 1*theStats.playerStats.skilleffects, false));
     updateSkill("devotion");
     
     jQuery("#fervour_skill_level").val(theStats.skills.theorder.fervour.level);
     jQuery("#fervour_relic_level").val(theStats.skills.theorder.fervour.reliclevel);
-    jQuery("#fervour_skill_effect").text(getEffect(1*skillEffects.theorder.fervour, theStats.skills.theorder.fervour.level, 1*theStats.playerStats.skilleffects, false));
+    jQuery("#fervour_skill_effect").text(getEffect(1*skillEffects.theorder.fervour, 1*theStats.skills.theorder.fervour.level, 1*theStats.playerStats.skilleffects, false));
     updateSkill("fervour");
 
     jQuery("#productivity_skill_level").val(theStats.skills.fundamentals.productivity.level);
     jQuery("#productivity_relic_level").val(theStats.skills.fundamentals.productivity.reliclevel);
-    jQuery("#productivity_skill_effect").text(getEffect(1*skillEffects.fundamentals.productivity, theStats.skills.fundamentals.productivity.level, 1*theStats.playerStats.skilleffects, false));
+    jQuery("#productivity_skill_effect").text(getEffect(1*skillEffects.fundamentals.productivity, 1*theStats.skills.fundamentals.productivity.level, 1*theStats.playerStats.skilleffects, false));
     updateSkill("productivity");
     
     jQuery("#concentration_skill_level").val(theStats.skills.fundamentals.concentration.level);
     jQuery("#concentration_relic_level").val(theStats.skills.fundamentals.concentration.reliclevel);
-    jQuery("#concentration_skill_effect").text(getEffect(1*skillEffects.fundamentals.concentration, theStats.skills.fundamentals.concentration.level, 1*theStats.playerStats.skilleffects, false));
+    jQuery("#concentration_skill_effect").text(getEffect(1*skillEffects.fundamentals.concentration, 1*theStats.skills.fundamentals.concentration.level, 1*theStats.playerStats.skilleffects, true));
     updateSkill("concentration");
     
     jQuery("#bargaining_skill_level").val(theStats.skills.fundamentals.bargaining.level);
     jQuery("#bargaining_relic_level").val(theStats.skills.fundamentals.bargaining.reliclevel);
-    jQuery("#bargaining_skill_effect").text(getEffect(1*skillEffects.fundamentals.bargaining, theStats.skills.fundamentals.bargaining.level, 1*theStats.playerStats.skilleffects, false));
+    jQuery("#bargaining_skill_effect").text(getEffect(1*skillEffects.fundamentals.bargaining, 1*theStats.skills.fundamentals.bargaining.level, 1*theStats.playerStats.skilleffects, false));
     updateSkill("bargaining");
     
     jQuery("#meditation_skill_level").val(theStats.skills.fundamentals.meditation.level);
     jQuery("#meditation_relic_level").val(theStats.skills.fundamentals.meditation.reliclevel);
-    jQuery("#meditation_skill_effect").text(getEffect(1*skillEffects.fundamentals.meditation, theStats.skills.fundamentals.meditation.level, 1*theStats.playerStats.skilleffects, false));
+    jQuery("#meditation_skill_effect").text(getEffect(1*skillEffects.fundamentals.meditation, 1*theStats.skills.fundamentals.meditation.level, 1*theStats.playerStats.skilleffects, false));
     updateSkill("meditation");
     //#endregion
 }
