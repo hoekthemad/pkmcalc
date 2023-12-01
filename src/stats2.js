@@ -52,7 +52,7 @@ let updateSkill = (skillname) => {
     if (skillname == "faith" || skillname == "zeal" || skillname == "devotion" || skillname == "fervour") skillcategory = "theorder";
     if (skillname == "productivity" || skillname == "concentration" || skillname == "bargaining" || skillname == "meditation") skillcategory = "fundamentals";
     jQuery('#'+skillname+'_skill_effect').text(
-        getEffect(skillEffects[skillcategory][skillname], jQuery('#'+skillname+'_skill_level').val(), _import.stats.playerStats.skilleffects, skillname == "concentration" ? false : true)
+        getEffect(skillEffects[skillcategory][skillname], jQuery('#'+skillname+'_skill_level').val(), _import.stats.playerStats.skilleffects, skillname == "concentration" ? true : false)
     );
     jQuery('#'+skillname+'_skill_cost').text(
         convertIntToCurrency(
