@@ -307,7 +307,7 @@ let _import = {
             }
             
         }).always(function (dataOrjqXHR) { 
-            alert(dataOrjqXHR.status)
+            //alert(dataOrjqXHR.status)
         });
     }
 }
