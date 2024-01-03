@@ -194,7 +194,7 @@ const skillEffects = {
     magic: {
         manacontrol: 0.01,
         lifeessence: 0.02,
-        resiliance: 0.00
+        resiliance: 0.005
     },
     darkmagic: {
         fanaticaldevotion: 0.01,
