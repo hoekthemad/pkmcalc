@@ -198,12 +198,8 @@ const skillEffects = {
     magic: {
         manacontrol: 0.01,
         lifeessence: 0.02,
-<<<<<<< Updated upstream
-        resiliance: 0.005
-=======
         resiliance: 0.005,
         materialism: 0.04
->>>>>>> Stashed changes
     },
     darkmagic: {
         fanaticaldevotion: 0.01,
