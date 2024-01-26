@@ -68,11 +68,11 @@ let checkIsDM = (skillname) => {
 let getShopPrice = (item, stats) => {
     let base_price = item.base_price;
 
-    let relicTouches = 1 + (2*(stats.relictouches > 5 ? 5 : stats.relictouches));
+    //let relicTouches = 1 + (2*(stats.relictouches > 5 ? 5 : stats.relictouches));
     let fana_discount = Math.sqrt(stats.fanaticism/10)+1;
     let allPriceDiscount = stats.playerStats.allprices;
     let shopPriceDiscount = stats.playerStats.shopprices;
 
-    return Math.floor(Number(base_price) / relicTouches / (fana_discount < 1 ? 1 : (1*fana_discount)) / (1*allPriceDiscount) / (1*shopPriceDiscount));
+    return Math.floor(Number(base_price) / stats.relictouches / (fana_discount < 1 ? 1 : (1*fana_discount)) / (1*allPriceDiscount) / (1*shopPriceDiscount));
 }
 
