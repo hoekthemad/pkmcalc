@@ -38,7 +38,11 @@ const properties = {
             effect: 9
         },
         kingdom_minister: {
-            base_price: 69849193096160890000000n,
+            base_price: 1746229827404022300000000n,
+            effect: 10
+        },
+        heaven: {
+            base_price: 218278728425502760000000000n,
             effect: 10
         }
     }
@@ -194,7 +198,12 @@ const skillEffects = {
     magic: {
         manacontrol: 0.01,
         lifeessence: 0.02,
+<<<<<<< Updated upstream
         resiliance: 0.005
+=======
+        resiliance: 0.005,
+        materialism: 0.04
+>>>>>>> Stashed changes
     },
     darkmagic: {
         fanaticaldevotion: 0.01,
@@ -203,6 +212,7 @@ const skillEffects = {
         extremepiety: 0.01,
         absolutefaith: 0.01,
         devoutmastery: 0.002,
-        doggedperseverance: 0.003
+        doggedperseverance: 0.003,
+        blazingfervour: 0.0027
     }
 }
