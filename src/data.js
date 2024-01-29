@@ -69,6 +69,11 @@ const trinkets = {
         effect_value: 3,
         base_price: 471012870,
     },
+    soulbound_locket: {
+        effect_type: "greed",
+        effect_value: 2,
+        base_price: 1507241183
+    },
     pendulum: {
         effect_type: "bonusrelic",
         effect_value: 0.2,
@@ -98,7 +103,12 @@ const trinkets = {
         effect_type: "bonusrelic",
         effect_value: 1.5,
         base_price: 10611166119964754000n,
-    }
+    },
+    mystic_satchel: {
+        effect_type: "greed",
+        effect_value: 1.5,
+        base_price: 563920873396019130000n
+    },
 }
 
 const weapons = {
@@ -174,7 +184,12 @@ const servants = {
         effect_type: "shopprices",
         effect_value: 1.5,
         base_price: 500021324850607700000n
-    }
+    },
+    smuggler: {
+        effect_type: "greed",
+        effect_value: 1.5,
+        base_price: 141294075893117760000000n
+    },
 }
 
 const skillEffects = {
