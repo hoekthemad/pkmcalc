@@ -76,3 +76,8 @@ let getShopPrice = (item, stats) => {
     return Math.floor(Number(base_price) / stats.relictouches / (fana_discount < 1 ? 1 : (1*fana_discount)) / (1*allPriceDiscount) / (1*shopPriceDiscount));
 }
 
+let calcSP => () => {
+    let chosenItem = jQuery("#shop_item option:selected").val();
+    let shopPrice = convertIntToCurrency(getShopPrice(chosenItem, _import.stats));
+    jQuery("#shop_price").val(shopPrice);
+}
