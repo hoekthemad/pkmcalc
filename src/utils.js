@@ -78,6 +78,6 @@ let getShopPrice = (item, stats) => {
 
 let calcSP = () => {
     let chosenItem = jQuery("#shop_item option:selected").val();
-    let shopPrice = convertIntToCurrency(getShopPrice(chosenItem, _import.stats));
+    let shopPrice = convertIntToCurrency(getShopPrice(`${chosenItem}`, _import.stats));
     jQuery("#shop_price").val(shopPrice);
 }
