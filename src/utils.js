@@ -1,4 +1,5 @@
 let convertIntToCurrency = (number) => {
+    if ("infinity" == number) return "infinity";
     let splitPrice = number.toString().split("");
 
         let count = 0;
