@@ -30,7 +30,10 @@
             }
 
             jQuery(document).ready(function () {
-                calcSP()
+                calcSP();
+                jQuery("#shop_item").find("option").each(function () {
+                    if (jQuery(this).val() == "") jQuery(this).remove()
+                })
             })
         </script>
     </head>
