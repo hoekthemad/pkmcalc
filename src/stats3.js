@@ -1,7 +1,49 @@
 let StatPage = {
+    baseHTML: `
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#skills_GROUPNAME" aria-expanded="true" aria-controls="skills_GROUPNAME">
+                    SKILLHEADER
+                </button>
+            </h2>
+            <div id="skills_GROUPNAME" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                    THESKILLS
+                </div>
+            </div>
+        </div>
+    `,
+
+    skillHTML: `
+        <div class="row g-3 align-items-center">
+            <div class="col">
+                <label for="SKILLNAME_skill_level" class="col-form-label">HTMLSKILLNAME: Skill Level</label>
+            </div>
+            <div class="col">
+                <input type="number" id="SKILLNAME_skill_level" class="form-control" value="1" onchange="updateSkill('SKILLNAME')">
+            </div>
+
+            <div class="col">
+                <label for="SKILLNAME_relic_level" class="col-form-label">Relic Level</label>
+            </div>
+            <div class="col">
+                <input type="number" id="SKILLNAME_relic_level" class="form-control" value="1" onchange="updateSkill('SKILLNAME')">
+            </div>
+
+            <div class="col">
+                <span class="col-form-label">Skill effect <span id="SKILLNAME_skill_effect">SKILL_EFFECT</span></span>
+            </div>
+
+            <div class="col">
+                <span class="col-form-label">Skill cost <span id="SKILLNAME_skill_cost">1c</span></span>
+            </div>
+        </div>
+    `,
+
     skills: {
         theorder: ['faith', 'zeal', 'devotion', 'fervour'],
-        fundamentals: ['productivity', 'concentration', 'bargaining', 'meditiation'],
+        fundamentals: ['productivity', 'concentration', 'bargaining', 'meditation'],
         combat: ['strength', 'battletactics', 'musclememory'],
         magic: ['manacontrol', 'lifeessence', 'resiliance', 'materialism'],
         darkmagic: ['fanaticaldevotion', 'ardentbelief', 'zealousconviction', 'extremepiety', 'absolutefaith', 'devoutmastery', 'doggedperseverance', 'blazingfervour']
@@ -18,6 +60,10 @@ let StatPage = {
             case "concentration": return "Concentration";
             case "bargaining": return "Bargaining";
             case "meditation": return "Meditation";
+            
+            case "strength": return "Strength";
+            case "battletactics": return "Battle Bactics";
+            case "musclememory": return "Muscle Memory";
 
             case "manacontrol": return "Mana Control";
             case "lifeessence": return "Life Essence";
@@ -36,91 +82,49 @@ let StatPage = {
     },
 
     init: () => {
-        let baseHTML = `
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#skills_GROUPNAME" aria-expanded="true" aria-controls="skills_GROUPNAME">
-                    SKILLHEADER
-                </button>
-            </h2>
-            <div id="skills_GROUPNAME" class="accordion-collapse collapse show">
-                <div class="accordion-body">
-                    <div class="row g-3 align-items-center">
-                        THESKILLS
-                    </div>
-                </div>
-            </div>
-        </div>
-        `;
-        let skillHTML = `
-        <div class="col">
-            <label for="SKILLNAME_skill_level" class="col-form-label">HTMLSKILLNAME: Skill Level</label>
-        </div>
-        <div class="col">
-            <input type="number" id="SKILLNAME_skill_level" class="form-control" value="1" onchange="updateSkill('SKILLNAME')">
-        </div>
-
-        <div class="col">
-            <label for="SKILLNAME_relic_level" class="col-form-label">Relic Level</label>
-        </div>
-        <div class="col">
-            <input type="number" id="SKILLNAME_relic_level" class="form-control" value="1" onchange="updateSkill('SKILLNAME')">
-        </div>
-
-        <div class="col">
-            <span class="col-form-label">Skill effect <span id="SKILLNAME_skill_effect">SKILL_EFFECT</span></span>
-        </div>
-
-        <div class="col">
-            <span class="col-form-label">Skill cost <span id="SKILLNAME_skill_cost">1c</span></span>
-        </div>
-        `;
-
+        let groupDisplayNames = [
+            'The Order', 'Fundamentals', 'Combat', 'Magic', 'Dark Magic'
+        ];
+        let groupHTMLNames = [
+            'theorder', 'fundamentals', 'combat', 'magic', 'darkmagic'
+        ];
         let totalSkillHtml = '';
 
-        let orderOuterHTML = baseHTML;
-        orderOuterHTML.replace('SKILLHEADER', "The Order");
-        orderOuterHTML.replace('GROUPNAME', "theorder");
+        for (let gCount = 0; gCount < groupDisplayNames.length; gCount++) {
+            let outerHTML = StatPage.baseHTML;
+            outerHTML = outerHTML.replaceAll("SKILLHEADER", groupDisplayNames[gCount]);
+            outerHTML = outerHTML.replaceAll("GROUPNAME", groupHTMLNames[gCount]);
 
-        let orderSkillsHTML = ``;
-        for (let orderI = 0; orderI < StatPage.skills.theorder.length; orderI++) {
-            let thisSkillHtml = skillHTML;
-            thisSkillHtml.replace('HTMLSKILLNAME', StatPage.translateSkillName(StatPage.skills.theorder[orderI]));
+            let groupSkillHTML = '';
+            for (let skillCount = 0; skillCount < StatPage.skills[groupHTMLNames[gCount]].length; skillCount++) {
+                let thisSkillHtml = StatPage.skillHTML;
+                thisSkillHtml = thisSkillHtml.replaceAll('HTMLSKILLNAME', StatPage.translateSkillName(StatPage.skills[groupHTMLNames[gCount]][skillCount]));
+                thisSkillHtml = thisSkillHtml.replaceAll('SKILL_EFFECT', skillEffects[groupHTMLNames[gCount]][StatPage.skills[groupHTMLNames[gCount]][skillCount]]);
+                thisSkillHtml = thisSkillHtml.replaceAll('SKILLNAME', StatPage.skills[groupHTMLNames[gCount]][skillCount]);
 
-            orderSkillsHTML += thisSkillHtml;
+                groupSkillHTML += thisSkillHtml;
+            }
+            outerHTML = outerHTML.replaceAll("THESKILLS", groupSkillHTML);
+            totalSkillHtml += outerHTML;
+            outerHTML = '';
         }
-        totalSkillHtml = orderSkillsHTML;
 
-        let fundaOuterHTML = baseHTML;
-        fundaOuterHTML.replace('SKILLHEADER', "Fundamentals");
-        fundaOuterHTML.replaceAll('GROUPNAME', "fundamentals");
+        // let orderHTML = StatPage.baseHTML;
+        // orderHTML = orderHTML.replace(/SKILLHEADER/g, 'The Order');
+        // orderHTML = orderHTML.replace("GROUPNAME", "theorder");
+        // let orderSkillsHTML = ``;
+        // for (let orderI = 0; orderI < StatPage.skills.theorder.length; orderI++) {
+        //     let thisSkillHtml = StatPage.skillHTML;
+        //     thisSkillHtml = thisSkillHtml.replace('HTMLSKILLNAME', StatPage.translateSkillName(StatPage.skills.theorder[orderI]));
+        //     thisSkillHtml = thisSkillHtml.replace('SKILL_EFFECT', skillEffects.theorder[StatPage.skills.theorder[orderI]]);
+        //     thisSkillHtml = thisSkillHtml.replace('HTMLSKILLNAME', StatPage.translateSkillName(StatPage.skills.theorder[orderI]));
+        //     thisSkillHtml = thisSkillHtml.replace('HTMLSKILLNAME', StatPage.translateSkillName(StatPage.skills.theorder[orderI]));
 
-        let fundaSkillHTML = ``;
-        for (let orderI = 0; orderI < StatPage.skills.fundamentals.length; orderI++) {
-            let thisSkillHtml = skillHTML;
-            thisSkillHtml.replace('HTMLSKILLNAME', StatPage.translateSkillName(StatPage.skills.fundamentals[orderI]));
+        //     orderSkillsHTML += thisSkillHtml;
+        // }
+        // orderHTML = orderHTML.replace("THESKILLS", orderSkillsHTML);
+        // totalSkillHtml = totalSkillHtml + orderHTML;
 
-            fundaSkillHTML += thisSkillHtml;
-        }
-        totalSkillHtml = totalSkillHtml + fundaSkillHTML;
-
-        let combatOuterHTML = baseHTML;
-        combatOuterHTML.replace('SKILLHEADER', "Combat");
-        combatOuterHTML.replace('GROUPNAME', "combat");
-
-        let combatSkillHTML = ``;
-        for (let orderI = 0; orderI < StatPage.skills.combat.length; orderI++) {
-            let thisSkillHtml = skillHTML;
-            thisSkillHtml.replace('HTMLSKILLNAME', StatPage.translateSkillName(StatPage.skills.combat[orderI]));
-
-            combatSkillHTML += thisSkillHtml;
-        }
-        totalSkillHtml = totalSkillHtml + combatSkillHTML;
-
-
-
-        combatOuterHTML.replace('THESKILLS', totalSkillHtml);
-        jQuery("#skillsAccordian").append(combatOuterHTML);
+        jQuery("#skillsAccordian").append(totalSkillHtml);
     }
 }
