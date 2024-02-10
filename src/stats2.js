@@ -1,7 +1,33 @@
+let skills = {
+    order: ['faith', 'zeal', 'devotion', 'fervour'],
+    funda: ['productivity', 'concentration', 'bargaining', 'meditiation'],
+    combat: ['strength', 'battletactics', 'musclememory'],
+    magic: ['manacontrol', 'lifeessence', 'resiliance', 'materialism'],
+    dm: ['fanaticaldevotion', 'ardentbelief', 'zealousconviction', 'extremepiety', 'absolutefaith', 'devoutmastery', 'doggedperseverance', 'blazingfervour']
+};
+
+let setup = () => {
+    for (let orderI = 0; orderI < skills.order.length; orderI++) {
+        let baseValue = skillEffects.theorder[skills.order[orderI]];
+        let baseCost = convertIntToCurrency(1);
+        let baseRelic = 1;
+        let baseLevel = 1;
+
+        
+    }
+};
+
+setup();
+
 let stats = (userid) => {
     _import.go(userid);
 
     let theStats = _import.stats;
+
+    for (let _i=0; _i < skills.order.length; _i++) {
+        console.log(skills.order[_i]);
+    }
+
     jQuery("#current_fana").text(parseFloat(theStats.fanaticism).toLocaleString());
     jQuery("#total_brands").text(parseFloat(theStats.brands).toLocaleString());
     jQuery("#relic_touches").text(parseFloat(theStats.relictouches).toLocaleString());

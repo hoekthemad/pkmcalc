@@ -20,8 +20,6 @@ let getSkillPrice = (level, isTheOrder, priceModifier, happinessModifier, relicL
         (isBoostActive ? 2 : 1)
     )
 
-    console.log(a, b)
-
     return 1 + a / b
 }
 
