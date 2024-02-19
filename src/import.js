@@ -286,9 +286,9 @@ let _import = {
                         _import.stats.skills.darkmagic.doggedperseverance.reliclevel = skills['dogged perseverance']['relicLevel'];
                         _import.stats.skills.darkmagic.doggedperseverance.effect = skills['dogged perseverance']['value'];
         
-                        _import.stats.skills.darkmagic.blazingfervour.level = skills['blazing fervour']['level'];
-                        _import.stats.skills.darkmagic.blazingfervour.reliclevel = skills['blazing fervour']['relicLevel'];
-                        _import.stats.skills.darkmagic.blazingfervour.effect = skills['blazing fervour']['value'];
+                        _import.stats.skills.darkmagic.blazingfervour.level = skills['blazing fervor']['level'];
+                        _import.stats.skills.darkmagic.blazingfervour.reliclevel = skills['blazing fervor']['relicLevel'];
+                        _import.stats.skills.darkmagic.blazingfervour.effect = skills['blazing fervor']['value'];
                     }
                     //#endregion
         
