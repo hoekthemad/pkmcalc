@@ -73,7 +73,7 @@ let StatPage = {
 
             case "manacontrol": return "Mana Control";
             case "lifeessence": return "Life Essence";
-            case "resiliance": return "Resiliance";
+            case "resiliance": return "Resilience";
             case "materialism": return "Materialism";
 
             case "fanaticaldevotion": return "Fanatical Devotion";
