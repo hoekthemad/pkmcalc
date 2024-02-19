@@ -34,7 +34,7 @@ let StatPage = {
                 <label for="SKILLNAME_relic_level" class="col-form-label">Relic Level</label>
             </div>
             <div class="col">
-                <input type="number" id="SKILLNAME_relic_level" class="form-control" value="1" onchange="updateSkill('SKILLNAME')">
+                <input type="number" id="SKILLNAME_relic_level" class="form-control" value="1" onchange="StatPage.updateSkill('SKILLNAME')">
             </div>
 
             <div class="col">
@@ -117,6 +117,34 @@ let StatPage = {
         jQuery("#skillsAccordian").append(totalSkillHtml);
     },
 
+    updateSkill: (skillName) => {
+        if (skillname == "faith" || skillname == "zeal" || skillname == "devotion" || skillname == "fervour") skillcategory = "theorder";
+        if (skillname == "productivity" || skillname == "concentration" || skillname == "bargaining" || skillname == "meditation") skillcategory = "fundamentals";
+        if (skillname == "strength" || skillname == "battletactics" || skillname == "musclememory") skillcategory = "combat";
+        if (skillname == "manacontrol" || skillname == "lifeessence" || skillname == "resiliance" || skillname == "materialism") skillcategory = "magic";
+        if (
+            skillname == "fanaticaldevotion" || skillname == "ardentbelief" || skillname == "zealousconviction" || skillname == "extremepiety" ||
+            skillname == "absolutefaith" || skillname == "devoutmastery" || skillname == "doggedperseverance" || skillname == "blazingfervour"
+        ) skillcategory = "darkmagic";
+        jQuery('#'+skillname+'_skill_effect').text(
+            getEffect(skillEffects[skillcategory][skillname], jQuery('#'+skillname+'_skill_level').val(), 1*$('#concentration_skill_effect').text(), skillname == "concentration" ? true : false)
+        );
+        jQuery('#'+skillname+'_skill_cost').text(
+            convertIntToCurrency(
+                Math.floor(getSkillPrice(
+                    jQuery('#'+skillname+'_skill_level').val(), 
+                    checkIsOrder(skillname), 
+                    _import.stats.playerStats.allprices, 
+                    _import.stats.playerStats.happiness,
+                    jQuery('#'+skillname+'_relic_level').val(),
+                    checkIsDM(skillname),
+                    _import.stats.fanaticism,
+                    true
+                ))
+            )
+        )
+    },
+
     import: (playerid) => {
         _import.go(playerid)
 
@@ -142,7 +170,7 @@ let StatPage = {
         }
 
         for (i = 0; i < skillNameList.length; i++) {
-            updateSkill(skillNameList[i]);
+            StatPage.updateSkill(skillNameList[i]);
         }
     }
 }
