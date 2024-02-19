@@ -208,7 +208,7 @@ data = {
     magic: {
         manacontrol: 0.01,
         lifeessence: 0.02,
-        resiliance: 0.005,
+        resilience: 0.005,
         materialism: 0.04
     },
     darkmagic: {
