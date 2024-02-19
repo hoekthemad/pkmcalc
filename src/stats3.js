@@ -1,4 +1,10 @@
 let StatPage = {
+    groupDisplayNames: [
+        'The Order', 'Fundamentals', 'Combat', 'Magic', 'Dark Magic'
+    ],
+    groupHTMLNames: [
+        'theorder', 'fundamentals', 'combat', 'magic', 'darkmagic'
+    ],
     baseHTML: `
         <div class="accordion-item">
             <h2 class="accordion-header">
@@ -108,23 +114,25 @@ let StatPage = {
             totalSkillHtml += outerHTML;
             outerHTML = '';
         }
-
-        // let orderHTML = StatPage.baseHTML;
-        // orderHTML = orderHTML.replace(/SKILLHEADER/g, 'The Order');
-        // orderHTML = orderHTML.replace("GROUPNAME", "theorder");
-        // let orderSkillsHTML = ``;
-        // for (let orderI = 0; orderI < StatPage.skills.theorder.length; orderI++) {
-        //     let thisSkillHtml = StatPage.skillHTML;
-        //     thisSkillHtml = thisSkillHtml.replace('HTMLSKILLNAME', StatPage.translateSkillName(StatPage.skills.theorder[orderI]));
-        //     thisSkillHtml = thisSkillHtml.replace('SKILL_EFFECT', skillEffects.theorder[StatPage.skills.theorder[orderI]]);
-        //     thisSkillHtml = thisSkillHtml.replace('HTMLSKILLNAME', StatPage.translateSkillName(StatPage.skills.theorder[orderI]));
-        //     thisSkillHtml = thisSkillHtml.replace('HTMLSKILLNAME', StatPage.translateSkillName(StatPage.skills.theorder[orderI]));
-
-        //     orderSkillsHTML += thisSkillHtml;
-        // }
-        // orderHTML = orderHTML.replace("THESKILLS", orderSkillsHTML);
-        // totalSkillHtml = totalSkillHtml + orderHTML;
-
         jQuery("#skillsAccordian").append(totalSkillHtml);
+    },
+
+    import: (playerid) => {
+        _import.go(playerid)
+
+        let stats =_import.stats;
+
+        jQuery("#current_fana").text(parseFloat(stats.fanaticism).toLocaleString());
+        jQuery("#total_brands").text(parseFloat(stats.brands).toLocaleString());
+        jQuery("#relic_touches").text(parseFloat(stats.relictouches).toLocaleString());
+
+        for (group = 0; group < StatPage.groupHTMLNames.length; group++) {
+            for (skill = 0; skill < StatPage.skills[group].length; skill++) {
+                jQuery(`#${StatPage.skills[skill]}_skill_level`).val(stats.skills[group][skill].level);
+                jQuery(`#${StatPage.skills[skill]}_relic_level`).val(stats.skills[group][skill].reliclevel);
+                jQuery(`#${StatPage.skills[skill]}_skill_effect`).text(getEffect(1*skillEffects[group][skill], 1*stats.[group][skill].level, 1*stats.playerStats.skilleffects, false));
+                updateSkill(skill);
+            }
+        }
     }
 }
