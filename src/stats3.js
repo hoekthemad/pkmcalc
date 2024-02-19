@@ -51,7 +51,7 @@ let StatPage = {
         theorder: ['faith', 'zeal', 'devotion', 'fervour'],
         fundamentals: ['productivity', 'concentration', 'bargaining', 'meditation'],
         combat: ['strength', 'battletactics', 'musclememory'],
-        magic: ['manacontrol', 'lifeessence', 'resilience', 'materialism'],
+        magic: ['manacontrol', 'lifeessence', 'resiliance', 'materialism'],
         darkmagic: ['fanaticaldevotion', 'ardentbelief', 'zealousconviction', 'extremepiety', 'absolutefaith', 'devoutmastery', 'doggedperseverance', 'blazingfervour']
     },
 
