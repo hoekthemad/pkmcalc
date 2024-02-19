@@ -129,7 +129,7 @@ let StatPage = {
         for (group = 0; group < StatPage.groupHTMLNames.length; group++) {
             for (skill = 0; skill < StatPage.skills[StatPage.groupHTMLNames[group]].length; skill++) {
                 let groupName = StatPage.groupHTMLNames[group];
-                let skillName = StatPage.skills[groupname][skill];
+                let skillName = StatPage.skills[groupName][skill];
                 
                 jQuery(`#${skillName}_skill_level`).val(stats.skills[groupName][skillName].level);
                 //jQuery(`#${StatPage.skills[skill]}_relic_level`).val(stats.skills[groupName][skillName].reliclevel);
