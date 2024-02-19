@@ -45,7 +45,8 @@ let _import = {
             magic: {
                 manacontrol:    {   level: 1, reliclevel: 1, effect: 0.01     },
                 lifeessence:    {   level: 1, reliclevel: 1, effect: 0.02     },
-                resilience:     {   level: 1, reliclevel: 1, effect: 0.005    }
+                resilience:     {   level: 1, reliclevel: 1, effect: 0.005    },
+                materialism:     {   level: 1, reliclevel: 1, effect: 0.004    }
             },
             darkmagic: {
                 fanaticaldevotion:  {   level: 1, reliclevel: 1, effect: 0.01     },
@@ -54,7 +55,8 @@ let _import = {
                 extremepiety:       {   level: 1, reliclevel: 1, effect: 0.01     },
                 absolutefaith:      {   level: 1, reliclevel: 1, effect: 0.01     },
                 devoutmastery:      {   level: 1, reliclevel: 1, effect: 0.002    },
-                doggedperseverance: {   level: 1, reliclevel: 1, effect: 0.003    }
+                doggedperseverance: {   level: 1, reliclevel: 1, effect: 0.003    },
+                blazingfervour:     {   level: 1, reliclevel: 1, effect: 0.0.0027    }
             }
         },
         shop: {
@@ -247,6 +249,10 @@ let _import = {
                         _import.stats.skills.magic.resilience.level = skills['resilience']['level'];
                         _import.stats.skills.magic.resilience.reliclevel = skills['resilience']['relicLevel'];
                         _import.stats.skills.magic.resilience.effect = skills['resilience']['value'];
+                        
+                        _import.stats.skills.magic.materialism.level = skills['materialism']['level'];
+                        _import.stats.skills.magic.materialism.reliclevel = skills['materialism']['relicLevel'];
+                        _import.stats.skills.magic.materialism.effect = skills['materialism']['value'];
                     }
                     //#endregion
                     
@@ -279,6 +285,10 @@ let _import = {
                         _import.stats.skills.darkmagic.doggedperseverance.level = skills['dogged perseverance']['level'];
                         _import.stats.skills.darkmagic.doggedperseverance.reliclevel = skills['dogged perseverance']['relicLevel'];
                         _import.stats.skills.darkmagic.doggedperseverance.effect = skills['dogged perseverance']['value'];
+        
+                        _import.stats.skills.darkmagic.blazingfervour.level = skills['blazing fervour']['level'];
+                        _import.stats.skills.darkmagic.blazingfervour.reliclevel = skills['blazing fervour']['relicLevel'];
+                        _import.stats.skills.darkmagic.blazingfervour.effect = skills['blazing fervour']['value'];
                     }
                     //#endregion
         
