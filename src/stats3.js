@@ -126,16 +126,23 @@ let StatPage = {
         jQuery("#total_brands").text(parseFloat(stats.brands).toLocaleString());
         jQuery("#relic_touches").text(parseFloat(stats.relictouches).toLocaleString());
 
+        let skillNameList = [];
+
         for (group = 0; group < StatPage.groupHTMLNames.length; group++) {
             for (skill = 0; skill < StatPage.skills[StatPage.groupHTMLNames[group]].length; skill++) {
                 let groupName = StatPage.groupHTMLNames[group];
                 let skillName = StatPage.skills[groupName][skill];
+
+                skillNameList.push(skillName)
                 
                 jQuery(`#${skillName}_skill_level`).val(stats.skills[groupName][skillName].level);
                 jQuery(`#${skillName}_relic_level`).val(stats.skills[groupName][skillName].reliclevel);
                 jQuery(`#${skillName}_skill_effect`).text(getEffect(1*skillEffects[groupName][skillName], 1*stats.skills[groupName][skillName].level, 1*stats.playerStats.skilleffects, false));
-                updateSkill(skillName);
             }
+        }
+
+        for (i = 0; i < skillNameList.length; i++) {
+            updateSkill(skillNameList[i]);
         }
     }
 }
