@@ -51,7 +51,7 @@ let StatPage = {
         theorder: ['faith', 'zeal', 'devotion', 'fervour'],
         fundamentals: ['productivity', 'concentration', 'bargaining', 'meditation'],
         combat: ['strength', 'battletactics', 'musclememory'],
-        magic: ['manacontrol', 'lifeessence', 'resiliance', 'materialism'],
+        magic: ['manacontrol', 'lifeessence', 'resilience', 'materialism'],
         darkmagic: ['fanaticaldevotion', 'ardentbelief', 'zealousconviction', 'extremepiety', 'absolutefaith', 'devoutmastery', 'doggedperseverance', 'blazingfervour']
     },
 
@@ -73,7 +73,7 @@ let StatPage = {
 
             case "manacontrol": return "Mana Control";
             case "lifeessence": return "Life Essence";
-            case "resiliance": return "Resilience";
+            case "resilience": return "Resilience";
             case "materialism": return "Materialism";
 
             case "fanaticaldevotion": return "Fanatical Devotion";
@@ -121,7 +121,7 @@ let StatPage = {
         if (skillname == "faith" || skillname == "zeal" || skillname == "devotion" || skillname == "fervour") skillcategory = "theorder";
         if (skillname == "productivity" || skillname == "concentration" || skillname == "bargaining" || skillname == "meditation") skillcategory = "fundamentals";
         if (skillname == "strength" || skillname == "battletactics" || skillname == "musclememory") skillcategory = "combat";
-        if (skillname == "manacontrol" || skillname == "lifeessence" || skillname == "resiliance" || skillname == "materialism") skillcategory = "magic";
+        if (skillname == "manacontrol" || skillname == "lifeessence" || skillname == "resilience" || skillname == "materialism") skillcategory = "magic";
         if (
             skillname == "fanaticaldevotion" || skillname == "ardentbelief" || skillname == "zealousconviction" || skillname == "extremepiety" ||
             skillname == "absolutefaith" || skillname == "devoutmastery" || skillname == "doggedperseverance" || skillname == "blazingfervour"
