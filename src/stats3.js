@@ -105,7 +105,7 @@ let StatPage = {
             for (let skillCount = 0; skillCount < StatPage.skills[groupHTMLNames[gCount]].length; skillCount++) {
                 let thisSkillHtml = StatPage.skillHTML;
                 thisSkillHtml = thisSkillHtml.replaceAll('HTMLSKILLNAME', StatPage.translateSkillName(StatPage.skills[groupHTMLNames[gCount]][skillCount]));
-                thisSkillHtml = thisSkillHtml.replaceAll('SKILL_EFFECT', skillEffects[groupHTMLNames[gCount]][StatPage.skills[groupHTMLNames[gCount]][skillCount]]);
+                thisSkillHtml = thisSkillHtml.replaceAll('SKILL_EFFECT', data.skillEffects[groupHTMLNames[gCount]][StatPage.skills[groupHTMLNames[gCount]][skillCount]]);
                 thisSkillHtml = thisSkillHtml.replaceAll('SKILLNAME', StatPage.skills[groupHTMLNames[gCount]][skillCount]);
 
                 groupSkillHTML += thisSkillHtml;
@@ -127,7 +127,7 @@ let StatPage = {
             skillname == "absolutefaith" || skillname == "devoutmastery" || skillname == "doggedperseverance" || skillname == "blazingfervour"
         ) skillcategory = "darkmagic";
         jQuery('#'+skillname+'_skill_effect').text(
-            getEffect(skillEffects[skillcategory][skillname], jQuery('#'+skillname+'_skill_level').val(), 1*$('#concentration_skill_effect').text(), skillname == "concentration" ? true : false)
+            getEffect(data.skillEffects[skillcategory][skillname], jQuery('#'+skillname+'_skill_level').val(), 1*$('#concentration_skill_effect').text(), skillname == "concentration" ? true : false)
         );
         jQuery('#'+skillname+'_skill_cost').text(
             convertIntToCurrency(
@@ -165,7 +165,7 @@ let StatPage = {
                 
                 jQuery(`#${skillName}_skill_level`).val(stats.skills[groupName][skillName].level);
                 jQuery(`#${skillName}_relic_level`).val(stats.skills[groupName][skillName].reliclevel);
-                jQuery(`#${skillName}_skill_effect`).text(getEffect(1*skillEffects[groupName][skillName], 1*stats.skills[groupName][skillName].level, 1*stats.playerStats.skilleffects, false));
+                jQuery(`#${skillName}_skill_effect`).text(getEffect(1*data.skillEffects[groupName][skillName], 1*stats.skills[groupName][skillName].level, 1*stats.playerStats.skilleffects, false));
             }
         }
 
