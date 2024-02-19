@@ -60,7 +60,7 @@ let StatPage = {
             case "faith": return "Faith";
             case "zeal": return "Zeal";
             case "devotion": return "Devotion";
-            case "fervour": return "Fervour";
+            case "fervour": return "Fervor";
 
             case "productivity": return "Productivity";
             case "concentration": return "Concentration";
@@ -83,7 +83,7 @@ let StatPage = {
             case "absolutefaith": return "Absolite Faith";
             case "devoutmastery": return "Devout Mastery";
             case "doggedperseverance": return "Dogged Perseverance";
-            case "blazingfervour": return "Blazing Fervour";
+            case "blazingfervour": return "Blazing Fervor";
         }
     },
 
