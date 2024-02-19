@@ -133,7 +133,7 @@ let StatPage = {
                 
                 jQuery(`#${skillName}_skill_level`).val(stats.skills[groupName][skillName].level);
                 jQuery(`#${skillName}_relic_level`).val(stats.skills[groupName][skillName].reliclevel);
-                jQuery(`#${skillName}_skill_effect`).text(getEffect(1*skillEffects[group][skill], 1*stats[group][skill].level, 1*stats.playerStats.skilleffects, false));
+                jQuery(`#${skillName}_skill_effect`).text(getEffect(1*skillEffects[groupName][skillName], 1*stats.skills[groupName][skillName].level, 1*stats.playerStats.skilleffects, false));
                 updateSkill(skillName);
             }
         }
