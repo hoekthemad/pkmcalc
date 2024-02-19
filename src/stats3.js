@@ -13,7 +13,7 @@ let StatPage = {
                     SKILLHEADER
                 </button>
             </h2>
-            <div id="skills_GROUPNAME" class="accordion-collapse collapse show">
+            <div id="skills_GROUPNAME" class="accordion-collapse collapse">
                 <div class="accordion-body">
                     THESKILLS
                 </div>
