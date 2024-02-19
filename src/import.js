@@ -56,7 +56,7 @@ let _import = {
                 absolutefaith:      {   level: 1, reliclevel: 1, effect: 0.01     },
                 devoutmastery:      {   level: 1, reliclevel: 1, effect: 0.002    },
                 doggedperseverance: {   level: 1, reliclevel: 1, effect: 0.003    },
-                blazingfervour:     {   level: 1, reliclevel: 1, effect: 0.0.0027    }
+                blazingfervour:     {   level: 1, reliclevel: 1, effect: 0.0027    }
             }
         },
         shop: {
