@@ -27,7 +27,7 @@ let StatPage = {
                 <label for="SKILLNAME_skill_level" class="col-form-label">HTMLSKILLNAME: Skill Level</label>
             </div>
             <div class="col">
-                <input type="number" id="SKILLNAME_skill_level" class="form-control" value="1" onchange="updateSkill('SKILLNAME')">
+                <input type="number" id="SKILLNAME_skill_level" class="form-control" value="1" onchange="StatPage.updateSkill('SKILLNAME')">
             </div>
 
             <div class="col">
@@ -133,11 +133,11 @@ let StatPage = {
             convertIntToCurrency(
                 Math.floor(getSkillPrice(
                     jQuery('#'+skillname+'_skill_level').val(), 
-                    checkIsOrder(skillname), 
+                    (skillcategory == "theorder"), 
                     _import.stats.playerStats.allprices, 
                     _import.stats.playerStats.happiness,
                     jQuery('#'+skillname+'_relic_level').val(),
-                    checkIsDM(skillname),
+                    (skillcategory == "darkmagic"),
                     _import.stats.fanaticism,
                     true
                 ))
