@@ -17,6 +17,9 @@ let _import = {
             allprices: 1,
             shopprices: 1,
             skilleffects: 1,
+            fosbonus: 0,
+            brandbonus: 0,
+            tablebonus: 0,
             bonusrelic: 0,
             flatincome: 0,
             atkduration: 1,
@@ -300,6 +303,9 @@ let _import = {
                         _import.stats.playerStats.allprices = _playerStats['allPrices'] ?? 1;
                         _import.stats.playerStats.shopprices = _playerStats['shopPrices'] ?? 1;
                         _import.stats.playerStats.skilleffects = _playerStats['skillEffects'] ?? 1;
+                        _import.stats.playerStats.fosbonus = _playerStats['fosBonus'] ?? 1;
+                        _import.stats.playerStats.brandbonus = _playerStats['brandBonus'] ?? 1;
+                        _import.stats.playerStats.tablebonus = _playerStats['tableBonus'] ?? 1;
                         _import.stats.playerStats.bonusrelic = _playerStats['bonusRelic'] ?? 0;
                         _import.stats.playerStats.flatincome = _playerStats['flatIncome'] ?? 0;
                         _import.stats.playerStats.atkduration = _playerStats['atkDuration'] ?? 1;
