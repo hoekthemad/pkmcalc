@@ -87,6 +87,38 @@ let StatPage = {
         }
     },
 
+    getCategory: (skillname) => {
+        switch (skillname) {
+            case "faith":
+            case "zeal":
+            case "devotion":
+            case "fervour": return "theorder";
+
+            case "productivity":
+            case "concentration":
+            case "bargaining":
+            case "meditation": return "fundamentals";
+            
+            case "strength": 
+            case "battletactics": 
+            case "musclememory": return "combat";
+
+            case "manacontrol": 
+            case "lifeessence": 
+            case "resilience": 
+            case "materialism": return "magic";
+
+            case "fanaticaldevotion":
+            case "ardentbelief": 
+            case "zealousconviction":
+            case "extremepiety": 
+            case "absolutefaith":
+            case "devoutmastery":
+            case "doggedperseverance": 
+            case "blazingfervour": return "darkmagic";
+        }
+    },
+
     init: () => {
         let groupDisplayNames = [
             'The Order', 'Fundamentals', 'Combat', 'Magic', 'Dark Magic'
@@ -118,14 +150,16 @@ let StatPage = {
     },
 
     updateSkill: (skillname) => {
-        if (skillname == "faith" || skillname == "zeal" || skillname == "devotion" || skillname == "fervour") skillcategory = "theorder";
-        if (skillname == "productivity" || skillname == "concentration" || skillname == "bargaining" || skillname == "meditation") skillcategory = "fundamentals";
-        if (skillname == "strength" || skillname == "battletactics" || skillname == "musclememory") skillcategory = "combat";
-        if (skillname == "manacontrol" || skillname == "lifeessence" || skillname == "resilience" || skillname == "materialism") skillcategory = "magic";
-        if (
-            skillname == "fanaticaldevotion" || skillname == "ardentbelief" || skillname == "zealousconviction" || skillname == "extremepiety" ||
-            skillname == "absolutefaith" || skillname == "devoutmastery" || skillname == "doggedperseverance" || skillname == "blazingfervour"
-        ) skillcategory = "darkmagic";
+        // if (skillname == "faith" || skillname == "zeal" || skillname == "devotion" || skillname == "fervour") skillcategory = "theorder";
+        // if (skillname == "productivity" || skillname == "concentration" || skillname == "bargaining" || skillname == "meditation") skillcategory = "fundamentals";
+        // if (skillname == "strength" || skillname == "battletactics" || skillname == "musclememory") skillcategory = "combat";
+        // if (skillname == "manacontrol" || skillname == "lifeessence" || skillname == "resilience" || skillname == "materialism") skillcategory = "magic";
+        // if (
+        //     skillname == "fanaticaldevotion" || skillname == "ardentbelief" || skillname == "zealousconviction" || skillname == "extremepiety" ||
+        //     skillname == "absolutefaith" || skillname == "devoutmastery" || skillname == "doggedperseverance" || skillname == "blazingfervour"
+        // ) skillcategory = "darkmagic";
+
+        let skillcategory = StatPage.getCategory(skillname)
 
         let playerstats = _import.stats.playerStats;
         
