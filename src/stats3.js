@@ -126,8 +126,18 @@ let StatPage = {
             skillname == "fanaticaldevotion" || skillname == "ardentbelief" || skillname == "zealousconviction" || skillname == "extremepiety" ||
             skillname == "absolutefaith" || skillname == "devoutmastery" || skillname == "doggedperseverance" || skillname == "blazingfervour"
         ) skillcategory = "darkmagic";
+
+        let playerstats = _import.stats.playerStats;
+        
         jQuery('#'+skillname+'_skill_effect').text(
-            getEffect(data.skillEffects[skillcategory][skillname], jQuery('#'+skillname+'_skill_level').val(), 1*$('#concentration_skill_effect').text(), skillname == "concentration" ? true : false)
+            getEffect(
+                data.skillEffects[skillcategory][skillname], 
+                jQuery('#'+skillname+'_skill_level').val(), 
+                (
+                    1*$('#concentration_skill_effect').text() + 1*playerstats.fosbonus + 1*playerstats.brandbonus + 1*playerstats.tablebonus
+                ), 
+                skillname == "concentration" ? true : false
+            );
         );
         jQuery('#'+skillname+'_skill_cost').text(
             convertIntToCurrency(
