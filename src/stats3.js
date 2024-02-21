@@ -137,7 +137,7 @@ let StatPage = {
                     1*$('#concentration_skill_effect').text() + 1*playerstats.fosbonus + 1*playerstats.brandbonus + 1*playerstats.tablebonus
                 ), 
                 skillname == "concentration" ? true : false
-            );
+            )
         );
         jQuery('#'+skillname+'_skill_cost').text(
             convertIntToCurrency(
