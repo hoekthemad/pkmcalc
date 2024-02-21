@@ -213,8 +213,10 @@ let StatPage = {
             }
         }
 
-        for (i = 0; i < skillNameList.length; i++) {
-            StatPage.updateSkill(skillNameList[i]);
+        for (let runC = 0; runC < 2; runC++) {
+            for (i = 0; i < skillNameList.length; i++) {
+                StatPage.updateSkill(skillNameList[i]);
+            }
         }
     }
 }
