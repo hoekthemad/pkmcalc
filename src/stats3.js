@@ -15,7 +15,20 @@ let StatPage = {
             </h2>
             <div id="skills_GROUPNAME" class="accordion-collapse collapse show">
                 <div class="accordion-body">
-                    Target skill level <input type="number" class="form-control" onchange="StatPage.updateCategory('GROUPNAME', jQuery(this).val())" /><br />
+                    <div class="row g-3 align-items-center">
+                        <div class="col">
+                            <label for="GROUPNAME_skill_level" class="col-form-label">Target skill level</label>
+                        </div>
+                        <div class="col">
+                            <input type="number" id="GROUPNAME_skill_level" class="form-control" value="1" onchange="StatPage.updateCategoryLevel('GROUPNAME', jQuery(this).val())">
+                        </div>
+                        <div class="col">
+                            <label for="GROUPNAME_relic_level" class="col-form-label">Target skill level</label>
+                        </div>
+                        <div class="col">
+                            <input type="number" id="GROUPNAME_relic_level" class="form-control" value="1" onchange="StatPage.updateCategoryRelic('GROUPNAME', jQuery(this).val())">
+                        </div>
+                    </div>
                     THESKILLS
                 </div>
             </div>
@@ -151,10 +164,18 @@ let StatPage = {
         StatPage.updateAll();
     },
 
-    updateCategory: (category, level) => {
+    updateCategoryLevel: (category, level) => {
         let skills = StatPage.skills[category];
         for (let i = 0; i < skills.length; i++) {
             jQuery(`#${skills[i]}_skill_level`).val(level);
+        }
+        StatPage.updateAll();
+    },
+
+    updateCategoryRelic: (category, level) => {
+        let skills = StatPage.skills[category];
+        for (let i = 0; i < skills.length; i++) {
+            jQuery(`#${skills[i]}_relic_level`).val(level);
         }
         StatPage.updateAll();
     },
