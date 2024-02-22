@@ -36,7 +36,7 @@ let convertIntToCurrency = (number) => {
             count++;
         }
 
-        return theprice;
+        //return theprice;
 
         let fullSplit = theprice.split(" ");
 
