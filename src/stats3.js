@@ -147,6 +147,7 @@ let StatPage = {
             outerHTML = '';
         }
         jQuery("#skillsAccordian").append(totalSkillHtml);
+        StatPage.updateAll();
     },
 
     updateAll: () => {
