@@ -156,7 +156,7 @@ let StatPage = {
             jQuery(`#${skills[i]}_skill_level`).val(level);
         }
         StatPage.updateAll();
-    }
+    },
 
     updateAll: () => {
         for (let key in StatPage.skills) {
