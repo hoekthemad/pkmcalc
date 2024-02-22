@@ -9,28 +9,28 @@ let convertIntToCurrency = (number) => {
             theprice = theprice+"c</span>";
         }
         else if (2 == count) {
-            theprice = "s <span class='copper'>"+theprice;
+            theprice = "s</span> <span class='copper'>"+theprice;
         }
         else if (4 == count) {
-            theprice = "g <span class='silver'>"+theprice;
+            theprice = "g</span> <span class='silver'>"+theprice;
         }
         else if (6 == count) {
-            theprice = "p <span class='gold'>"+theprice;
+            theprice = "p</span> <span class='gold'>"+theprice;
         }
         else if (8 == count) {
-            theprice = "e <span class='platinum'>"+theprice;
+            theprice = "e</span> <span class='platinum'>"+theprice;
         }
         else if (10 == count) {
-            theprice = "a <span class='emerald'>"+theprice;
+            theprice = "a</span> <span class='emerald'>"+theprice;
         }
         else if (12 == count) {
-            theprice = "r <span class='amethyst'>"+theprice;
+            theprice = "r</span> <span class='amethyst'>"+theprice;
         }
         else if (14 == count) {
-            theprice = "t <span class='ruby'>"+theprice;
+            theprice = "t</span> <span class='ruby'>"+theprice;
         }
         else if (16 == count) {
-            theprice = "d <span class='topaz'>"+theprice;
+            theprice = "d</span> <span class='topaz'>"+theprice;
         }
         theprice = splitPrice[i-1]+theprice;
         count++;
