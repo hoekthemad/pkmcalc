@@ -31,7 +31,22 @@ let StatPage = {
                             <input type="number" id="GROUPNAME_relic_level" class="form-control" value="1" onchange="StatPage.updateCategoryRelic('GROUPNAME', jQuery(this).val())">
                         </div>
                         <div class="col">&nbsp;</div>
-                        <div class="col">&nbsp;</div>
+                    </div>
+                    <br/>
+                    <div class="row g-3 align-items-center">
+                        <div class="col">
+                            Skill Name
+                        </div>
+                        <div class="col">
+                            Skill Level
+                        </div>
+                        <div class="col">
+                            Relic Level
+                        </div>
+                        <div class="col">
+                            Skill Effect
+                        </div>
+                        <div class="col">Skill Cost</div>
                     </div>
                     THESKILLS
                 </div>
@@ -42,25 +57,21 @@ let StatPage = {
     skillHTML: `
         <div class="row g-3 align-items-center">
             <div class="col">
-                <label for="SKILLNAME_skill_level" class="col-form-label">HTMLSKILLNAME: Skill Level</label>
+                <label for="SKILLNAME_skill_level" class="col-form-label">HTMLSKILLNAME</label>
             </div>
             <div class="col">
                 <input type="number" id="SKILLNAME_skill_level" class="form-control" value="1" onchange="StatPage.updateAll()">
-            </div>
-
-            <div class="col">
-                <label for="SKILLNAME_relic_level" class="col-form-label">Relic Level</label>
             </div>
             <div class="col">
                 <input type="number" id="SKILLNAME_relic_level" class="form-control" value="1" onchange="StatPage.updateAll()">
             </div>
 
             <div class="col">
-                <span class="col-form-label">Skill effect <span id="SKILLNAME_skill_effect">SKILL_EFFECT</span></span>
+                <span class="col-form-label"><span id="SKILLNAME_skill_effect">SKILL_EFFECT</span></span>
             </div>
 
             <div class="col">
-                <span class="col-form-label">Skill cost <span id="SKILLNAME_skill_cost">1c</span></span>
+                <span class="col-form-label"><span id="SKILLNAME_skill_cost">1c</span></span>
             </div>
         </div>
     `,
