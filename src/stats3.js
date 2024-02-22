@@ -189,6 +189,7 @@ let StatPage = {
                 StatPage.updateSkill(StatPage.skills[key][skillC]);
             }
         }
+        StatPage.calcIncome();
     },
 
     updateSkill: (skillname) => {
@@ -260,7 +261,7 @@ let StatPage = {
                 StatPage.updateSkill(skillNameList[i]);
             }
         }
-        jQuery("#income").html(convertIntToCurrency(StatPage.calcIncome()));
+        StatPage.calcIncome();
     },
 
     calcIncome: () => {
