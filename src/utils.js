@@ -43,18 +43,18 @@ let convertIntToCurrency = (number) => {
     if (fullSplit.length >= 3) thereturn = `${fullSplit[0]} ${fullSplit[1]} ${fullSplit[2]}`;
     if (fullSplit.length >= 2) thereturn = `${fullSplit[0]} ${fullSplit[1]}`;
     if (fullSplit.length >= 1) thereturn = `${fullSplit[0]}`;
-    let retval = "";
-    retval = retval + thereturn.replace(/([0-9]{1,2}c)/g, "<span class='copper'>$1</span>");
-    retval = retval + thereturn.replace(/([0-9]{1,2}s)/g, "<span class='silver'>$1</span>");
-    retval = retval + thereturn.replace(/([0-9]{1,2}g)/g, "<span class='gold'>$1</span>");
-    retval = retval + thereturn.replace(/([0-9]{1,2}p)/g, "<span class='platinum'>$1</span>");
-    retval = retval + thereturn.replace(/([0-9]{1,2}e)/g, "<span class='emerald'>$1</span>");
-    retval = retval + thereturn.replace(/([0-9]{1,2}a)/g, "<span class='amethyst'>$1</span>");
-    retval = retval + thereturn.replace(/([0-9]{1,2}r)/g, "<span class='ruby'>$1</span>");
-    retval = retval + thereturn.replace(/([0-9]{1,2}t)/g, "<span class='topaz'>$1</span>");
-    retval = retval + thereturn.replace(/([0-9]{1,2}d)/g, "<span class='diamond'>$1</span>");
 
-    return retval;
+    thereturn = thereturn.replace(/(.+?)([0-9]+?c)(.+?)/g, "$1<span class='copper'>$2</span>$3");
+    thereturn = thereturn.replace(/(.+?)([0-9]+?s)(.+?)/g, "$1<span class='silver'>$2</span>$3");
+    thereturn = thereturn.replace(/(.+?)([0-9]+?g)(.+?)/g, "$1<span class='gold'>$2</span>$3");
+    thereturn = thereturn.replace(/(.+?)([0-9]+?p)(.+?)/g, "$1<span class='platinum'>$2</span>$3");
+    thereturn = thereturn.replace(/(.+?)([0-9]+?e)(.+?)/g, "$1<span class='emerald'>$2</span>$3");
+    thereturn = thereturn.replace(/(.+?)([0-9]+?a)(.+?)/g, "$1<span class='amethyst'>$2</span>$3");
+    thereturn = thereturn.replace(/(.+?)([0-9]+?r)(.+?)/g, "$1<span class='ruby'>$2</span>$3");
+    thereturn = thereturn.replace(/(.+?)([0-9]+?t)(.+?)/g, "$1<span class='topaz'>$2</span>$3");
+    thereturn = thereturn.replace(/(.+?)([0-9]+?d)(.+?)/g, "$1<span class='diamond'>$2</span>$3");
+
+    return thereturn;
 }
 
 let checkIsOrder = (skillname) => {
