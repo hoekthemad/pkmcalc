@@ -109,6 +109,18 @@ let isBoostActive = (datetime) => {
     return now < datetime;
 }
 
+let getRepeatHappiness = () => {
+    let count = 1*jQuery("#repeathappiness").val();
+    if (count >= 1) {
+        retval = Math.exp(1.01, count);
+        // retval = (1.01^count)-1;
+    }
+    else {
+        retval = 0;
+    }
+    return 1*retval.toFixed(2);
+}
+
 let calcHappiness = () => {
     let devotionEffect = 1*jQuery("#devotion_skill_effect").text();
     let meditationEffect = 1*jQuery("#meditation_skill_effect").text();
@@ -132,7 +144,12 @@ let calcHappiness = () => {
     
     let hpBoost = isBoostActive(_import.stats.boosts.happiness);
 
-    let ret = 1 * devotionEffect * meditationEffect * fdEffect * epEffect * (hpBoost ? 2 : 1) * tent * woodenhut * cottage * house * largehouse * smallpalace * grandpalace * townruler * cityruler * kingdomminister * heaven * ceremonyknife * butler;
+    let ret = (1+getRepeatHappiness()) * 
+        devotionEffect * meditationEffect * fdEffect * epEffect * 
+        (hpBoost ? 2 : 1) * 
+        tent * woodenhut * cottage * house * largehouse * smallpalace * 
+        grandpalace * townruler * cityruler * kingdomminister * 
+        heaven * ceremonyknife * butler;
     return 1*ret.toFixed(2);
 }
 

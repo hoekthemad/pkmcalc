@@ -109,7 +109,8 @@
                         <p>Half Shop: <input type="checkbox" id="halfshop" onchange="changeTalents()"></p>
                         <p>1.5 All Price: <input type="checkbox" id="allprice" onchange="changeTalents()"></p>
                         <p>3x Happiness: <input type="checkbox" id="threehappiness" onchange="changeTalents()"></p>
-                        <p>∞ Happiness Num: <input type="number" id="repeathappiness" value="0" onchange="changeTalents()"></p>
+                        <p>∞ Happiness Num: <input type="number" id="repeathappiness" value="0"
+                                onchange="changeTalents()"></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
@@ -118,73 +119,91 @@
             </div>
         </div>
 
-        <p class="">
-            Fanaticism: <span id="current_fana" class="fana">0</span> |
-            Total Brands: <span id="total_brands" class="brands">0</span> |
-            Relic Discount: <span id="relic_touches">0</span> |
-            Income: <span id="income"></span>
-        </p>
-        <br />
-        <p class="">Calculate shop price:
-            <select id="shop_item" onchange="calcSP()">
-                <optgroup label="Properties">
-                    <option value="data.properties.tent">Tent</option>
-                    <option value="data.properties.wooden_hut">Wooden Hut</option>
-                    <option value="data.properties.cottage">Cottage</option>
-                    <option value="data.properties.house">House</option>
-                    <option value="data.properties.large_house">Large House</option>
-                    <option value="data.properties.small_palace">Small Palace</option>
-                    <option value="data.properties.grand_palace">Grand Palace</option>
-                    <option value="data.properties.town_ruler">Town Ruler</option>
-                    <option value="data.properties.city_ruler">City Ruler</option>
-                    <option value="data.properties.kingdom_minister">Kingdom Minister</option>
-                    <option value="data.properties.heaven">Heaven</option>
-                </optgroup>
-                <optgroup label="Trinkets">
-                    <option value="data.trinkets.coin_pouch">Coin Pouch</option>
-                    <option value="data.trinkets.wooden_crown">Wooden Crown</option>
-                    <option value="data.trinkets.dumbells">Dumbells</option>
-                    <option value="data.trinkets.lucky_charm">Lucky Charm</option>
-                    <option value="data.trinkets.soulbound_locket">Soulbound Locket</option>
-                    <option value="data.trinkets.pendulum">Pendulum</option>
-                    <option value="data.trinkets.silver_ring">Silver Ring</option>
-                    <option value="data.trinkets.ceremony_knife">Ceremony Knife</option>
-                    <option value="data.trinkets.magic_pebbles">Magic Pebbles</option>
-                    <option value="data.trinkets.shiny_lamp">Shiny Lamp</option>
-                    <option value="data.trinkets.golden_hourglass">Golden Hourglass</option>
-                    <option value="data.trinkets.mystic_satchel">Mystic Satchel</option>
-                </optgroup>
-                <optgroup label="Weapons">
-                    <option value="data.weapons.small_shield">Small Sheild</option>
-                    <option value="data.weapons.war_paint">War Paint</option>
-                    <option value="data.weapons.short_bow">Short Bow</option>
-                    <option value="data.weapons.steel_longsword">Steel Longsword</option>
-                    <option value="data.weapons.knight_armor">Knight Armour</option>
-                    <option value="data.weapons.war_horse">War Horse</option>
-                    <option value="data.weapons.magic_sword">Magic Sword</option>
-                </optgroup>
-                <optgroup label="Servants">
-                    <option value="data.servants.squire">Squire</option>
-                    <option value="data.servants.squire">Squire</option>
-                    <option value="data.servants.bookeeper">Bookkeeper</option>
-                    <option value="data.servants.butler">Butler</option>
-                    <option value="data.servants.banker">Banker</option>
-                    <option value="data.servants.seer">Seer
-                    <option>
-                    <option value="data.servants.bodyguard">Bodyguard</option>
-                    <option value="data.servants.holyman">Holy Man
-                    <option>
-                    <option value="data.servants.smuggler">Smuggler</option>
-                </optgroup>
-            </select>
-            <span id="shop_price">0</span>
-        </p>
-        <div class="col-sm-12 col-md-12">
-            <h2>Skills</h2>
-            <hr />
-            <div class="accordion" id="skillsAccordian">
-            </div>
+        <div class="col">
+            <p class="">
+                Fanaticism: <span id="current_fana" class="fana">0</span> |
+                Total Brands: <span id="total_brands" class="brands">0</span> |
+                Relic Discount: <span id="relic_touches">0</span> |
+                Income: <span id="income"></span>
+            </p>
         </div>
+        <br />
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-skills-tab" data-bs-toggle="tab" data-bs-target="#nav-skills" type="button" role="tab" aria-controls="nav-skills" aria-selected="true">Skills</button>
+                <button class="nav-link" id="nav-shop-tab" data-bs-toggle="tab" data-bs-target="#nav-shop" type="button" role="tab" aria-controls="nav-shop" aria-selected="false">Shop</button>
+                <button class="nav-link" id="nav-stats-tab" data-bs-toggle="tab" data-bs-target="#nav-stats" type="button" role="tab" aria-controls="nav-stats" aria-selected="false">Stats</button>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-skills" role="tabpanel" aria-labelledby="nav-skills-tab">
+                <div class="col-sm-12 col-md-12">
+                    <div class="accordion" id="skillsAccordian">
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-shop" role="tabpanel" aria-labelledby="nav-shop-tab">
+                <div class="col">
+                    <p class="">Calculate shop price:
+                        <select id="shop_item" onchange="calcSP()">
+                            <optgroup label="Properties">
+                                <option value="data.properties.tent">Tent</option>
+                                <option value="data.properties.wooden_hut">Wooden Hut</option>
+                                <option value="data.properties.cottage">Cottage</option>
+                                <option value="data.properties.house">House</option>
+                                <option value="data.properties.large_house">Large House</option>
+                                <option value="data.properties.small_palace">Small Palace</option>
+                                <option value="data.properties.grand_palace">Grand Palace</option>
+                                <option value="data.properties.town_ruler">Town Ruler</option>
+                                <option value="data.properties.city_ruler">City Ruler</option>
+                                <option value="data.properties.kingdom_minister">Kingdom Minister</option>
+                                <option value="data.properties.heaven">Heaven</option>
+                            </optgroup>
+                            <optgroup label="Trinkets">
+                                <option value="data.trinkets.coin_pouch">Coin Pouch</option>
+                                <option value="data.trinkets.wooden_crown">Wooden Crown</option>
+                                <option value="data.trinkets.dumbells">Dumbells</option>
+                                <option value="data.trinkets.lucky_charm">Lucky Charm</option>
+                                <option value="data.trinkets.soulbound_locket">Soulbound Locket</option>
+                                <option value="data.trinkets.pendulum">Pendulum</option>
+                                <option value="data.trinkets.silver_ring">Silver Ring</option>
+                                <option value="data.trinkets.ceremony_knife">Ceremony Knife</option>
+                                <option value="data.trinkets.magic_pebbles">Magic Pebbles</option>
+                                <option value="data.trinkets.shiny_lamp">Shiny Lamp</option>
+                                <option value="data.trinkets.golden_hourglass">Golden Hourglass</option>
+                                <option value="data.trinkets.mystic_satchel">Mystic Satchel</option>
+                            </optgroup>
+                            <optgroup label="Weapons">
+                                <option value="data.weapons.small_shield">Small Sheild</option>
+                                <option value="data.weapons.war_paint">War Paint</option>
+                                <option value="data.weapons.short_bow">Short Bow</option>
+                                <option value="data.weapons.steel_longsword">Steel Longsword</option>
+                                <option value="data.weapons.knight_armor">Knight Armour</option>
+                                <option value="data.weapons.war_horse">War Horse</option>
+                                <option value="data.weapons.magic_sword">Magic Sword</option>
+                            </optgroup>
+                            <optgroup label="Servants">
+                                <option value="data.servants.squire">Squire</option>
+                                <option value="data.servants.squire">Squire</option>
+                                <option value="data.servants.bookeeper">Bookkeeper</option>
+                                <option value="data.servants.butler">Butler</option>
+                                <option value="data.servants.banker">Banker</option>
+                                <option value="data.servants.seer">Seer
+                                <option>
+                                <option value="data.servants.bodyguard">Bodyguard</option>
+                                <option value="data.servants.holyman">Holy Man
+                                <option>
+                                <option value="data.servants.smuggler">Smuggler</option>
+                            </optgroup>
+                        </select>
+                        <span id="shop_price">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-stats" role="tabpanel" aria-labelledby="nav-stats-tab">...</div>
+        </div>
+        
+        
     </div>
     <br />
 </body>
