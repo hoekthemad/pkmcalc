@@ -45,7 +45,7 @@ let convertIntToCurrency = (number) => {
     if (count == number.length && count >= 2 && count < 4) theprice = "<span class='silver'>"+theprice;
     if (count == number.length && count >= 0 && count < 2) theprice = "<span class='copper'>"+theprice;
 
-    //return theprice;
+    return theprice;
     console.log(theprice)
 
     let fullSplit = theprice.split("</span>");
