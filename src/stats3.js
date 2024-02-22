@@ -50,7 +50,7 @@ let StatPage = {
     skills: {
         theorder: ['faith', 'zeal', 'devotion', 'fervour'],
         fundamentals: ['productivity', 'concentration', 'bargaining', 'meditation'],
-        combat: ['strength', 'battletactics', 'musclememory'],
+        combat: ['strength', 'musclememory', 'battletactics'],
         magic: ['manacontrol', 'lifeessence', 'resilience', 'materialism'],
         darkmagic: ['fanaticaldevotion', 'ardentbelief', 'zealousconviction', 'extremepiety', 'absolutefaith', 'devoutmastery', 'doggedperseverance', 'blazingfervour']
     },
