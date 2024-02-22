@@ -35,7 +35,7 @@ let convertIntToCurrency = (number) => {
         theprice = splitPrice[i-1]+theprice;
         count++;
     }
-    console.log(count, number, number.length);
+
     if (count == number.toString().length && count > 16) theprice = "<span class='diamond'>"+theprice;
     if (count == number.toString().length && count > 14 && count <= 16) theprice = "<span class='topaz'>"+theprice;
     if (count == number.toString().length && count > 12 && count <= 14) theprice = "<span class='ruby'>"+theprice;
@@ -49,6 +49,7 @@ let convertIntToCurrency = (number) => {
     console.log(theprice)
 
     let fullSplit = theprice.split("</span>");
+    console.log(fullSplit);
 
     if (fullSplit.length >= 3) thereturn = `${fullSplit[0]}</span> ${fullSplit[1]}</span> ${fullSplit[2]}</span>`;
     if (fullSplit.length >= 2) thereturn = `${fullSplit[0]}</span> ${fullSplit[1]}</span>`;
