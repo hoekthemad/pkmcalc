@@ -34,13 +34,27 @@
                 StatPage.init();
             })
         </script>
+        <style>
+            .fana { color: #ff0000; }
+            .brands { color: #0000ff; }
+
+            .copper { color: #e65100; }
+            .silver { color: #9e9e9e; }
+            .gold { color: #fbc02d; }
+            .platinum { color: #00bcd4; }
+            .emerald { color: #00c853; }
+            .amethyst { color: #ba68c8; }
+            .ruby { color: #f44336; }
+            .topaz { color: #fff176; }
+            .diamond { color: #ffffff; }
+        </style>
     </head>
 
     <body class="container-fluid">
         <br />
         <div class="row align-items-start">
             <button class="btn btn-primary" onclick="importStats()">Import your stats</button><br />
-            <p class="">Your current fanaticism: <span id="current_fana">0</span> | Your total brands: <span id="total_brands">0</span> | Your relic touches: <span id="relic_touches">0</span></p>
+            <p class="">Your current fanaticism: <span id="current_fana" class="fana">0</span> | Your total brands: <span id="total_brands" class="brands">0</span> | Your relic touches: <span id="relic_touches">0</span></p>
             <div class="col-sm-12 col-md-12">
                 <h2>Skills</h2>
                 <hr />
