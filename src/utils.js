@@ -38,7 +38,7 @@ let convertIntToCurrency = (number) => {
 
     //return theprice;
 
-    let fullSplit = theprice.split("</span>");
+    let fullSplit = theprice.split(" ");
 
     if (fullSplit.length >= 3) thereturn = `${fullSplit[0]} ${fullSplit[1]} ${fullSplit[2]}`;
     if (fullSplit.length >= 2) thereturn = `${fullSplit[0]} ${fullSplit[1]}`;
