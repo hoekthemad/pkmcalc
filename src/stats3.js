@@ -245,8 +245,8 @@ let StatPage = {
                 Math.floor(getSkillPrice(
                     jQuery('#'+skillname+'_skill_level').val(), 
                     (skillcategory == "theorder"), 
-                    _import.stats.playerStats.allprices, 
-                    _import.stats.playerStats.happiness,
+                    calcAllPrice(), 
+                    _import.stats.playerStats.happiness, // calcHappiness(),
                     jQuery('#'+skillname+'_relic_level').val(),
                     (skillcategory == "darkmagic"),
                     _import.stats.fanaticism,
@@ -280,10 +280,8 @@ let StatPage = {
             }
         }
 
-        for (let runC = 0; runC < 2; runC++) {
-            for (i = 0; i < skillNameList.length; i++) {
-                StatPage.updateSkill(skillNameList[i]);
-            }
+        for (let runC = 0; runC < 4; runC++) {
+            StatPage.updateAll();
         }
         StatPage.calcIncome();
     }

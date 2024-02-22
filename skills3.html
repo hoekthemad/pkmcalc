@@ -106,8 +106,10 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p>1.5 All Price: <input type="checkbox" id="allprice"></p>
-                        <p>∞ Happiness Num: <input type="number" id="repeathappiness" value="0"></p>
+                        <p>Half Shop: <input type="checkbox" id="halfshop" onchange="changeTalents()"></p>
+                        <p>1.5 All Price: <input type="checkbox" id="allprice" onchange="changeTalents()"></p>
+                        <p>3x Happiness: <input type="checkbox" id="threehappiness" onchange="changeTalents()"></p>
+                        <p>∞ Happiness Num: <input type="number" id="repeathappiness" value="0" onchange="changeTalents()"></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>

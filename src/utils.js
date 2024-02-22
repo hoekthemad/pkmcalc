@@ -94,7 +94,7 @@ let getShopPrice = (item, stats) => {
         return BigInt(base_price);
     }
     else {
-        return Math.round(number(base_price) / stats.relictouches / (fana_discount < 1 ? 1 : (1*fana_discount)) / (1*allPriceDiscount) / (1*shopPriceDiscount));
+        return Math.round(Number(base_price) / stats.relictouches / (fana_discount < 1 ? 1 : (1*fana_discount)) / (1*allPriceDiscount) / (1*shopPriceDiscount));
     }
 }
 
@@ -141,6 +141,7 @@ let calcShopPrice = () => {
     let dp = 1*jQuery("#doggedperseverance_skill_effect").text();
 
     let allprice = jQuery("#allprice").prop('checked') ? 1.5 : 1;
+    let shopprice = jQuery("#halfshop").prop('checked') ? 2 : 1;
 
     let woodencrown = _import.stats.shop.trinkets.woodencrown ? 2 : 1;
     let magicpebbles = _import.stats.shop.trinkets.magicpebbles ? 1.5 : 1;
@@ -148,7 +149,7 @@ let calcShopPrice = () => {
     let squire = _import.stats.shop.servants.squire ? 1.5 : 1;
     let holyman = _import.stats.shop.servants.holyman ? 1.5 : 1;
 
-    let ret = 1 * fervor * dp * woodencrown * magicpebbles * magicsword * squire * holyman * allprice;
+    let ret = 1 * fervor * dp * woodencrown * magicpebbles * magicsword * squire * holyman * allprice * shopprice;
     return 1*ret.toFixed(2);
 }
 
@@ -166,4 +167,9 @@ let calcAllPrice = () => {
 
     let ret = 1 * zeal * bargaining * manacontrol * zealousconviction * allprice * silverring * shinylamp * banker;
     return 1*ret.toFixed(2);
+}
+
+let changeTalents = () => {
+    StatPage.updateAll();
+    calcSP();
 }
