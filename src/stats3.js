@@ -209,7 +209,7 @@ let StatPage = {
         else incBoost = 1;
 
         let income = 1 * faithEffect * prodEffect * dmEffect * cp * lc * bk * incBoost;
-        income = convertIntToCurrency(Math.round(income));
+        income = convertIntToCurrency(Math.round(income) + Math.round(_import.stats.playerStats.flatincome));
         jQuery("#income").html(income);
     },
 
