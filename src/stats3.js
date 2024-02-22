@@ -68,7 +68,7 @@ let StatPage = {
             case "meditation": return "Meditation";
             
             case "strength": return "Strength";
-            case "battletactics": return "Battle Bactics";
+            case "battletactics": return "Battle Tactics";
             case "musclememory": return "Muscle Memory";
 
             case "manacontrol": return "Mana Control";
