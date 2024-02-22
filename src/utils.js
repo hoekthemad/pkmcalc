@@ -90,8 +90,12 @@ let getShopPrice = (item, stats) => {
     let fana_discount = Math.sqrt(stats.fanaticism/10)+1;
     let allPriceDiscount = stats.playerStats.allprices;
     let shopPriceDiscount = stats.playerStats.shopprices;
-
-    return Math.round(Number(base_price) / stats.relictouches / (fana_discount < 1 ? 1 : (1*fana_discount)) / (1*allPriceDiscount) / (1*shopPriceDiscount));
+    if (1 == stats.relictouches && fana_discount <= 1 && (1*allPriceDiscount) == 1 && (1*shopPriceDiscount)) {
+        return Number(base_price);
+    }
+    else {
+        return Math.round(Number(base_price) / stats.relictouches / (fana_discount < 1 ? 1 : (1*fana_discount)) / (1*allPriceDiscount) / (1*shopPriceDiscount));
+    }
 }
 
 let calcSP = () => {
