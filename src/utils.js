@@ -36,6 +36,8 @@ let convertIntToCurrency = (number) => {
             count++;
         }
 
+        return theprice;
+
         let fullSplit = theprice.split(" ");
 
         if (fullSplit.length >= 3) return `${fullSplit[0]} ${fullSplit[1]} ${fullSplit[2]}`;
