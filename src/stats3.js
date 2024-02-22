@@ -181,7 +181,7 @@ let StatPage = {
                 skillname == "concentration" ? true : false
             )
         );
-        jQuery('#'+skillname+'_skill_cost').text(
+        jQuery('#'+skillname+'_skill_cost').html(
             convertIntToCurrency(
                 Math.floor(getSkillPrice(
                     jQuery('#'+skillname+'_skill_level').val(), 
