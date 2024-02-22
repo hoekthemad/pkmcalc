@@ -35,14 +35,15 @@ let convertIntToCurrency = (number) => {
         theprice = splitPrice[i-1]+theprice;
         count++;
     }
-    if (count == number.length && count >= 16) theprice = "<span class='diamond'>"+theprice;
-    if (count == number.length && count >= 14 && count <= 16) theprice = "<span class='topaz'>"+theprice;
-    if (count == number.length && count >= 12 && count <= 14) theprice = "<span class='ruby'>"+theprice;
-    if (count == number.length && count >= 10 && count <= 12) theprice = "<span class='amethyst'>"+theprice;
-    if (count == number.length && count >= 8 && count <= 10) theprice = "<span class='emerald'>"+theprice;
-    if (count == number.length && count >= 6 && count <= 8) theprice = "<span class='platinum'>"+theprice;
-    if (count == number.length && count >= 4 && count <= 6) theprice = "<span class='gold'>"+theprice;
-    if (count == number.length && count >= 2 && count <= 4) theprice = "<span class='silver'>"+theprice;
+    console.log(count, number, number.length);
+    if (count == number.length && count >= 15) theprice = "<span class='diamond'>"+theprice;
+    if (count == number.length && count >= 13 && count <= 16) theprice = "<span class='topaz'>"+theprice;
+    if (count == number.length && count >= 11 && count <= 14) theprice = "<span class='ruby'>"+theprice;
+    if (count == number.length && count >= 9 && count <= 12) theprice = "<span class='amethyst'>"+theprice;
+    if (count == number.length && count >= 7 && count <= 10) theprice = "<span class='emerald'>"+theprice;
+    if (count == number.length && count >= 5 && count <= 8) theprice = "<span class='platinum'>"+theprice;
+    if (count == number.length && count >= 3 && count <= 6) theprice = "<span class='gold'>"+theprice;
+    if (count == number.length && count >= 1 && count <= 4) theprice = "<span class='silver'>"+theprice;
     if (count == number.length && count >= 0 && count <= 2) theprice = "<span class='copper'>"+theprice;
 
     return theprice;
