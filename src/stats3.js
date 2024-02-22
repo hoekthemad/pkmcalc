@@ -80,7 +80,7 @@ let StatPage = {
             case "ardentbelief": return "Ardent Belief";
             case "zealousconviction": return "Zealous Conviction";
             case "extremepiety": return "Extreme Piety";
-            case "absolutefaith": return "Absolite Faith";
+            case "absolutefaith": return "Absolute Faith";
             case "devoutmastery": return "Devout Mastery";
             case "doggedperseverance": return "Dogged Perseverance";
             case "blazingfervour": return "Blazing Fervor";
