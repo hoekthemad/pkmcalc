@@ -15,7 +15,7 @@ let StatPage = {
             </h2>
             <div id="skills_GROUPNAME" class="accordion-collapse collapse show">
                 <div class="accordion-body">
-                    Target skill level <input type="number" onchange="StatPage.updateCategory('GROUPNAME', jQuery(this).val())" /><br />
+                    Target skill level <input type="number" class="form-control" onchange="StatPage.updateCategory('GROUPNAME', jQuery(this).val())" /><br />
                     THESKILLS
                 </div>
             </div>
