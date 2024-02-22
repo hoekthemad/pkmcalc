@@ -28,6 +28,8 @@ let StatPage = {
                         <div class="col">
                             <input type="number" id="GROUPNAME_relic_level" class="form-control" value="1" onchange="StatPage.updateCategoryRelic('GROUPNAME', jQuery(this).val())">
                         </div>
+                        <div class="col">&nbsp;</div>
+                        <div class="col">&nbsp;</div>
                     </div>
                     THESKILLS
                 </div>
