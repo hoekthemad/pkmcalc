@@ -40,9 +40,9 @@ let convertIntToCurrency = (number) => {
 
     let fullSplit = theprice.split("</span>");
 
-    if (fullSplit.length >= 3) thereturn = `${fullSplit[0]}</span> ${fullSplit[1]}</span> ${fullSplit[2]}</span>`;
-    if (fullSplit.length >= 2) thereturn = `${fullSplit[0]}</span> ${fullSplit[1]}</span>`;
-    if (fullSplit.length >= 1) thereturn = `${fullSplit[0]}</span>`;
+    if (fullSplit.length >= 3) thereturn = `${fullSplit[0]} ${fullSplit[1]} ${fullSplit[2]}`;
+    if (fullSplit.length >= 2) thereturn = `${fullSplit[0]} ${fullSplit[1]}`;
+    if (fullSplit.length >= 1) thereturn = `${fullSplit[0]}`;
     thereturn = thereturn.replace(/([0-9]{1,2}c)/, "<span class='copper'>$1</span>");
     thereturn = thereturn.replace(/([0-9]{1,2}s)/, "<span class='silver'>$1</span>");
     thereturn = thereturn.replace(/([0-9]{1,2}g)/, "<span class='gold'>$1</span>");
