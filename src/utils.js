@@ -94,7 +94,7 @@ let getShopPrice = (item, stats) => {
         return BigInt(base_price);
     }
     else {
-        return Math.round(Number(base_price) / stats.relictouches / (fana_discount < 1 ? 1 : (1*fana_discount)) / (1*allPriceDiscount) / (1*shopPriceDiscount));
+        return Math.round(BigInt(base_price) / stats.relictouches / (fana_discount < 1 ? 1 : (1*fana_discount)) / (1*allPriceDiscount) / (1*shopPriceDiscount));
     }
 }
 
