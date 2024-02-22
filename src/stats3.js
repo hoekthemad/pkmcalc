@@ -192,16 +192,54 @@ let StatPage = {
         StatPage.calcIncome();
     },
 
-    updateSkill: (skillname) => {
-        // if (skillname == "faith" || skillname == "zeal" || skillname == "devotion" || skillname == "fervour") skillcategory = "theorder";
-        // if (skillname == "productivity" || skillname == "concentration" || skillname == "bargaining" || skillname == "meditation") skillcategory = "fundamentals";
-        // if (skillname == "strength" || skillname == "battletactics" || skillname == "musclememory") skillcategory = "combat";
-        // if (skillname == "manacontrol" || skillname == "lifeessence" || skillname == "resilience" || skillname == "materialism") skillcategory = "magic";
-        // if (
-        //     skillname == "fanaticaldevotion" || skillname == "ardentbelief" || skillname == "zealousconviction" || skillname == "extremepiety" ||
-        //     skillname == "absolutefaith" || skillname == "devoutmastery" || skillname == "doggedperseverance" || skillname == "blazingfervour"
-        // ) skillcategory = "darkmagic";
+    calcIncome: () => {
+        let faithEffect = 1*jQuery("#faith_skill_effect").text();
+        let prodEffect = 1*jQuery("#productivity_skill_effect").text();
+        let dmEffect = 1*jQuery("#devoutmastery_skill_effect").text();
 
+        let cp = _import.stats.shop.trinkets.coinpouch == true ? 2.5 : 1;
+        let lc = _import.stats.shop.trinkets.luckycharm == true ? 3 : 1;
+        let bk = _import.stats.shop.servants.bookkeeper == true ? 2 : 1;
+
+        let adBoost = isBoostActive(_import.stats.boosts.income.ad);
+        let cmBoost = isBoostActive(_import.stats.boosts.income.tavern);
+
+        if (adBoost && cmBoost) incBoost = 3;
+        else if ((!adBoost && cmBoost) || (adBoost && !cmBoost)) incBoost = 2;
+        else incBoost = 1;
+
+        let income = 1 * faithEffect * prodEffect * dmEffect * cp * lc * bk * incBoost;
+        income = convertIntToCurrency(Math.round(income));
+        jQuery("#income").html(income);
+    },
+
+    calcHappiness: () => {
+        let devotionEffect = 1*jQuery("#devotion_skill_effect").text();
+        let meditationEffect = 1*jQuery("#meditation_skill_effect").text();
+        let fdEffect = 1*jQuery("#fanaticaldevotion_skill_effect").text();
+        let epEffect = 1*jQuery("#extremepiety_skill_effect").text();
+
+        let tent = _import.stats.shop.properties.tent ? 1 : 1;
+        let woodenhut = _import.stats.shop.properties.woodenhut ? 2 : 1;
+        let cottage = _import.stats.shop.properties.cottage ? 3 : 1;
+        let house = _import.stats.shop.properties.house ? 4 : 1;
+        let largehouse = _import.stats.shop.properties.largehouse ? 5 : 1;
+        let smallpalace = _import.stats.shop.properties.smallpalace ? 6 : 1;
+        let grandpalace = _import.stats.shop.properties.grandpalace ? 7 : 1;
+        let townruler = _import.stats.shop.properties.townruler ? 8 : 1;
+        let cityruler = _import.stats.shop.properties.cityruler ? 9 : 1;
+        let kingdomminister = _import.stats.shop.properties.kingdomminister ? 10 : 1;
+        let heaven = _import.stats.shop.properties.heaven ? 11 : 1;
+
+        let ceremonyknife = _import.stats.shop.trinkets.ceremonyknife ? 1.5 : 1;
+        let butler = _import.stats.shop.servants.butler ? 1.5 : 1;
+        
+        let hpBoost = isBoostActive(_import.stats.boosts.happiness);
+
+        return 1 * devotionEffect * meditationEffect * fdEffect * epEffect * (hpBoost ? 2 : 1) * tent * woodenhut * cottage * house * largehouse * smallpalace * grandpalace * townruler * cityruler * kingdomminister * heaven * ceremonyknife * butler;
+    },
+
+    updateSkill: (skillname) => {
         let skillcategory = StatPage.getCategory(skillname)
 
         let playerstats = _import.stats.playerStats;
@@ -262,19 +300,5 @@ let StatPage = {
             }
         }
         StatPage.calcIncome();
-    },
-
-    calcIncome: () => {
-        let faithEffect = 1*jQuery("#faith_skill_effect").text();
-        let prodEffect = 1*jQuery("#productivity_skill_effect").text();
-        let dmEffect = 1*jQuery("#devoutmastery_skill_effect").text();
-
-        let cp = _import.stats.shop.trinkets.coinpouch == true ? 2.5 : 1;
-        let lc = _import.stats.shop.trinkets.luckycharm == true ? 3 : 1;
-        let bk = _import.stats.shop.servants.bookkeeper == true ? 2 : 1;
-
-        let income = 1 * faithEffect * prodEffect * dmEffect * cp * lc * bk;
-        income = convertIntToCurrency(parseInt(income));
-        jQuery("#income").html(income);
     }
 }

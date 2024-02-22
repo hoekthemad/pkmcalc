@@ -103,3 +103,8 @@ let calcSP = () => {
     let shopPrice = convertIntToCurrency(getShopPrice(eval(chosenItem), _import.stats));
     jQuery("#shop_price").html(shopPrice);
 }
+
+isBoostActive = (datetime) => {
+    let now = Date.now();
+    return now < datetime;
+}

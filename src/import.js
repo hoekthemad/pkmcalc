@@ -73,19 +73,22 @@ let _import = {
                 grandpalace:        false,
                 townruler:          false,
                 cityruler:          false,
-                kingdomminister:    false
+                kingdomminister:    false,
+                heaven:    false,
             },
             trinkets: {
                 coinpouch:          false,
                 woodencrown:        false,
                 dumbbells:          false,
                 luckycharm:         false,
+                soulboundlocket:    false,
                 pendulum:           false,
                 silverring:         false,
                 ceremonyknife:      false,
                 magicpebbles:       false,
                 shinylamp:          false,
-                goldenhourglass:    false
+                goldenhourglass:    false,
+                mysticsatchel:      false
             },
             weapons: {
                 smallshield:    false,
@@ -103,7 +106,8 @@ let _import = {
                 banker:     false,
                 seer:       false,
                 bodyguard:  false,
-                holyman:    false
+                holyman:    false,
+                smuggler:   false
             }
         },
 
@@ -140,6 +144,7 @@ let _import = {
                         _import.stats.shop.properties.townruler = shop['town ruler'] ?? false;
                         _import.stats.shop.properties.cityruler = shop['city ruler'] ?? false;
                         _import.stats.shop.properties.kingdomminister = shop['kindom minister'] ?? false;
+                        _import.stats.shop.properties.heaven = shop['heaven'] ?? false;
                     }
                     //#endregion
                     
@@ -149,12 +154,14 @@ let _import = {
                         _import.stats.shop.trinkets.woodencrown = shop['wooden crown'] ?? false;
                         _import.stats.shop.trinkets.dumbbells = shop['dumbbells'] ?? false;
                         _import.stats.shop.trinkets.luckycharm = shop['lucky charm'] ?? false;
+                        _import.stats.shop.trinkets.soulboundlocket = shop['soulbound locket'] ?? false;
                         _import.stats.shop.trinkets.pendulum = shop['pendulum'] ?? false;
                         _import.stats.shop.trinkets.silverring = shop['silver ring'] ?? false;
                         _import.stats.shop.trinkets.ceremonyknife = shop['ceremony knife'] ?? false;
                         _import.stats.shop.trinkets.magicpebbles = shop['magic pebbles'] ?? false;
                         _import.stats.shop.trinkets.shinylamp = shop['shiny lamp'] ?? false;
                         _import.stats.shop.trinkets.goldenhourglass = shop['golden hourglass'] ?? false;
+                        _import.stats.shop.trinkets.mysticsatchel = shop['mystic satchel'] ?? false;
                     }
                     //#endregion
                     
@@ -179,6 +186,7 @@ let _import = {
                         _import.stats.shop.servants.seer = shop['seer'] ?? false;
                         _import.stats.shop.servants.bodyguard = shop['bodyguard'] ?? false;
                         _import.stats.shop.servants.holyman = shop['holyman'] ?? false;
+                        _import.stats.shop.servants.smuggler = shop['smuggler'] ?? false;
                     }
                     //#endregion
         
