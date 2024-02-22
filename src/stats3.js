@@ -10,7 +10,7 @@ let StatPage = {
             <h2 class="accordion-header">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                     data-bs-target="#skills_GROUPNAME" aria-expanded="true" aria-controls="skills_GROUPNAME">
-                    SKILLHEADER
+                    SKILLHEADER - Target skill level <input type="number" onchange="StatPage.updateCategory('GROUPNAME', jQuery(this).val())" />
                 </button>
             </h2>
             <div id="skills_GROUPNAME" class="accordion-collapse collapse show">
@@ -149,6 +149,14 @@ let StatPage = {
         jQuery("#skillsAccordian").append(totalSkillHtml);
         StatPage.updateAll();
     },
+
+    updateCategory: (category, level) => {
+        let skills = StatPage.skills[category];
+        for (let i = 0; i < skills.length; i++) {
+            jQuery(`#${skills[i]}_skill_level`).val(level);
+        }
+        StatPage.updateAll();
+    }
 
     updateAll: () => {
         for (let key in StatPage.skills) {
