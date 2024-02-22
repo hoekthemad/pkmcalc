@@ -46,26 +46,12 @@ let convertIntToCurrency = (number) => {
     if (count == number.toString().length && count > 2 && count <= 4) theprice = "<span class='silver'>"+theprice;
     if (count == number.toString().length && count > 0 && count <= 2) theprice = "<span class='copper'>"+theprice;
 
-    console.log(theprice)
-
     let fullSplit = theprice.split("</span>");
-    console.log(fullSplit, `${fullSplit[0]}</span> ${fullSplit[1]}</span> ${fullSplit[2]}</span>`);
 
     if (fullSplit.length >= 3) thereturn = `${fullSplit[0]}</span>${fullSplit[1]}</span>${fullSplit[2]}</span>`;
     else if (fullSplit.length >= 2) thereturn = `${fullSplit[0]}</span>${fullSplit[1]}</span>`;
     else if (fullSplit.length >= 1) thereturn = `${fullSplit[0]}</span>`;
-
-    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?c)(.+?)/g, "$1<span class='copper'>$2</span>$3");
-    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?s)(.+?)/g, "$1<span class='silver'>$2</span>$3");
-    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?g)(.+?)/g, "$1<span class='gold'>$2</span>$3");
-    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?p)(.+?)/g, "$1<span class='platinum'>$2</span>$3");
-    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?e)(.+?)/g, "$1<span class='emerald'>$2</span>$3");
-    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?a)(.+?)/g, "$1<span class='amethyst'>$2</span>$3");
-    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?r)(.+?)/g, "$1<span class='ruby'>$2</span>$3");
-    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?t)(.+?)/g, "$1<span class='topaz'>$2</span>$3");
-    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?d)(.+?)/g, "$1<span class='diamond'>$2</span>$3");
-
-    //return theprice;
+    
     return thereturn;
 }
 
