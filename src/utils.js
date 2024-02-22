@@ -6,53 +6,54 @@ let convertIntToCurrency = (number) => {
     let theprice = "";
     for (let i = splitPrice.length; i > 0; i--) {
         if (0 == count) {
-            theprice = theprice+"c";
+            theprice = theprice+"c</span>";
         }
         else if (2 == count) {
-            theprice = "s "+theprice;
+            theprice = "s <span class='copper'>"+theprice;
         }
         else if (4 == count) {
-            theprice = "g "+theprice;
+            theprice = "g <span class='silver'>"+theprice;
         }
         else if (6 == count) {
-            theprice = "p "+theprice;
+            theprice = "p <span class='gold'>"+theprice;
         }
         else if (8 == count) {
-            theprice = "e "+theprice;
+            theprice = "e <span class='platinum'>"+theprice;
         }
         else if (10 == count) {
-            theprice = "a "+theprice;
+            theprice = "a <span class='emerald'>"+theprice;
         }
         else if (12 == count) {
-            theprice = "r "+theprice;
+            theprice = "r <span class='amethyst'>"+theprice;
         }
         else if (14 == count) {
-            theprice = "t "+theprice;
+            theprice = "t <span class='ruby'>"+theprice;
         }
         else if (16 == count) {
-            theprice = "d "+theprice;
+            theprice = "d <span class='topaz'>"+theprice;
         }
         theprice = splitPrice[i-1]+theprice;
         count++;
+        if (count == number.length && count >= 16) theprice = "<span class='diamond'>"+theprice;
     }
 
     //return theprice;
 
-    let fullSplit = theprice.split(" ");
+    let fullSplit = theprice.split("</span>");
 
-    if (fullSplit.length >= 3) thereturn = `${fullSplit[0]} ${fullSplit[1]} ${fullSplit[2]}`;
-    if (fullSplit.length >= 2) thereturn = `${fullSplit[0]} ${fullSplit[1]}`;
-    if (fullSplit.length >= 1) thereturn = `${fullSplit[0]}`;
+    if (fullSplit.length >= 3) thereturn = `${fullSplit[0]}</span> ${fullSplit[1]}</span> ${fullSplit[2]}</span>`;
+    if (fullSplit.length >= 2) thereturn = `${fullSplit[0]}</span> ${fullSplit[1]}</span>`;
+    if (fullSplit.length >= 1) thereturn = `${fullSplit[0]}</span>`;
 
-    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?c)(.+?)/g, "$1<span class='copper'>$2</span>$3");
-    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?s)(.+?)/g, "$1<span class='silver'>$2</span>$3");
-    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?g)(.+?)/g, "$1<span class='gold'>$2</span>$3");
-    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?p)(.+?)/g, "$1<span class='platinum'>$2</span>$3");
-    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?e)(.+?)/g, "$1<span class='emerald'>$2</span>$3");
-    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?a)(.+?)/g, "$1<span class='amethyst'>$2</span>$3");
-    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?r)(.+?)/g, "$1<span class='ruby'>$2</span>$3");
-    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?t)(.+?)/g, "$1<span class='topaz'>$2</span>$3");
-    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?d)(.+?)/g, "$1<span class='diamond'>$2</span>$3");
+    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?c)(.+?)/g, "$1<span class='copper'>$2</span>$3");
+    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?s)(.+?)/g, "$1<span class='silver'>$2</span>$3");
+    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?g)(.+?)/g, "$1<span class='gold'>$2</span>$3");
+    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?p)(.+?)/g, "$1<span class='platinum'>$2</span>$3");
+    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?e)(.+?)/g, "$1<span class='emerald'>$2</span>$3");
+    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?a)(.+?)/g, "$1<span class='amethyst'>$2</span>$3");
+    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?r)(.+?)/g, "$1<span class='ruby'>$2</span>$3");
+    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?t)(.+?)/g, "$1<span class='topaz'>$2</span>$3");
+    // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?d)(.+?)/g, "$1<span class='diamond'>$2</span>$3");
 
     return thereturn;
 }
