@@ -32,6 +32,12 @@
 
             jQuery(document).ready(function () {
                 StatPage.init();
+                
+                calcSP();
+                
+                jQuery("#shop_item").find("option").each(function () {
+                    if (jQuery(this).val() == "") jQuery(this).remove()
+                })
             })
         </script>
         <style>
@@ -55,6 +61,58 @@
         <div class="row align-items-start">
             <button class="btn btn-primary" onclick="importStats()">Import your stats</button><br />
             <p class="">Your current fanaticism: <span id="current_fana" class="fana">0</span> | Your total brands: <span id="total_brands" class="brands">0</span> | Your relic touches: <span id="relic_touches">0</span></p>
+            <br />
+            <p class="">Calculate shop price: 
+                <select id="shop_item" onchange="calcSP()">
+                    <optgroup label="Properties">
+                        <option value="properties.list.tent">Tent</option>
+                        <option value="properties.list.wooden_hut">Wooden Hut</option>
+                        <option value="properties.list.cottage">Cottage</option>
+                        <option value="properties.list.house">House</option>
+                        <option value="properties.list.large_house">Large House</option>
+                        <option value="properties.list.small_palace">Small Palace</option>
+                        <option value="properties.list.grand_palace">Grand Palace</option>
+                        <option value="properties.list.town_ruler">Town Ruler</option>
+                        <option value="properties.list.city_ruler">City Ruler</option>
+                        <option value="properties.list.kingdom_minister">Kingdom Minister</option>
+                        <option value="properties.list.heaven">Heaven</option>
+                    </optgroup>
+                    <optgroup label="Trinkets">
+                        <option value="trinkets.coin_pouch">Coin Pouch</option>
+                        <option value="trinkets.wooden_crown">Wooden Crown</option>
+                        <option value="trinkets.dumbells">Dumbells</option>
+                        <option value="trinkets.lucky_charm">Lucky Charm</option>
+                        <option value="trinkets.soulbound_locket">Soulbound Locket</option>
+                        <option value="trinkets.pendulum">Pendulum</option>
+                        <option value="trinkets.silver_ring">Silver Ring</option>
+                        <option value="trinkets.ceremony_knife">Ceremony Knife</option>
+                        <option value="trinkets.magic_pebbles">Magic Pebbles</option>
+                        <option value="trinkets.shiny_lamp">Shiny Lamp</option>
+                        <option value="trinkets.golden_hourglass">Golden Hourglass</option>
+                        <option value="trinkets.mystic_satchel">Mystic Satchel</option>
+                    </optgroup>
+                    <optgroup label="Weapons">
+                        <option value="weapons.small_shield">Small Sheild</option>
+                        <option value="weapons.war_paint">War Paint</option>
+                        <option value="weapons.short_bow">Short Bow</option>
+                        <option value="weapons.steel_longsword">Steel Longsword</option>
+                        <option value="weapons.knight_armor">Knight Armour</option>
+                        <option value="weapons.war_horse">War Horse</option>
+                        <option value="weapons.magic_sword">Magic Sword</option>
+                    </optgroup>
+                    <optgroup label="Servants">
+                        <option value="servants.squire">Squire</option>
+                        <option value="servants.bookeeper">Bookkeeper</option>
+                        <option value="servants.butler">Butler</option>
+                        <option value="servants.banker">Banker</option>
+                        <option value="servants.seer">Seer<option>
+                        <option value="servants.bodyguard">Bodyguard</option>
+                        <option value="servants.holyman">Holy Man<option>
+                        <option value="servants.smuggler">Smuggler</option>
+                    </optgroup>
+                </select>
+                <span id="shop_price">0</span>
+            </p>
             <div class="col-sm-12 col-md-12">
                 <h2>Skills</h2>
                 <hr />
