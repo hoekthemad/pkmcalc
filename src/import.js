@@ -3,7 +3,7 @@ let _import = {
         balance: 0,
         fanaticism: 0,
         brands: 0,
-        relictouches: 0,
+        relictouches: 1,
         boosts: {
             income: {
                 ad: Date.now(),
