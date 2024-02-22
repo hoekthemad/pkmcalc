@@ -27,14 +27,14 @@ let StatPage = {
                 <label for="SKILLNAME_skill_level" class="col-form-label">HTMLSKILLNAME: Skill Level</label>
             </div>
             <div class="col">
-                <input type="number" id="SKILLNAME_skill_level" class="form-control" value="1" onchange="StatPage.updateSkill('SKILLNAME')">
+                <input type="number" id="SKILLNAME_skill_level" class="form-control" value="1" onchange="StatPage.updateAll()">
             </div>
 
             <div class="col">
                 <label for="SKILLNAME_relic_level" class="col-form-label">Relic Level</label>
             </div>
             <div class="col">
-                <input type="number" id="SKILLNAME_relic_level" class="form-control" value="1" onchange="StatPage.updateSkill('SKILLNAME')">
+                <input type="number" id="SKILLNAME_relic_level" class="form-control" value="1" onchange="StatPage.updateAll()">
             </div>
 
             <div class="col">
