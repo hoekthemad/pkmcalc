@@ -269,7 +269,11 @@ let StatPage = {
         let prodEffect = 1*jQuery("#productivity_skill_effect").text();
         let dmEffect = 1*jQuery("#devoutmastery_skill_effect").text();
 
-        let income = 1 * faithEffect * prodEffect * dmEffect;
+        let cp = _import.stats.shop.trinkets.coinpouch == true ? 2.5 : 1;
+        let lc = _import.stats.shop.trinkets.luckycharm == true ? 3 : 1;
+        let bk = _import.stats.shop.servants.bookkeeper == true ? 1.5 : 1;
+
+        let income = 1 * faithEffect * prodEffect * dmEffect * cp * lp * bk;
         income = convertIntToCurrency(parseInt(income));
         jQuery("#income").html(income);
     }
