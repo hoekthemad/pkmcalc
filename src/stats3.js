@@ -149,6 +149,14 @@ let StatPage = {
         jQuery("#skillsAccordian").append(totalSkillHtml);
     },
 
+    updateAll: () => {
+        for (let key in StatPage.skills) {
+            for (let skillC = 0; skillC < StatPage.skills[key].length; skillC++) {
+                StatPage.updateSkill(StatPage.skills[key][skillC]);
+            }
+        }
+    },
+
     updateSkill: (skillname) => {
         // if (skillname == "faith" || skillname == "zeal" || skillname == "devotion" || skillname == "fervour") skillcategory = "theorder";
         // if (skillname == "productivity" || skillname == "concentration" || skillname == "bargaining" || skillname == "meditation") skillcategory = "fundamentals";
