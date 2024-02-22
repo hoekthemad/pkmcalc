@@ -266,7 +266,7 @@ let StatPage = {
 
     calcIncome: () => {
         let faithEffect = 1*jQuery("#faith_skill_effect").text();
-        let prodEfefct = 1*jQuery("#productivity_skill_effect").text();
+        let prodEffect = 1*jQuery("#productivity_skill_effect").text();
         let dmEffect = 1*jQuery("#devoutmastery_skill_effect").text();
 
         let income = 1 * faithEffect * prodEffect * dmEffect;
