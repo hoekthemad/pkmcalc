@@ -271,7 +271,7 @@ let StatPage = {
 
         let cp = _import.stats.shop.trinkets.coinpouch == true ? 2.5 : 1;
         let lc = _import.stats.shop.trinkets.luckycharm == true ? 3 : 1;
-        let bk = _import.stats.shop.servants.bookkeeper == true ? 1.5 : 1;
+        let bk = _import.stats.shop.servants.bookkeeper == true ? 2 : 1;
 
         let income = 1 * faithEffect * prodEffect * dmEffect * cp * lc * bk;
         income = convertIntToCurrency(parseInt(income));
