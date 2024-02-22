@@ -38,6 +38,7 @@ let convertIntToCurrency = (number) => {
     }
 
     //return theprice;
+    console.log(theprice)
 
     let fullSplit = theprice.split("</span>");
 
