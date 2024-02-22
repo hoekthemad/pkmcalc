@@ -2,9 +2,11 @@ let StatPage = {
     groupDisplayNames: [
         'The Order', 'Fundamentals', 'Combat', 'Magic', 'Dark Magic'
     ],
+
     groupHTMLNames: [
         'theorder', 'fundamentals', 'combat', 'magic', 'darkmagic'
     ],
+
     baseHTML: `
         <div class="accordion-item">
             <h2 class="accordion-header">
@@ -70,6 +72,38 @@ let StatPage = {
         magic: ['manacontrol', 'lifeessence', 'resilience', 'materialism'],
         darkmagic: ['fanaticaldevotion', 'ardentbelief', 'zealousconviction', 'extremepiety', 'absolutefaith', 'devoutmastery', 'doggedperseverance', 'blazingfervour']
     },
+
+    baseShopHTML: `
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#shop_GROUPNAME" aria-expanded="true" aria-controls="shop_GROUPNAME">
+                    SHOPHEADER
+                </button>
+            </h2>
+            <div id="shop_GROUPNAME" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    THESHOP
+                </div>
+            </div>
+        </div>
+    `,
+
+    shopHTML: `
+        <div class="row g-3 align-items-center">
+            <div class="col">
+                <label for="" class="col-form-label">HTMLSHOPNAME:</label>
+            </div>
+            <div class="col">
+                <span id="SHOPNAME_price">THEPRICE</span>
+            </div>
+            <div class="col">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="SHOPNAME_toggle" onchange="StatPage.updateAll()">
+                </div>
+            </div>
+        </div>
+    `,
 
     translateSkillName: (name) => {
         switch (name) {
@@ -163,8 +197,39 @@ let StatPage = {
             outerHTML = '';
         }
         jQuery("#skillsAccordian").append(totalSkillHtml);
+
+        let shopDisplayNames = [
+            'Properties', 'Trinkets', 'Weapons', 'Servants'
+        ];
+        let shopHTMLNames = [
+            'properties', 'trinkets', 'weapons', 'servants'
+        ];
+
+        let totalShopHTML = '';
+        for (let sCount = 0; sCount < shopDisplayNames.length; sCount++) {
+            let shopOuterHTML = StatPage.baseShopHTML;
+            shopOuterHTML = shopOuterHTML.replaceAll("SHOPHEADER", shopDisplayNames[sCount]);
+            shopOuterHTML = shopOuterHTML.replaceAll("GROUPNAME", shopHTMLNames[sCount]);
+            console.log(shopOuterHTML)
+            let shopHTML = '';
+
+            for (let shopitem in data[shopHTMLNames[sCount]]) {
+                let thisShopHTML = StatPage.shopHTML;
+
+                thisShopHTML = thisShopHTML.replaceAll("HTMLSHOPNAME", shopitem);
+                thisShopHTML = thisShopHTML.replaceAll("SHOPNAME", shopitem);
+                thisShopHTML = thisShopHTML.replaceAll("THEPRICE", convertIntToCurrency(data[shopHTMLNames[sCount]][shopitem].base_price));
+
+                shopHTML += thisShopHTML;
+            }
+
+            shopOuterHTML = shopOuterHTML.replaceAll("THESHOP", shopHTML);
+            totalShopHTML += shopOuterHTML;
+            shopOuterHTML = '';
+        }
+        jQuery("#shopAccordian").append(totalShopHTML);
+
         StatPage.updateAll();
-        jQuery("#income").html(convertIntToCurrency(1));
     },
 
     updateCategoryLevel: (category, level) => {
@@ -190,6 +255,7 @@ let StatPage = {
             }
         }
         StatPage.calcIncome();
+        calcSP();
     },
 
     calcIncome: () => {
