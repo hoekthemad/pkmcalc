@@ -36,7 +36,11 @@ let convertIntToCurrency = (number) => {
             count++;
         }
 
-        return theprice;
+        let fullSplit = theprice.split(" ");
+
+        if (fullSplit.length >= 3) return `${fullSplit[0]} ${fullSplit[1]} ${fullSplit[2]}`;
+        if (fullSplit.length >= 2) return `${fullSplit[0]} ${fullSplit[1]}`;
+        if (fullSplit.length >= 1) return `${fullSplit[0]}`;
 }
 
 let checkIsOrder = (skillname) => {
