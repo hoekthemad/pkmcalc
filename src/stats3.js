@@ -260,5 +260,16 @@ let StatPage = {
                 StatPage.updateSkill(skillNameList[i]);
             }
         }
+        jQuery("#income").html(convertIntToCurrency(StatPage.calcIncome()));
+    },
+
+    calcIncome: () => {
+        let faithEffect = 1*jQuery("#faith_skill_effect").text();
+        let prodEfefct = 1*jQuery("#productivity_skill_effect").text();
+        let dmEffect = 1*jQuery("#devoutmastery_skill_effect").text();
+
+        let income = 1 * faithEffect * prodEffect * dmEffect;
+        income = convertIntToCurrency(parseInt(income));
+        jQuery("#income").html(income);
     }
 }
