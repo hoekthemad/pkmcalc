@@ -22,22 +22,22 @@
     <script src="src/ds.js"></script>
     <script src="src/utils.js"></script>
     <script src="src/import.js"></script>
-    <!--<script src="src/stats2.js"></script>-->
-    <script src="src/stats3.js"></script>
+    <script src="src/skills.js"></script>
+    <script src="src/shop.js"></script>
     <script>
         let importStats = () => {
             let userID = prompt("Please enter your user ID");
             StatPage.import(userID);
+            let updateInterval = setInterval(() => {
+                StatPage.updateAll();
+                console.log("test");
+            }, 1000);
         }
 
         jQuery(document).ready(function () {
             StatPage.init();
 
             calcSP();
-
-            jQuery("#shop_item").find("option").each(function () {
-                if (jQuery(this).val() == "") jQuery(this).remove()
-            })
         })
     </script>
     <style>
@@ -191,11 +191,9 @@
                                 <option value="data.servants.bookeeper">Bookkeeper</option>
                                 <option value="data.servants.butler">Butler</option>
                                 <option value="data.servants.banker">Banker</option>
-                                <option value="data.servants.seer">Seer
-                                <option>
+                                <option value="data.servants.seer">Seer</option>
                                 <option value="data.servants.bodyguard">Bodyguard</option>
-                                <option value="data.servants.holyman">Holy Man
-                                <option>
+                                <option value="data.servants.holyman">Holy Man</option>
                                 <option value="data.servants.smuggler">Smuggler</option>
                             </optgroup>
                         </select>
