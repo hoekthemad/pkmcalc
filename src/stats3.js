@@ -8,12 +8,12 @@ let StatPage = {
     baseHTML: `
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#skills_GROUPNAME" aria-expanded="true" aria-controls="skills_GROUPNAME">
                     SKILLHEADER
                 </button>
             </h2>
-            <div id="skills_GROUPNAME" class="accordion-collapse collapse show">
+            <div id="skills_GROUPNAME" class="accordion-collapse collapse">
                 <div class="accordion-body">
                     <div class="row g-3 align-items-center">
                         <div class="col">
@@ -214,29 +214,15 @@ let StatPage = {
     },
 
     calcHappiness: () => {
-        let devotionEffect = 1*jQuery("#devotion_skill_effect").text();
-        let meditationEffect = 1*jQuery("#meditation_skill_effect").text();
-        let fdEffect = 1*jQuery("#fanaticaldevotion_skill_effect").text();
-        let epEffect = 1*jQuery("#extremepiety_skill_effect").text();
+        return calcHappiness
+    },
 
-        let tent = _import.stats.shop.properties.tent ? 1 : 1;
-        let woodenhut = _import.stats.shop.properties.woodenhut ? 2 : 1;
-        let cottage = _import.stats.shop.properties.cottage ? 3 : 1;
-        let house = _import.stats.shop.properties.house ? 4 : 1;
-        let largehouse = _import.stats.shop.properties.largehouse ? 5 : 1;
-        let smallpalace = _import.stats.shop.properties.smallpalace ? 6 : 1;
-        let grandpalace = _import.stats.shop.properties.grandpalace ? 7 : 1;
-        let townruler = _import.stats.shop.properties.townruler ? 8 : 1;
-        let cityruler = _import.stats.shop.properties.cityruler ? 9 : 1;
-        let kingdomminister = _import.stats.shop.properties.kingdomminister ? 10 : 1;
-        let heaven = _import.stats.shop.properties.heaven ? 11 : 1;
+    calcShopPrice: () => {
+        return calcShopPrice();
+    },
 
-        let ceremonyknife = _import.stats.shop.trinkets.ceremonyknife ? 1.5 : 1;
-        let butler = _import.stats.shop.servants.butler ? 1.5 : 1;
-        
-        let hpBoost = isBoostActive(_import.stats.boosts.happiness);
-
-        return 1 * devotionEffect * meditationEffect * fdEffect * epEffect * (hpBoost ? 2 : 1) * tent * woodenhut * cottage * house * largehouse * smallpalace * grandpalace * townruler * cityruler * kingdomminister * heaven * ceremonyknife * butler;
+    calcAllPrice: () => {
+        return calcAllPrice();
     },
 
     updateSkill: (skillname) => {

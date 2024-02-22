@@ -1,133 +1,190 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
-    <head>
-        <title>PK:M Skill Price Calculator</title>
+<head>
+    <title>PK:M Skill Price Calculator</title>
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/style.css" />
 
-        <script src="https://code.jquery.com/jquery-3.7.1.js"
-            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
-        <script src="src/ext.js" type="text/javascript"></script>
-        <script src="src/ds.js"></script>
-        <script src="src/utils.js"></script>
-        <script src="src/import.js"></script>
-        <!--<script src="src/stats2.js"></script>-->
-        <script src="src/stats3.js"></script>
-        <script>
-            let importStats = () => {
-                let userID = prompt("Please enter your user ID");
-                StatPage.import(userID);
-            }
+    <script src="src/ext.js" type="text/javascript"></script>
+    <script src="src/ds.js"></script>
+    <script src="src/utils.js"></script>
+    <script src="src/import.js"></script>
+    <!--<script src="src/stats2.js"></script>-->
+    <script src="src/stats3.js"></script>
+    <script>
+        let importStats = () => {
+            let userID = prompt("Please enter your user ID");
+            StatPage.import(userID);
+        }
 
-            jQuery(document).ready(function () {
-                StatPage.init();
-                
-                calcSP();
-                
-                jQuery("#shop_item").find("option").each(function () {
-                    if (jQuery(this).val() == "") jQuery(this).remove()
-                })
+        jQuery(document).ready(function () {
+            StatPage.init();
+
+            calcSP();
+
+            jQuery("#shop_item").find("option").each(function () {
+                if (jQuery(this).val() == "") jQuery(this).remove()
             })
-        </script>
-        <style>
-            .fana { color: #ff0000; }
-            .brands { color: #00aaff; }
+        })
+    </script>
+    <style>
+        .fana {
+            color: #ff0000;
+        }
 
-            .copper { color: #e65100; }
-            .silver { color: #9e9e9e; }
-            .gold { color: #fbc02d; }
-            .platinum { color: #00bcd4; }
-            .emerald { color: #00c853; }
-            .amethyst { color: #ba68c8; }
-            .ruby { color: #f44336; }
-            .topaz { color: #fff176; }
-            .diamond { color: #ffffff; }
-        </style>
-    </head>
+        .brands {
+            color: #00aaff;
+        }
 
-    <body class="container-fluid">
-        <br />
-        <div class="row align-items-start">
-            <button class="btn btn-primary" onclick="importStats()">Import your stats</button><br />
-            <p class="">
-                Fanaticism: <span id="current_fana" class="fana">0</span> | 
-                Total Brands: <span id="total_brands" class="brands">0</span> | 
-                Relic Discount: <span id="relic_touches">0</span> |
-                Income: <span id="income"></span>
-            </p>
-            <br />
-            <p class="">Calculate shop price: 
-                <select id="shop_item" onchange="calcSP()">
-                    <optgroup label="Properties">
-                        <option value="data.properties.tent">Tent</option>
-                        <option value="data.properties.wooden_hut">Wooden Hut</option>
-                        <option value="data.properties.cottage">Cottage</option>
-                        <option value="data.properties.house">House</option>
-                        <option value="data.properties.large_house">Large House</option>
-                        <option value="data.properties.small_palace">Small Palace</option>
-                        <option value="data.properties.grand_palace">Grand Palace</option>
-                        <option value="data.properties.town_ruler">Town Ruler</option>
-                        <option value="data.properties.city_ruler">City Ruler</option>
-                        <option value="data.properties.kingdom_minister">Kingdom Minister</option>
-                        <option value="data.properties.heaven">Heaven</option>
-                    </optgroup>
-                    <optgroup label="Trinkets">
-                        <option value="data.trinkets.coin_pouch">Coin Pouch</option>
-                        <option value="data.trinkets.wooden_crown">Wooden Crown</option>
-                        <option value="data.trinkets.dumbells">Dumbells</option>
-                        <option value="data.trinkets.lucky_charm">Lucky Charm</option>
-                        <option value="data.trinkets.soulbound_locket">Soulbound Locket</option>
-                        <option value="data.trinkets.pendulum">Pendulum</option>
-                        <option value="data.trinkets.silver_ring">Silver Ring</option>
-                        <option value="data.trinkets.ceremony_knife">Ceremony Knife</option>
-                        <option value="data.trinkets.magic_pebbles">Magic Pebbles</option>
-                        <option value="data.trinkets.shiny_lamp">Shiny Lamp</option>
-                        <option value="data.trinkets.golden_hourglass">Golden Hourglass</option>
-                        <option value="data.trinkets.mystic_satchel">Mystic Satchel</option>
-                    </optgroup>
-                    <optgroup label="Weapons">
-                        <option value="data.weapons.small_shield">Small Sheild</option>
-                        <option value="data.weapons.war_paint">War Paint</option>
-                        <option value="data.weapons.short_bow">Short Bow</option>
-                        <option value="data.weapons.steel_longsword">Steel Longsword</option>
-                        <option value="data.weapons.knight_armor">Knight Armour</option>
-                        <option value="data.weapons.war_horse">War Horse</option>
-                        <option value="data.weapons.magic_sword">Magic Sword</option>
-                    </optgroup>
-                    <optgroup label="Servants">
-                        <option value="data.servants.squire">Squire</option>
-                        <option value="data.servants.squire">Squire</option>
-                        <option value="data.servants.bookeeper">Bookkeeper</option>
-                        <option value="data.servants.butler">Butler</option>
-                        <option value="data.servants.banker">Banker</option>
-                        <option value="data.servants.seer">Seer<option>
-                        <option value="data.servants.bodyguard">Bodyguard</option>
-                        <option value="data.servants.holyman">Holy Man<option>
-                        <option value="data.servants.smuggler">Smuggler</option>
-                    </optgroup>
-                </select>
-                <span id="shop_price">0</span>
-            </p>
-            <div class="col-sm-12 col-md-12">
-                <h2>Skills</h2>
-                <hr />
-                <div class="accordion" id="skillsAccordian">
+        .copper {
+            color: #e65100;
+        }
+
+        .silver {
+            color: #9e9e9e;
+        }
+
+        .gold {
+            color: #fbc02d;
+        }
+
+        .platinum {
+            color: #00bcd4;
+        }
+
+        .emerald {
+            color: #00c853;
+        }
+
+        .amethyst {
+            color: #ba68c8;
+        }
+
+        .ruby {
+            color: #f44336;
+        }
+
+        .topaz {
+            color: #fff176;
+        }
+
+        .diamond {
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body class="container-fluid">
+    <br />
+    <div class="row align-items-start">
+        <button type="button" class="btn btn-primary" onclick="importStats()">Import your stats</button><br /><br />
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Talents
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Talents</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>1.5 All Price: <input type="checkbox" id="allprice"></p>
+                        <p>∞ Happiness Num: <input type="number" id="repeathappiness" value="0"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <p class="">
+            Fanaticism: <span id="current_fana" class="fana">0</span> |
+            Total Brands: <span id="total_brands" class="brands">0</span> |
+            Relic Discount: <span id="relic_touches">0</span> |
+            Income: <span id="income"></span>
+        </p>
         <br />
-    </body>
+        <p class="">Calculate shop price:
+            <select id="shop_item" onchange="calcSP()">
+                <optgroup label="Properties">
+                    <option value="data.properties.tent">Tent</option>
+                    <option value="data.properties.wooden_hut">Wooden Hut</option>
+                    <option value="data.properties.cottage">Cottage</option>
+                    <option value="data.properties.house">House</option>
+                    <option value="data.properties.large_house">Large House</option>
+                    <option value="data.properties.small_palace">Small Palace</option>
+                    <option value="data.properties.grand_palace">Grand Palace</option>
+                    <option value="data.properties.town_ruler">Town Ruler</option>
+                    <option value="data.properties.city_ruler">City Ruler</option>
+                    <option value="data.properties.kingdom_minister">Kingdom Minister</option>
+                    <option value="data.properties.heaven">Heaven</option>
+                </optgroup>
+                <optgroup label="Trinkets">
+                    <option value="data.trinkets.coin_pouch">Coin Pouch</option>
+                    <option value="data.trinkets.wooden_crown">Wooden Crown</option>
+                    <option value="data.trinkets.dumbells">Dumbells</option>
+                    <option value="data.trinkets.lucky_charm">Lucky Charm</option>
+                    <option value="data.trinkets.soulbound_locket">Soulbound Locket</option>
+                    <option value="data.trinkets.pendulum">Pendulum</option>
+                    <option value="data.trinkets.silver_ring">Silver Ring</option>
+                    <option value="data.trinkets.ceremony_knife">Ceremony Knife</option>
+                    <option value="data.trinkets.magic_pebbles">Magic Pebbles</option>
+                    <option value="data.trinkets.shiny_lamp">Shiny Lamp</option>
+                    <option value="data.trinkets.golden_hourglass">Golden Hourglass</option>
+                    <option value="data.trinkets.mystic_satchel">Mystic Satchel</option>
+                </optgroup>
+                <optgroup label="Weapons">
+                    <option value="data.weapons.small_shield">Small Sheild</option>
+                    <option value="data.weapons.war_paint">War Paint</option>
+                    <option value="data.weapons.short_bow">Short Bow</option>
+                    <option value="data.weapons.steel_longsword">Steel Longsword</option>
+                    <option value="data.weapons.knight_armor">Knight Armour</option>
+                    <option value="data.weapons.war_horse">War Horse</option>
+                    <option value="data.weapons.magic_sword">Magic Sword</option>
+                </optgroup>
+                <optgroup label="Servants">
+                    <option value="data.servants.squire">Squire</option>
+                    <option value="data.servants.squire">Squire</option>
+                    <option value="data.servants.bookeeper">Bookkeeper</option>
+                    <option value="data.servants.butler">Butler</option>
+                    <option value="data.servants.banker">Banker</option>
+                    <option value="data.servants.seer">Seer
+                    <option>
+                    <option value="data.servants.bodyguard">Bodyguard</option>
+                    <option value="data.servants.holyman">Holy Man
+                    <option>
+                    <option value="data.servants.smuggler">Smuggler</option>
+                </optgroup>
+            </select>
+            <span id="shop_price">0</span>
+        </p>
+        <div class="col-sm-12 col-md-12">
+            <h2>Skills</h2>
+            <hr />
+            <div class="accordion" id="skillsAccordian">
+            </div>
+        </div>
+    </div>
+    <br />
+</body>
 
 </html>
-

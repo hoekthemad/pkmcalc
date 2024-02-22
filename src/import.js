@@ -74,7 +74,7 @@ let _import = {
                 townruler:          false,
                 cityruler:          false,
                 kingdomminister:    false,
-                heaven:    false,
+                heaven:             false,
             },
             trinkets: {
                 coinpouch:          false,

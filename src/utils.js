@@ -88,13 +88,13 @@ let getShopPrice = (item, stats) => {
 
     //let relicTouches = 1 + (2*(stats.relictouches > 5 ? 5 : stats.relictouches));
     let fana_discount = Math.sqrt(stats.fanaticism/10)+1;
-    let allPriceDiscount = stats.playerStats.allprices;
-    let shopPriceDiscount = stats.playerStats.shopprices;
+    let allPriceDiscount = calcAllPrice();
+    let shopPriceDiscount = calcShopPrice();
     if (1 == stats.relictouches && fana_discount <= 1 && (1*allPriceDiscount) == 1 && (1*shopPriceDiscount)) {
         return BigInt(base_price);
     }
     else {
-        return Math.round(BigInt(base_price) / stats.relictouches / (fana_discount < 1 ? 1 : (1*fana_discount)) / (1*allPriceDiscount) / (1*shopPriceDiscount));
+        return Math.round(number(base_price) / stats.relictouches / (fana_discount < 1 ? 1 : (1*fana_discount)) / (1*allPriceDiscount) / (1*shopPriceDiscount));
     }
 }
 
@@ -104,7 +104,66 @@ let calcSP = () => {
     jQuery("#shop_price").html(shopPrice);
 }
 
-isBoostActive = (datetime) => {
+let isBoostActive = (datetime) => {
     let now = Date.now();
     return now < datetime;
+}
+
+let calcHappiness = () => {
+    let devotionEffect = 1*jQuery("#devotion_skill_effect").text();
+    let meditationEffect = 1*jQuery("#meditation_skill_effect").text();
+    let fdEffect = 1*jQuery("#fanaticaldevotion_skill_effect").text();
+    let epEffect = 1*jQuery("#extremepiety_skill_effect").text();
+
+    let tent = _import.stats.shop.properties.tent ? 1 : 1;
+    let woodenhut = _import.stats.shop.properties.woodenhut ? 2 : 1;
+    let cottage = _import.stats.shop.properties.cottage ? 3 : 1;
+    let house = _import.stats.shop.properties.house ? 4 : 1;
+    let largehouse = _import.stats.shop.properties.largehouse ? 5 : 1;
+    let smallpalace = _import.stats.shop.properties.smallpalace ? 6 : 1;
+    let grandpalace = _import.stats.shop.properties.grandpalace ? 7 : 1;
+    let townruler = _import.stats.shop.properties.townruler ? 8 : 1;
+    let cityruler = _import.stats.shop.properties.cityruler ? 9 : 1;
+    let kingdomminister = _import.stats.shop.properties.kingdomminister ? 10 : 1;
+    let heaven = _import.stats.shop.properties.heaven ? 11 : 1;
+
+    let ceremonyknife = _import.stats.shop.trinkets.ceremonyknife ? 1.5 : 1;
+    let butler = _import.stats.shop.servants.butler ? 1.5 : 1;
+    
+    let hpBoost = isBoostActive(_import.stats.boosts.happiness);
+
+    let ret = 1 * devotionEffect * meditationEffect * fdEffect * epEffect * (hpBoost ? 2 : 1) * tent * woodenhut * cottage * house * largehouse * smallpalace * grandpalace * townruler * cityruler * kingdomminister * heaven * ceremonyknife * butler;
+    return 1*ret.toFixed(2);
+}
+
+let calcShopPrice = () => {
+    let fervor = 1*jQuery("#fervour_skill_effect").text();
+    let dp = 1*jQuery("#doggedperseverance_skill_effect").text();
+
+    let allprice = jQuery("#allprice").prop('checked') ? 1.5 : 1;
+
+    let woodencrown = _import.stats.shop.trinkets.woodencrown ? 2 : 1;
+    let magicpebbles = _import.stats.shop.trinkets.magicpebbles ? 1.5 : 1;
+    let magicsword = _import.stats.shop.weapons.magicsword ? 1.5 : 1;
+    let squire = _import.stats.shop.servants.squire ? 1.5 : 1;
+    let holyman = _import.stats.shop.servants.holyman ? 1.5 : 1;
+
+    let ret = 1 * fervor * dp * woodencrown * magicpebbles * magicsword * squire * holyman * allprice;
+    return 1*ret.toFixed(2);
+}
+
+let calcAllPrice = () => {
+    let zeal = 1*jQuery("#zeal_skill_effect").text();
+    let bargaining = 1*jQuery("#bargaining_skill_effect").text();
+    let manacontrol = 1*jQuery("#manacontrol_skill_effect").text();
+    let zealousconviction = 1*jQuery("#zealousconviction_skill_effect").text();
+
+    let allprice = jQuery("#allprice").prop('checked') ? 1.5 : 1;
+
+    let silverring = _import.stats.shop.trinkets.silverring ? 2 : 1;
+    let shinylamp = _import.stats.shop.trinkets.shinylamp ? 2 : 1;
+    let banker = _import.stats.shop.servants.banker ? 2 : 1;
+
+    let ret = 1 * zeal * bargaining * manacontrol * zealousconviction * allprice * silverring * shinylamp * banker;
+    return 1*ret.toFixed(2);
 }
