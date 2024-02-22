@@ -54,7 +54,7 @@ let convertIntToCurrency = (number) => {
     retval = retval + thereturn.replace(/([0-9]{1,2}t)/g, "<span class='topaz'>$1</span>");
     retval = retval + thereturn.replace(/([0-9]{1,2}d)/g, "<span class='diamond'>$1</span>");
 
-    return thereturn;
+    return retval;
 }
 
 let checkIsOrder = (skillname) => {
