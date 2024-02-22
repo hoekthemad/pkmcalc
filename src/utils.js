@@ -49,7 +49,7 @@ let convertIntToCurrency = (number) => {
     console.log(theprice)
 
     let fullSplit = theprice.split("</span>");
-    console.log(fullSplit);
+    console.log(fullSplit, `${fullSplit[0]}</span> ${fullSplit[1]}</span> ${fullSplit[2]}</span>`);
 
     if (fullSplit.length >= 3) thereturn = `${fullSplit[0]}</span> ${fullSplit[1]}</span> ${fullSplit[2]}</span>`;
     if (fullSplit.length >= 2) thereturn = `${fullSplit[0]}</span> ${fullSplit[1]}</span>`;
@@ -65,6 +65,7 @@ let convertIntToCurrency = (number) => {
     // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?t)(.+?)/g, "$1<span class='topaz'>$2</span>$3");
     // thereturn = thereturn.replaceAll(/(.+?)([0-9]+?d)(.+?)/g, "$1<span class='diamond'>$2</span>$3");
 
+    return theprice;
     return thereturn;
 }
 
