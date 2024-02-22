@@ -164,6 +164,7 @@ let StatPage = {
         }
         jQuery("#skillsAccordian").append(totalSkillHtml);
         StatPage.updateAll();
+        jQuery("#income").html(convertIntToCurrency(1));
     },
 
     updateCategoryLevel: (category, level) => {
