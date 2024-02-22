@@ -44,15 +44,15 @@ let convertIntToCurrency = (number) => {
     if (fullSplit.length >= 2) thereturn = `${fullSplit[0]} ${fullSplit[1]}`;
     if (fullSplit.length >= 1) thereturn = `${fullSplit[0]}`;
 
-    thereturn = thereturn.replace(/(.+?)([0-9]+?c)(.+?)/g, "$1<span class='copper'>$2</span>$3");
-    thereturn = thereturn.replace(/(.+?)([0-9]+?s)(.+?)/g, "$1<span class='silver'>$2</span>$3");
-    thereturn = thereturn.replace(/(.+?)([0-9]+?g)(.+?)/g, "$1<span class='gold'>$2</span>$3");
-    thereturn = thereturn.replace(/(.+?)([0-9]+?p)(.+?)/g, "$1<span class='platinum'>$2</span>$3");
-    thereturn = thereturn.replace(/(.+?)([0-9]+?e)(.+?)/g, "$1<span class='emerald'>$2</span>$3");
-    thereturn = thereturn.replace(/(.+?)([0-9]+?a)(.+?)/g, "$1<span class='amethyst'>$2</span>$3");
-    thereturn = thereturn.replace(/(.+?)([0-9]+?r)(.+?)/g, "$1<span class='ruby'>$2</span>$3");
-    thereturn = thereturn.replace(/(.+?)([0-9]+?t)(.+?)/g, "$1<span class='topaz'>$2</span>$3");
-    thereturn = thereturn.replace(/(.+?)([0-9]+?d)(.+?)/g, "$1<span class='diamond'>$2</span>$3");
+    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?c)(.+?)/g, "$1<span class='copper'>$2</span>$3");
+    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?s)(.+?)/g, "$1<span class='silver'>$2</span>$3");
+    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?g)(.+?)/g, "$1<span class='gold'>$2</span>$3");
+    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?p)(.+?)/g, "$1<span class='platinum'>$2</span>$3");
+    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?e)(.+?)/g, "$1<span class='emerald'>$2</span>$3");
+    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?a)(.+?)/g, "$1<span class='amethyst'>$2</span>$3");
+    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?r)(.+?)/g, "$1<span class='ruby'>$2</span>$3");
+    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?t)(.+?)/g, "$1<span class='topaz'>$2</span>$3");
+    thereturn = thereturn.replaceAll(/(.+?)([0-9]+?d)(.+?)/g, "$1<span class='diamond'>$2</span>$3");
 
     return thereturn;
 }
