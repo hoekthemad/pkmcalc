@@ -273,7 +273,7 @@ let StatPage = {
         let lc = _import.stats.shop.trinkets.luckycharm == true ? 3 : 1;
         let bk = _import.stats.shop.servants.bookkeeper == true ? 1.5 : 1;
 
-        let income = 1 * faithEffect * prodEffect * dmEffect * cp * lp * bk;
+        let income = 1 * faithEffect * prodEffect * dmEffect * cp * lc * bk;
         income = convertIntToCurrency(parseInt(income));
         jQuery("#income").html(income);
     }
