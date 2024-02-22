@@ -10,11 +10,12 @@ let StatPage = {
             <h2 class="accordion-header">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                     data-bs-target="#skills_GROUPNAME" aria-expanded="true" aria-controls="skills_GROUPNAME">
-                    SKILLHEADER - Target skill level <input type="number" onchange="StatPage.updateCategory('GROUPNAME', jQuery(this).val())" />
+                    SKILLHEADER
                 </button>
             </h2>
             <div id="skills_GROUPNAME" class="accordion-collapse collapse show">
                 <div class="accordion-body">
+                    Target skill level <input type="number" onchange="StatPage.updateCategory('GROUPNAME', jQuery(this).val())" /><br />
                     THESKILLS
                 </div>
             </div>
