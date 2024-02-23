@@ -417,7 +417,8 @@ let StatPage = {
             for (let [item, values] of Object.entries(items)) {
                 let itemName = item.replace("_", "");
                 if (itemName == "dumbells") itemName = "dumbbells";
-                if (itemName == "bookeeper") itemName = "bookkeeper";
+                if (itemName == "bookkeeper") itemName = "bookeeper";
+                
                 jQuery(`#${item}_toggle`).prop("checked", _import.stats.shop[groupName][itemName] ? "checked" : "")
             }
         }
