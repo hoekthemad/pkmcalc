@@ -419,9 +419,18 @@ let StatPage = {
                 if (itemName == "dumbells") itemName = "dumbbells";
                 if (itemName == "bookkeeper") itemName = "bookeeper";
 
-                if (item.match(/king/)) item = "kingdom_minister";
-                if (item.match(/book/)) item = "bookeeper";
-                if (item.match(/holy/)) item = "holyman";
+                if (item.match(/king/))  {
+                    item = "kingdom_minister";
+                    itemName = "kingdom_minister";
+                }
+                if (item.match(/book/)) {
+                    item = "bookeeper";
+                    itemName = "bookkeeper";
+                }
+                if (item.match(/holy/)) {
+                    item = "holyman";
+                    itemName = "holyman";
+                }
                 
                 jQuery(`#${item}_toggle`).prop("checked", _import.stats.shop[groupName][itemName] ? "checked" : "")
             }
