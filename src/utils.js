@@ -132,20 +132,20 @@ let calcHappiness = () => {
     let fdEffect = 1*jQuery("#fanaticaldevotion_skill_effect").text();
     let epEffect = 1*jQuery("#extremepiety_skill_effect").text();
 
-    let tent = _import.stats.shop.properties.tent ? 1 : 1;
-    let woodenhut = _import.stats.shop.properties.woodenhut ? 2 : 1;
-    let cottage = _import.stats.shop.properties.cottage ? 3 : 1;
-    let house = _import.stats.shop.properties.house ? 4 : 1;
-    let largehouse = _import.stats.shop.properties.largehouse ? 5 : 1;
-    let smallpalace = _import.stats.shop.properties.smallpalace ? 6 : 1;
-    let grandpalace = _import.stats.shop.properties.grandpalace ? 7 : 1;
-    let townruler = _import.stats.shop.properties.townruler ? 8 : 1;
-    let cityruler = _import.stats.shop.properties.cityruler ? 9 : 1;
-    let kingdomminister = _import.stats.shop.properties.kingdomminister ? 10 : 1;
-    let heaven = _import.stats.shop.properties.heaven ? 11 : 1;
+    let tent = jQuery("#temt_toggle").prop('checked') ? 1 : 1;
+    let woodenhut = jQuery("#wooden_hut_toggle").prop('checked') ? 2 : 1;
+    let cottage = jQuery("#cottage_toggle").prop('checked') ? 3 : 1;
+    let house = jQuery("#house_toggle").prop('checked') ? 4 : 1;
+    let largehouse = jQuery("#large_house_toggle").prop('checked') ? 5 : 1;
+    let smallpalace = jQuery("#small_palace_toggle").prop('checked') ? 6 : 1;
+    let grandpalace = jQuery("#grand_palace_toggle").prop('checked') ? 7 : 1;
+    let townruler = jQuery("#town_ruler_toggle").prop('checked') ? 8 : 1;
+    let cityruler = jQuery("#city_ruler_toggle").prop('checked') ? 9 : 1;
+    let kingdomminister = jQuery("#kingdom_minister_toggle").prop('checked') ? 10 : 1;
+    let heaven = jQuery("#heaven_toggle").prop('checked') ? 11 : 1;
 
-    let ceremonyknife = _import.stats.shop.trinkets.ceremonyknife ? 1.5 : 1;
-    let butler = _import.stats.shop.servants.butler ? 1.5 : 1;
+    let ceremonyknife = jQuery("#ceremony_knife_toggle").prop('checked') ? 1.5 : 1;
+    let butler = jQuery("#butler_toggle").prop('checked') ? 1.5 : 1;
     
     let hpBoost = isBoostActive(_import.stats.boosts.happiness);
 
@@ -165,11 +165,11 @@ let calcShopPrice = () => {
     let allprice = jQuery("#allprice").prop('checked') ? 1.5 : 1;
     let shopprice = jQuery("#halfshop").prop('checked') ? 2 : 1;
 
-    let woodencrown = _import.stats.shop.trinkets.woodencrown ? 2 : 1;
-    let magicpebbles = _import.stats.shop.trinkets.magicpebbles ? 1.5 : 1;
-    let magicsword = _import.stats.shop.weapons.magicsword ? 1.5 : 1;
-    let squire = _import.stats.shop.servants.squire ? 1.5 : 1;
-    let holyman = _import.stats.shop.servants.holyman ? 1.5 : 1;
+    let woodencrown = jQuery("#wooden_crown_toggle").prop('checked') ? 2 : 1;
+    let magicpebbles = jQuery("#magic_pebbles_toggle").prop('checked') ? 1.5 : 1;
+    let magicsword = jQuery("#magic_sword_toggle").prop('checked') ? 1.5 : 1;
+    let squire = jQuery("#squire_toggle").prop('checked') ? 1.5 : 1;
+    let holyman = jQuery("#holyman_toggle").prop('checked') ? 1.5 : 1;
 
     let ret = 1 * fervor * dp * woodencrown * magicpebbles * magicsword * squire * holyman * allprice * shopprice;
     return 1*ret.toFixed(2);
@@ -183,9 +183,9 @@ let calcAllPrice = () => {
 
     let allprice = jQuery("#allprice").prop('checked') ? 1.5 : 1;
 
-    let silverring = _import.stats.shop.trinkets.silverring ? 2 : 1;
-    let shinylamp = _import.stats.shop.trinkets.shinylamp ? 2 : 1;
-    let banker = _import.stats.shop.servants.banker ? 2 : 1;
+    let silverring = jQuery("#silver_ring_toggle").prop('checked') ? 2 : 1;
+    let shinylamp = jQuery("#shiny_lamp_toggle").prop('checked') ? 2 : 1;
+    let banker = jQuery("#banker_toggle").prop('checked') ? 2 : 1;
 
     let ret = 1 * zeal * bargaining * manacontrol * zealousconviction * allprice * silverring * shinylamp * banker;
     return 1*ret.toFixed(2);
