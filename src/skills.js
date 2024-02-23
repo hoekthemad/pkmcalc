@@ -265,7 +265,6 @@ let StatPage = {
             let shopOuterHTML = StatPage.baseShopHTML;
             shopOuterHTML = shopOuterHTML.replaceAll("SHOPHEADER", shopDisplayNames[sCount]);
             shopOuterHTML = shopOuterHTML.replaceAll("GROUPNAME", shopHTMLNames[sCount]);
-            console.log(shopOuterHTML)
             let shopHTML = '';
 
             for (let shopitem in data[shopHTMLNames[sCount]]) {
