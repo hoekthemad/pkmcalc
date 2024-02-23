@@ -313,7 +313,6 @@ let StatPage = {
             for (let [group, items] of Object.entries(data)) {
                 for (let [item, values] of Object.entries(items)) {
                     if (group == "skillEffects") continue;
-                    console.log(values);
                     calculateSP(data[group][item], values.display.toLowerCase().replace(" ", "_"));
                 }
             }
@@ -419,7 +418,6 @@ let StatPage = {
                 let itemName = item.replace("_", "");
                 if (itemName == "dumbells") itemName = "dumbbells";
                 if (itemName == "bookeeper") itemName = "bookkeeper";
-                console.log(itemName, _import.stats.shop[groupName][itemName]);
                 jQuery(`#${item}_toggle`).prop("checked", _import.stats.shop[groupName][itemName] ? "checked" : "")
             }
         }
