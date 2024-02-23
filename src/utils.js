@@ -222,6 +222,15 @@ let updateFana = () => {
     StatPage.updateAll();
 }
 
+let updateBrands = () => {
+    let b = jQuery("#updateBrands").val();
+    jQuery("#total_brands").text(b);
+}
+
+let getBrandBonus = () => {
+    
+}
+
 function nFormatter(num, digits) {
   const lookup = [
     { value: 1, symbol: "" },

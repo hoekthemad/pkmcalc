@@ -395,7 +395,7 @@ let StatPage = {
                 data.skillEffects[skillcategory][skillname], 
                 jQuery('#'+skillname+'_skill_level').val(), 
                 (
-                    1*$('#concentration_skill_effect').text() + 1*playerstats.fosbonus + 1*playerstats.brandbonus + 1*playerstats.tablebonus
+                    1*$('#concentration_skill_effect').text() + 1*playerstats.fosbonus + getBrandBonus() + 1*playerstats.tablebonus
                 ), 
                 skillname == "concentration" ? true : false
             )
