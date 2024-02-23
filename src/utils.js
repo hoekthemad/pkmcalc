@@ -165,7 +165,7 @@ let calcShopPrice = () => {
     let fervor = 1*jQuery("#fervour_skill_effect").text();
     let dp = 1*jQuery("#doggedperseverance_skill_effect").text();
 
-    let allprice = jQuery("#allprice").prop('checked') ? 1.5 : 1;
+    let allprice = 1;//jQuery("#allprice").prop('checked') ? 1.5 : 1;
     let shopprice = jQuery("#halfshop").prop('checked') ? 2 : 1;
 
     let woodencrown = jQuery("#wooden_crown_toggle").prop('checked') ? 2 : 1;
