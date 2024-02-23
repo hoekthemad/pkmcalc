@@ -6,60 +6,60 @@ let convertIntToCurrency = (number) => {
     let theprice = "";
     for (let i = splitPrice.length; i > 0; i--) {
         if (0 == count) {
-            theprice = theprice+"c</span>";
+            theprice = theprice + "c</span>";
         }
         else if (2 == count) {
-            theprice = "s</span> <span class='copper'>"+theprice;
+            theprice = "s</span> <span class='copper'>" + theprice;
         }
         else if (4 == count) {
-            theprice = "g</span> <span class='silver'>"+theprice;
+            theprice = "g</span> <span class='silver'>" + theprice;
         }
         else if (6 == count) {
-            theprice = "p</span> <span class='gold'>"+theprice;
+            theprice = "p</span> <span class='gold'>" + theprice;
         }
         else if (8 == count) {
-            theprice = "e</span> <span class='platinum'>"+theprice;
+            theprice = "e</span> <span class='platinum'>" + theprice;
         }
         else if (10 == count) {
-            theprice = "a</span> <span class='emerald'>"+theprice;
+            theprice = "a</span> <span class='emerald'>" + theprice;
         }
         else if (12 == count) {
-            theprice = "r</span> <span class='amethyst'>"+theprice;
+            theprice = "r</span> <span class='amethyst'>" + theprice;
         }
         else if (14 == count) {
-            theprice = "t</span> <span class='ruby'>"+theprice;
+            theprice = "t</span> <span class='ruby'>" + theprice;
         }
         else if (16 == count) {
-            theprice = "d</span> <span class='topaz'>"+theprice;
+            theprice = "d</span> <span class='topaz'>" + theprice;
         }
-        theprice = splitPrice[i-1]+theprice;
+        theprice = splitPrice[i - 1] + theprice;
         count++;
     }
 
-    if (count == number.toString().length && count > 16) theprice = "<span class='diamond'>"+theprice;
-    if (count == number.toString().length && count > 14 && count <= 16) theprice = "<span class='topaz'>"+theprice;
-    if (count == number.toString().length && count > 12 && count <= 14) theprice = "<span class='ruby'>"+theprice;
-    if (count == number.toString().length && count > 10 && count <= 12) theprice = "<span class='amethyst'>"+theprice;
-    if (count == number.toString().length && count > 8 && count <= 10) theprice = "<span class='emerald'>"+theprice;
-    if (count == number.toString().length && count > 6 && count <= 8) theprice = "<span class='platinum'>"+theprice;
-    if (count == number.toString().length && count > 4 && count <= 6) theprice = "<span class='gold'>"+theprice;
-    if (count == number.toString().length && count > 2 && count <= 4) theprice = "<span class='silver'>"+theprice;
-    if (count == number.toString().length && count > 0 && count <= 2) theprice = "<span class='copper'>"+theprice;
+    if (count == number.toString().length && count > 16) theprice = "<span class='diamond'>" + theprice;
+    if (count == number.toString().length && count > 14 && count <= 16) theprice = "<span class='topaz'>" + theprice;
+    if (count == number.toString().length && count > 12 && count <= 14) theprice = "<span class='ruby'>" + theprice;
+    if (count == number.toString().length && count > 10 && count <= 12) theprice = "<span class='amethyst'>" + theprice;
+    if (count == number.toString().length && count > 8 && count <= 10) theprice = "<span class='emerald'>" + theprice;
+    if (count == number.toString().length && count > 6 && count <= 8) theprice = "<span class='platinum'>" + theprice;
+    if (count == number.toString().length && count > 4 && count <= 6) theprice = "<span class='gold'>" + theprice;
+    if (count == number.toString().length && count > 2 && count <= 4) theprice = "<span class='silver'>" + theprice;
+    if (count == number.toString().length && count > 0 && count <= 2) theprice = "<span class='copper'>" + theprice;
 
     let fullSplit = theprice.split("</span>");
 
     if (fullSplit.length >= 3) thereturn = `${fullSplit[0]}</span>${fullSplit[1]}</span>${fullSplit[2]}</span>`;
     else if (fullSplit.length >= 2) thereturn = `${fullSplit[0]}</span>${fullSplit[1]}</span>`;
     else if (fullSplit.length >= 1) thereturn = `${fullSplit[0]}</span>`;
-    
+
     return thereturn;
 }
 
 let checkIsOrder = (skillname) => {
     if (
-        "faith" == skillname || 
-        "zeal" == skillname || 
-        "devotion" == skillname || 
+        "faith" == skillname ||
+        "zeal" == skillname ||
+        "devotion" == skillname ||
         "fervour" == skillname
     ) {
         return true;
@@ -69,12 +69,12 @@ let checkIsOrder = (skillname) => {
 
 let checkIsDM = (skillname) => {
     if (
-        "fanatical devotion" == skillname || 
-        "ardent belief" == skillname || 
-        "zealous conviction" == skillname || 
-        "extreme piety" == skillname || 
-        "absolute faith" == skillname || 
-        "devout mastery" == skillname || 
+        "fanatical devotion" == skillname ||
+        "ardent belief" == skillname ||
+        "zealous conviction" == skillname ||
+        "extreme piety" == skillname ||
+        "absolute faith" == skillname ||
+        "devout mastery" == skillname ||
         "dogged perseverance" == skillname
     ) {
         return true;
@@ -87,14 +87,14 @@ let getShopPrice = (item, stats) => {
     if (0 == base_price) return 0;
 
     //let relicTouches = 1 + (2*(stats.relictouches > 5 ? 5 : stats.relictouches));
-    let fana_discount = Math.sqrt((1*jQuery("#current_fana").text().replaceAll(",", ""))/10)+1;
+    let fana_discount = Math.sqrt((1 * jQuery("#current_fana").text().replaceAll(",", "")) / 10) + 1;
     let allPriceDiscount = calcAllPrice();
     let shopPriceDiscount = calcShopPrice();
-    if (1 == stats.relictouches && fana_discount <= 1 && (1*allPriceDiscount) == 1 && (1*shopPriceDiscount)) {
+    if (1 == stats.relictouches && fana_discount <= 1 && (1 * allPriceDiscount) == 1 && (1 * shopPriceDiscount)) {
         return BigInt(base_price);
     }
     else {
-        return Math.round(Number(base_price) / stats.relictouches / (fana_discount < 1 ? 1 : (1*fana_discount)) / (1*allPriceDiscount) / (1*shopPriceDiscount));
+        return Math.round(Number(base_price) / stats.relictouches / (fana_discount < 1 ? 1 : (1 * fana_discount)) / (1 * allPriceDiscount) / (1 * shopPriceDiscount));
     }
 }
 
@@ -120,13 +120,12 @@ let isBoostActive = (datetime) => {
 let getRepeatHappiness = () => {
     let count = 1*jQuery("#repeathappiness").val();
     if (count >= 1) {
-        retval = Math.exp(1.01, count);
-        retval = (1.01^count)-1;
+        retval = Math.pow(1.01, count);
     }
     else {
-        retval = 0;
+        retval = 1;
     }
-    return 1*retval.toFixed(2);
+    return 1*retval;
 }
 
 let calcHappiness = () => {
@@ -161,12 +160,12 @@ let calcHappiness = () => {
         grandpalace * townruler * cityruler * kingdomminister * 
         heaven * ceremonyknife * butler * 
         threexhappi;
-    return 1*ret.toFixed(2);
+    return 1*ret;
 }
 
 let calcShopPrice = () => {
-    let fervor = 1*jQuery("#fervour_skill_effect").text();
-    let dp = 1*jQuery("#doggedperseverance_skill_effect").text();
+    let fervor = 1 * jQuery("#fervour_skill_effect").text();
+    let dp = 1 * jQuery("#doggedperseverance_skill_effect").text();
 
     let allprice = 1;//jQuery("#allprice").prop('checked') ? 1.5 : 1;
     let shopprice = jQuery("#halfshop").prop('checked') ? 2 : 1;
@@ -178,14 +177,14 @@ let calcShopPrice = () => {
     let holyman = jQuery("#holyman_toggle").prop('checked') ? 1.5 : 1;
 
     let ret = 1 * fervor * dp * woodencrown * magicpebbles * magicsword * squire * holyman * allprice * shopprice;
-    return 1*ret.toFixed(2);
+    return 1 * ret.toFixed(2);
 }
 
 let calcAllPrice = () => {
-    let zeal = 1*jQuery("#zeal_skill_effect").text();
-    let bargaining = 1*jQuery("#bargaining_skill_effect").text();
-    let manacontrol = 1*jQuery("#manacontrol_skill_effect").text();
-    let zealousconviction = 1*jQuery("#zealousconviction_skill_effect").text();
+    let zeal = 1 * jQuery("#zeal_skill_effect").text();
+    let bargaining = 1 * jQuery("#bargaining_skill_effect").text();
+    let manacontrol = 1 * jQuery("#manacontrol_skill_effect").text();
+    let zealousconviction = 1 * jQuery("#zealousconviction_skill_effect").text();
 
     let allprice = jQuery("#allprice").prop('checked') ? 1.5 : 1;
 
@@ -194,7 +193,7 @@ let calcAllPrice = () => {
     let banker = jQuery("#banker_toggle").prop('checked') ? 2 : 1;
 
     let ret = 1 * zeal * bargaining * manacontrol * zealousconviction * allprice * silverring * shinylamp * banker;
-    return 1*ret.toFixed(2);
+    return 1 * ret.toFixed(2);
 }
 
 let changeTalents = () => {
@@ -202,12 +201,12 @@ let changeTalents = () => {
 }
 
 let calcFana = () => {
-    let le = 1*jQuery("#lifeessence_skill_effect").text()
-    let ab = 1*jQuery("#ardentbelief_skill_effect").text()
-    let af = 1*jQuery("#absolutefaith_skill_effect").text();
+    let le = 1 * jQuery("#lifeessence_skill_effect").text()
+    let ab = 1 * jQuery("#ardentbelief_skill_effect").text()
+    let af = 1 * jQuery("#absolutefaith_skill_effect").text();
 
     let fgain = 1 * le * ab * af;
-    let dfgain = fgain*2;
+    let dfgain = fgain * 2;
     jQuery("#fan_gain_single").text(nFormatter(fgain, 1)).attr("title", numberWithCommas(fgain.toFixed(2)));
     jQuery("#fan_gain_double").text(nFormatter(dfgain, 1)).attr("title", numberWithCommas(dfgain.toFixed(2)));
 }
@@ -232,16 +231,16 @@ let getBrandBonus = () => {
 }
 
 function nFormatter(num, digits) {
-  const lookup = [
-    { value: 1, symbol: "" },
-    { value: 1e3, symbol: "k" },
-    { value: 1e6, symbol: "M" },
-    { value: 1e9, symbol: "G" },
-    { value: 1e12, symbol: "T" },
-    { value: 1e15, symbol: "P" },
-    { value: 1e18, symbol: "E" }
-  ];
-  const regexp = /\.0+$|(?<=\.[0-9]*[1-9])0+$/;
-  const item = lookup.findLast(item => num >= item.value);
-  return item ? (num / item.value).toFixed(digits).replace(regexp, "").concat(item.symbol) : "0";
+    const lookup = [
+        { value: 1, symbol: "" },
+        { value: 1e3, symbol: "k" },
+        { value: 1e6, symbol: "M" },
+        { value: 1e9, symbol: "G" },
+        { value: 1e12, symbol: "T" },
+        { value: 1e15, symbol: "P" },
+        { value: 1e18, symbol: "E" }
+    ];
+    const regexp = /\.0+$|(?<=\.[0-9]*[1-9])0+$/;
+    const item = lookup.findLast(item => num >= item.value);
+    return item ? (num / item.value).toFixed(digits).replace(regexp, "").concat(item.symbol) : "0";
 }
