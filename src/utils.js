@@ -121,7 +121,7 @@ let getRepeatHappiness = () => {
     let count = 1*jQuery("#repeathappiness").val();
     if (count >= 1) {
         retval = Math.exp(1.01, count);
-        // retval = (1.01^count)-1;
+        retval = (1.01^count)-1;
     }
     else {
         retval = 0;
@@ -154,7 +154,7 @@ let calcHappiness = () => {
     
     let hpBoost = isBoostActive(_import.stats.boosts.happiness);
 
-    let ret = (1+getRepeatHappiness()) * // tried this diff ways
+    let ret = (1*getRepeatHappiness()) * // tried this diff ways
         devotionEffect * meditationEffect * fdEffect * epEffect * 
         (hpBoost ? 2 : 1) * 
         tent * woodenhut * cottage * house * largehouse * smallpalace * 
@@ -228,7 +228,7 @@ let updateBrands = () => {
 }
 
 let getBrandBonus = () => {
-    
+    return _import.stats.playerStats.brandbonus
 }
 
 function nFormatter(num, digits) {
