@@ -310,9 +310,11 @@ let StatPage = {
         }
 
         for (let i =0; i < 4; i++) {
-            for (let group in data) {
-                for (let item in data[group]) {
-                    calculateSP(data[group][item], item);
+            for (let [group, items] of Object.entries(data)) {
+                for (let [item, values] of Object.entries(items)) {
+                    if (group == "skillEffects") continue;
+                    console.log(values);
+                    calculateSP(data[group][item], values.display.toLowerCase().replace(" ", "_"));
                 }
             }
         }
