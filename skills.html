@@ -25,6 +25,12 @@
     <script src="src/skills.js"></script>
     <script src="src/shop.js"></script>
     <script>
+        let updateFana = () => {
+            let fans = jQuery("#updatefana").val();
+            jQuery('#current_fana').text(fans.toLocaleString());
+            StatPage.updateAll();
+        }
+        
         let importStats = () => {
             let userID = prompt("Please enter your user ID\r\n- You will need to confirm this request in game");
             StatPage.import(userID);
@@ -134,7 +140,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p>Fanatacism: <input type="number" id="repeathappiness" value="0" onkeyup="jQuery('#current_fana').text(jQuery(this).val().toLocaleString());StatPage.updateAll();"></p>
+                            <p>Fanatacism: <input type="number" id="updatefana" value="0" onkeyup="updateFana();"></p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
