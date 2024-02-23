@@ -205,8 +205,8 @@ let calcFana = () => {
 
     let fgain = 1 * le * ab * af;
     let dfgain = fgain*2;
-    jQuery("#fan_gain_single").text(numberWithCommas(fgain.toFixed(2)));
-    jQuery("#fan_gain_double").text(numberWithCommas(dfgain.toFixed(2)));
+    jQuery("#fan_gain_single").text(nFormatter(fgain, 1));
+    jQuery("#fan_gain_double").text(nFormatter(dfgain, 1));
 }
 
 let numberWithCommas = (x) => {
@@ -217,4 +217,19 @@ let updateFana = () => {
     let fans = jQuery("#updatefana").val();
     jQuery('#current_fana').text(numberWithCommas(fans));
     StatPage.updateAll();
+}
+
+function nFormatter(num, digits) {
+  const lookup = [
+    { value: 1, symbol: "" },
+    { value: 1e3, symbol: "k" },
+    { value: 1e6, symbol: "M" },
+    { value: 1e9, symbol: "G" },
+    { value: 1e12, symbol: "T" },
+    { value: 1e15, symbol: "P" },
+    { value: 1e18, symbol: "E" }
+  ];
+  const regexp = /\.0+$|(?<=\.[0-9]*[1-9])0+$/;
+  const item = lookup.findLast(item => num >= item.value);
+  return item ? (num / item.value).toFixed(digits).replace(regexp, "").concat(item.symbol) : "0";
 }
