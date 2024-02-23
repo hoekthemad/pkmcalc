@@ -394,7 +394,7 @@ let StatPage = {
                     _import.stats.playerStats.happiness, // calcHappiness(),
                     jQuery('#'+skillname+'_relic_level').val(),
                     (skillcategory == "darkmagic"),
-                    _import.stats.fanaticism,
+                    1*jQuery("#current_fana").text().replaceAll(",", ""),
                     true
                 ))
             )
