@@ -22,13 +22,13 @@ let StatPage = {
                             <label for="GROUPNAME_skill_level" class="col-form-label">Target skill level</label>
                         </div>
                         <div class="col">
-                            <input type="number" id="GROUPNAME_skill_level" class="form-control" value="1" onchange="StatPage.updateCategoryLevel('GROUPNAME', jQuery(this).val())">
+                            <input type="number" id="GROUPNAME_skill_level" class="form-control" value="1" onkeyup="StatPage.updateCategoryLevel('GROUPNAME', jQuery(this).val())">
                         </div>
                         <div class="col">
                             <label for="GROUPNAME_relic_level" class="col-form-label">Target relic level</label>
                         </div>
                         <div class="col">
-                            <input type="number" id="GROUPNAME_relic_level" class="form-control" value="1" onchange="StatPage.updateCategoryRelic('GROUPNAME', jQuery(this).val())">
+                            <input type="number" id="GROUPNAME_relic_level" class="form-control" value="1" onkeyup="StatPage.updateCategoryRelic('GROUPNAME', jQuery(this).val())">
                         </div>
                         <div class="col">&nbsp;</div>
                     </div>
@@ -60,10 +60,10 @@ let StatPage = {
                 <label for="SKILLNAME_skill_level" class="col-form-label">HTMLSKILLNAME</label>
             </div>
             <div class="col">
-                <input type="number" id="SKILLNAME_skill_level" class="form-control" value="1" onchange="StatPage.updateAll()">
+                <input type="number" id="SKILLNAME_skill_level" class="form-control" value="1" onkeyup="StatPage.updateAll()">
             </div>
             <div class="col">
-                <input type="number" id="SKILLNAME_relic_level" class="form-control" value="1" onchange="StatPage.updateAll()">
+                <input type="number" id="SKILLNAME_relic_level" class="form-control" value="1" onkeyup="StatPage.updateAll()">
             </div>
 
             <div class="col">
