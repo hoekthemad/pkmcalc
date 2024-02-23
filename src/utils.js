@@ -205,6 +205,16 @@ let calcFana = () => {
 
     let fgain = 1 * le * ab * af;
     let dfgain = fgain*2;
-    jQuery("#fan_gain_single").text(fgain.toFixed(2));
-    jQuery("#fan_gain_double").text(dfgain.toFixed(2));
+    jQuery("#fan_gain_single").text(numberWithCommas(fgain.toFixed(2)));
+    jQuery("#fan_gain_double").text(numberWithCommas(dfgain.toFixed(2)));
+}
+
+let numberWithCommas = (x) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+let updateFana = () => {
+    let fans = jQuery("#updatefana").val();
+    jQuery('#current_fana').text(numberWithCommas(fans));
+    StatPage.updateAll();
 }
