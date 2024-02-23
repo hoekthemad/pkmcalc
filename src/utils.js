@@ -120,7 +120,7 @@ let isBoostActive = (datetime) => {
 let getRepeatHappiness = () => {
     let count = 1*jQuery("#repeathappiness").val();
     if (count >= 1) {
-        retval = Math.pow(1.01, count);
+        retval = 1+(0.01*count)
     }
     else {
         retval = 1;
@@ -155,7 +155,7 @@ let calcHappiness = () => {
 
     let ret = (1*getRepeatHappiness()) * // tried this diff ways
         devotionEffect * meditationEffect * fdEffect * epEffect * 
-        (hpBoost ? 2 : 1) * 
+        //(hpBoost ? 2 : 1) * 
         tent * woodenhut * cottage * house * largehouse * smallpalace * 
         grandpalace * townruler * cityruler * kingdomminister * 
         heaven * ceremonyknife * butler * 

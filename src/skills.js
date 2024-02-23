@@ -406,7 +406,7 @@ let StatPage = {
                     jQuery('#'+skillname+'_skill_level').val(), 
                     (skillcategory == "theorder"), 
                     calcAllPrice(), 
-                    _import.stats.playerStats.happiness, // calcHappiness(),
+                    calcHappiness(),
                     jQuery('#'+skillname+'_relic_level').val(),
                     (skillcategory == "darkmagic"),
                     1*jQuery("#current_fana").text().replaceAll(",", ""),
