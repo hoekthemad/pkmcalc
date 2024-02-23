@@ -334,6 +334,7 @@ let StatPage = {
         }
         
         StatPage.calcIncome();
+        calcFana();
     },
 
     calcIncome: () => {
