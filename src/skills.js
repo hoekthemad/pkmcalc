@@ -418,6 +418,10 @@ let StatPage = {
                 let itemName = item.replace("_", "");
                 if (itemName == "dumbells") itemName = "dumbbells";
                 if (itemName == "bookkeeper") itemName = "bookeeper";
+
+                if (item.match(/king/)) item = "kingdom_minister";
+                if (item.match(/book/)) item = "bookeeper";
+                if (item.match(/holy/)) item = "holyman";
                 
                 jQuery(`#${item}_toggle`).prop("checked", _import.stats.shop[groupName][itemName] ? "checked" : "")
             }
