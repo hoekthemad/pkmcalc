@@ -25,16 +25,6 @@
     <script src="src/skills.js"></script>
     <script src="src/shop.js"></script>
     <script>
-        let numberWithCommas = (x) => {
-            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-        
-        let updateFana = () => {
-            let fans = jQuery("#updatefana").val();
-            jQuery('#current_fana').text(numberWithCommas(fans));
-            StatPage.updateAll();
-        }
-        
         let importStats = () => {
             let userID = prompt("Please enter your user ID\r\n- You will need to confirm this request in game");
             StatPage.import(userID);
