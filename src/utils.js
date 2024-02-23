@@ -135,7 +135,7 @@ let calcHappiness = () => {
     let fdEffect = 1*jQuery("#fanaticaldevotion_skill_effect").text();
     let epEffect = 1*jQuery("#extremepiety_skill_effect").text();
 
-    let tent = jQuery("#temt_toggle").prop('checked') ? 1 : 1;
+    let tent = jQuery("#tent_toggle").prop('checked') ? 1 : 1;
     let woodenhut = jQuery("#wooden_hut_toggle").prop('checked') ? 2 : 1;
     let cottage = jQuery("#cottage_toggle").prop('checked') ? 3 : 1;
     let house = jQuery("#house_toggle").prop('checked') ? 4 : 1;
@@ -149,15 +149,18 @@ let calcHappiness = () => {
 
     let ceremonyknife = jQuery("#ceremony_knife_toggle").prop('checked') ? 1.5 : 1;
     let butler = jQuery("#butler_toggle").prop('checked') ? 1.5 : 1;
+
+    let threexhappi = jQuery("#threehappiness").prop("checked") ? 3 : 1;
     
     let hpBoost = isBoostActive(_import.stats.boosts.happiness);
 
-    let ret = (1+getRepeatHappiness()) * 
+    let ret = (1+getRepeatHappiness()) * // tried this diff ways
         devotionEffect * meditationEffect * fdEffect * epEffect * 
         (hpBoost ? 2 : 1) * 
         tent * woodenhut * cottage * house * largehouse * smallpalace * 
         grandpalace * townruler * cityruler * kingdomminister * 
-        heaven * ceremonyknife * butler;
+        heaven * ceremonyknife * butler * 
+        threexhappi;
     return 1*ret.toFixed(2);
 }
 
