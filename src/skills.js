@@ -19,10 +19,10 @@ let StatPage = {
                 <div class="accordion-body">
                     <div class="row g-3 align-items-center">
                         <div class="col">
-                            <label for="GROUPNAME_skill_level" class="col-form-label">Target skill level</label>
+                            &nbsp;
                         </div>
                         <div class="col">
-                            &nbsp;
+                            <label for="GROUPNAME_skill_level" class="col-form-label">Target skill level</label>
                         </div>
                         <div class="col">
                             <label for="GROUPNAME_relic_level" class="col-form-label">Target relic level</label>
@@ -34,10 +34,10 @@ let StatPage = {
                     </div>
                     <div class="row g-3 align-items-center">
                         <div class="col">
-                            <input type="number" id="GROUPNAME_skill_level" class="form-control" value="1" onkeyup="StatPage.updateCategoryLevel('GROUPNAME', jQuery(this).val())">
+                            &nbsp;
                         </div>
                         <div class="col">
-                            &nbsp;
+                            <input type="number" id="GROUPNAME_skill_level" class="form-control" value="1" onkeyup="StatPage.updateCategoryLevel('GROUPNAME', jQuery(this).val())">
                         </div>
                         <div class="col">
                             <input type="number" id="GROUPNAME_relic_level" class="form-control" value="1" onkeyup="StatPage.updateCategoryRelic('GROUPNAME', jQuery(this).val())">
