@@ -411,6 +411,19 @@ let StatPage = {
             }
         }
 
+        for (let [group, items] of Object.entries(data)) {
+            if (group == "skillEffects") continue;
+            let dataGroup = data[group];
+            let groupName = group.toLowerCase().replace("_", "")
+            for (let [item, values] of Object.entries(items)) {
+                let itemName = item.replace("_", "");
+                if (itemName == "dumbells") itemName = "dumbbells";
+                if (itemName == "bookeeper") itemName = "bookkeeper";
+                console.log(itemName, _import.stats.shop[groupName][itemName]);
+                jQuery(`#${item}_toggle`).prop("checked", _import.stats.shop[groupName][itemName] ? "checked" : "")
+            }
+        }
+
         for (let runC = 0; runC < 4; runC++) {
             StatPage.updateAll();
         }
