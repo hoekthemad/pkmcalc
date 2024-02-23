@@ -67,13 +67,13 @@ data = {
             effect_type: "shopprices",
             effect_value: 2,
             base_price: 166772,
-            display: "Wooden Hut"
+            display: "Wooden Crown"
         },
         dumbells: {
             effect_type: "atkduration",
             effect_value: 1.5,
             base_price: 8862938,
-            display: "Dumbells"
+            display: "Dumbbells"
         },
         lucky_charm: {
             effect_type: "income",
@@ -153,7 +153,7 @@ data = {
             effect_type: "atkduration",
             effect_value: 2,
             base_price: 5670988944,
-            display: "Steel Longsowrd"
+            display: "Steel Longsword"
         },
         knight_armor: {
             effect_type: "atkresistance",
