@@ -421,7 +421,7 @@ let StatPage = {
 
                 if (item.match(/king/))  {
                     item = "kingdom_minister";
-                    itemName = "kingdom_minister";
+                    itemName = "kingdomminister";
                 }
                 if (item.match(/book/)) {
                     item = "bookeeper";
