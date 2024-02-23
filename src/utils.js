@@ -105,7 +105,9 @@ let calcSP = () => {
 }
 
 let calculateSP = (item, itemname) => {
-    if (itemname == "holy_man") itemname = "holyman";
+    if (itemname.match(/holy/)) itemname = "holyman";
+    if (itemname.match(/dumb/)) itemname = "dumbells";
+    if (itemname.match(/book/)) itemname = "bookeeper";
     let shopPrice = convertIntToCurrency(getShopPrice(item, _import.stats));
     jQuery(`#${itemname}_price`).html(shopPrice);
 }
