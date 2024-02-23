@@ -105,7 +105,7 @@ let calcSP = () => {
 }
 
 let calculateSP = (item, itemname) => {
-    let shopPrice = convertIntToCurrency(item, _import.stats);
+    let shopPrice = convertIntToCurrency(getShopPrice(item, _import.stats));
     jQuery(`#${item}_price`).html(shopPrice);
 }
 
