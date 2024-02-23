@@ -309,6 +309,15 @@ let StatPage = {
                 StatPage.updateSkill(StatPage.skills[key][skillC]);
             }
         }
+
+        for (let i =0; i < 4; i++) {
+            for (let group in data) {
+                for (let item in data[group]) {
+                    calculateSP(data[group][item], item);
+                }
+            }
+        }
+        
         StatPage.calcIncome();
         calcSP();
     },
