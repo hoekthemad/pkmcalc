@@ -205,6 +205,6 @@ let calcFana = () => {
 
     let fgain = 1 * le * ab * af;
     let dfgain = fgain*2;
-    jQuery("#fain_gain_single").text(fgain.toFixed(2));
+    jQuery("#fan_gain_single").text(fgain.toFixed(2));
     jQuery("#fan_gain_double").text(dfgain.toFixed(2));
 }
