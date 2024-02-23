@@ -105,10 +105,8 @@ let calcSP = () => {
 }
 
 let calculateSP = (item, itemname) => {
-    // let chosenItem = jQuery("#shop_item option:selected").val();
-    let shopPrice = convertIntToCurrency(item, _import.stats));
+    let shopPrice = convertIntToCurrency(item, _import.stats);
     jQuery(`#${item}_price`.html(shopPrie);
-    //jQuery("#shop_price").html(shopPrice);
 }
 
 let isBoostActive = (datetime) => {
