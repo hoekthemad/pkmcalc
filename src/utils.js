@@ -196,5 +196,4 @@ let calcAllPrice = () => {
 
 let changeTalents = () => {
     StatPage.updateAll();
-    calcSP();
 }
