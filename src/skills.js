@@ -333,7 +333,8 @@ let StatPage = {
             }
         }
 
-        jQuery("#current_fana").attr("title", `Current fanaticism discount: `+(1+Math.sqrt((1*jQuery('#current_fana').text().replaceAll(",",""))/10)));
+        let fdiscount = (1+Math.sqrt((1*jQuery('#current_fana').text().replaceAll(",",""))/10));
+        jQuery("#current_fana").attr("title", `Current fanaticism discount: `+fdiscount.toFixed(1));
         
         StatPage.calcIncome();
         calcFana();
