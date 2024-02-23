@@ -32,6 +32,7 @@ let StatPage = {
                         </div>
                         <div class="col">&nbsp;</div>
                     </div>
+                    <div class="row g-3 align-items-center">
                         <div class="col">
                             <input type="number" id="GROUPNAME_skill_level" class="form-control" value="1" onkeyup="StatPage.updateCategoryLevel('GROUPNAME', jQuery(this).val())">
                         </div>
