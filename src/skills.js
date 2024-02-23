@@ -119,9 +119,6 @@ let StatPage = {
                         <div class="col">
                             Enabled
                         </div>
-                        <div class="col">
-                            Effect
-                        </div>
                     </div>
                     THESHOP
                 </div>
@@ -141,9 +138,6 @@ let StatPage = {
                 <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" id="SHOPNAME_toggle" onchange="StatPage.updateAll()">
                 </div>
-            </div>
-            <div class="col">
-                SHOPEFFECT
             </div>
         </div>
     `,
