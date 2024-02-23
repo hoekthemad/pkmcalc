@@ -197,3 +197,14 @@ let calcAllPrice = () => {
 let changeTalents = () => {
     StatPage.updateAll();
 }
+
+let calcFana = () => {
+    let le = 1*jQuery("#lifeessence_skill_effect").text()
+    let ab = 1*jQuery("#ardentbelief_skill_effect").text()
+    let af = 1*jQuery("#absolutefaith_skill_effect".text();
+
+    let fgain = 1 * le * ab * af;
+    let dfgain = fgain*2;
+    jQuery("#fain_gain_single").text(fgain.toFixed(2));
+    jQuery("#fan_gain_double").text(dfgain.toFixed(2));
+}
