@@ -106,7 +106,7 @@ let calcSP = () => {
 
 let calculateSP = (item, itemname) => {
     let shopPrice = convertIntToCurrency(getShopPrice(item, _import.stats));
-    jQuery(`#${item}_price`).html(shopPrice);
+    jQuery(`#${itemname}_price`).html(shopPrice);
 }
 
 let isBoostActive = (datetime) => {
