@@ -271,7 +271,7 @@ let StatPage = {
             for (let shopitem in data[shopHTMLNames[sCount]]) {
                 let thisShopHTML = StatPage.shopHTML;
 
-                thisShopHTML = thisShopHTML.replaceAll("HTMLSHOPNAME", StatPage.translateSkillName(shopitem));
+                thisShopHTML = thisShopHTML.replaceAll("HTMLSHOPNAME", data[shopHTMLNames[sCount]][shopitem].display);
                 thisShopHTML = thisShopHTML.replaceAll("SHOPNAME", shopitem);
                 thisShopHTML = thisShopHTML.replaceAll("THEPRICE", convertIntToCurrency(data[shopHTMLNames[sCount]][shopitem].base_price));
 
