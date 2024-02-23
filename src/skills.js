@@ -333,7 +333,6 @@ let StatPage = {
         }
         
         StatPage.calcIncome();
-        calcSP();
     },
 
     calcIncome: () => {
