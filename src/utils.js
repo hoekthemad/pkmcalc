@@ -87,7 +87,7 @@ let getShopPrice = (item, stats) => {
     if (0 == base_price) return 0;
 
     //let relicTouches = 1 + (2*(stats.relictouches > 5 ? 5 : stats.relictouches));
-    let fana_discount = Math.sqrt((1*jQuery("#current_fana").text().replace(",", ""))/10)+1;
+    let fana_discount = Math.sqrt((1*jQuery("#current_fana").text().replaceAll(",", ""))/10)+1;
     let allPriceDiscount = calcAllPrice();
     let shopPriceDiscount = calcShopPrice();
     if (1 == stats.relictouches && fana_discount <= 1 && (1*allPriceDiscount) == 1 && (1*shopPriceDiscount)) {
