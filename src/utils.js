@@ -227,6 +227,7 @@ let updateBrands = () => {
 }
 
 let getBrandBonus = () => {
+    return Math.pow(1.005, 1*jQuery("#total_brands").text())-1;
     return _import.stats.playerStats.brandbonus
 }
 
