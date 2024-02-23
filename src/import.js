@@ -143,7 +143,7 @@ let _import = {
                         _import.stats.shop.properties.grandpalace = shop['grand palace'] ?? false;
                         _import.stats.shop.properties.townruler = shop['town ruler'] ?? false;
                         _import.stats.shop.properties.cityruler = shop['city ruler'] ?? false;
-                        _import.stats.shop.properties.kingdomminister = shop['kindom minister'] ?? false;
+                        _import.stats.shop.properties.kingdomminister = shop['kingdom minister'] ?? false;
                         _import.stats.shop.properties.heaven = shop['heaven'] ?? false;
                     }
                     //#endregion
@@ -185,7 +185,7 @@ let _import = {
                         _import.stats.shop.servants.banker = shop['banker'] ?? false;
                         _import.stats.shop.servants.seer = shop['seer'] ?? false;
                         _import.stats.shop.servants.bodyguard = shop['bodyguard'] ?? false;
-                        _import.stats.shop.servants.holyman = shop['holyman'] ?? false;
+                        _import.stats.shop.servants.holyman = shop['holy man'] ?? false;
                         _import.stats.shop.servants.smuggler = shop['smuggler'] ?? false;
                     }
                     //#endregion
