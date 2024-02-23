@@ -25,7 +25,7 @@ let StatPage = {
                             <input type="number" id="GROUPNAME_skill_level" class="form-control" value="1" onchange="StatPage.updateCategoryLevel('GROUPNAME', jQuery(this).val())">
                         </div>
                         <div class="col">
-                            <label for="GROUPNAME_relic_level" class="col-form-label">Target skill level</label>
+                            <label for="GROUPNAME_relic_level" class="col-form-label">Target relic level</label>
                         </div>
                         <div class="col">
                             <input type="number" id="GROUPNAME_relic_level" class="form-control" value="1" onchange="StatPage.updateCategoryRelic('GROUPNAME', jQuery(this).val())">
