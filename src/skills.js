@@ -148,6 +148,50 @@ let StatPage = {
         }
     },
 
+    translateShopName: (name) => {
+        switch (name) {
+            case "tent" : return "Tent";
+            case "wooden_hut" : return "Wooden Hut";
+            case "cottage" : return "Cottage";
+            case "house" : return "House";
+            case "large_house" : return "Large House";
+            case "small_palace" : return "Small Palace";
+            case "grand_palace" : return "Grand Palace";
+            case "town_ruler" : return "Town Ruler";
+            case "city_ruler" : return "City Ruler";
+            case "kingdom_minister" : return "Kingdom Minister";
+                
+            case "coin_pouch" : return "Coin Pouch";
+            case "wooden_crown" : return "Wooden Crown";
+            case "dumbells" : return "Dumbells";
+            case "lucky_charm" : return "Lucky Charm";
+            case "soulbound_locket" : return "Soulbound Locket";
+            case "pendulum" : return "Pendulum";
+            case "silver_ring" : return "Silver Ring";
+            case "ceremony_knife" : return "Ceremony Knife";
+            case "magic_pebbles" : return "Magic Pebbles";
+            case "shiny_lamp" : return "Shiny lamp";
+            case "golden_hourglass" : return "Golden Hourglass";
+            case "mystic_satchel" : return "Mystic Satchel";
+                
+            case "small_shield" : return "Small Shield";
+            case "war_paint" : return "War Paint";
+            case "short_bow" : return "Short Bow";
+            case "steel_longsword" : return "Steel Longsowrd";
+            case "knight_armor" : return "Knight Armor";
+            case "war_horse" : return "War Horse";
+            case "magic_sword" : return "Magic Sword";
+                
+            case "squire" : return "Squire";
+            case "bookeeper" : return "Bookkeeper";
+            case "butler" : return "Butler";
+            case "banker" : return "Banker";
+            case "bodyguard" : return "Bodyguard";
+            case "holyman" : return "Holy Man";
+            case "smuggler" : return "Smuggler";
+        }
+    },
+
     getCategory: (skillname) => {
         switch (skillname) {
             case "faith":
@@ -227,7 +271,7 @@ let StatPage = {
             for (let shopitem in data[shopHTMLNames[sCount]]) {
                 let thisShopHTML = StatPage.shopHTML;
 
-                thisShopHTML = thisShopHTML.replaceAll("HTMLSHOPNAME", shopitem);
+                thisShopHTML = thisShopHTML.replaceAll("HTMLSHOPNAME", StatPage.translateSkillName(shopitem));
                 thisShopHTML = thisShopHTML.replaceAll("SHOPNAME", shopitem);
                 thisShopHTML = thisShopHTML.replaceAll("THEPRICE", convertIntToCurrency(data[shopHTMLNames[sCount]][shopitem].base_price));
 
