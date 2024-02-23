@@ -109,6 +109,20 @@ let StatPage = {
             </h2>
             <div id="shop_GROUPNAME" class="accordion-collapse collapse">
                 <div class="accordion-body">
+                    <div class="row g-3 align-items-center">
+                        <div class="col">
+                            Item Name
+                        </div>
+                        <div class="col">
+                            Cost
+                        </div>
+                        <div class="col">
+                            Enabled
+                        </div>
+                        <div class="col">
+                            Effect
+                        </div>
+                    </div>
                     THESHOP
                 </div>
             </div>
@@ -127,6 +141,9 @@ let StatPage = {
                 <div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" id="SHOPNAME_toggle" onchange="StatPage.updateAll()">
                 </div>
+            </div>
+            <div class="col">
+                SHOPEFFECT
             </div>
         </div>
     `,
@@ -288,6 +305,7 @@ let StatPage = {
                 thisShopHTML = thisShopHTML.replaceAll("HTMLSHOPNAME", data[shopHTMLNames[sCount]][shopitem].display);
                 thisShopHTML = thisShopHTML.replaceAll("SHOPNAME", shopitem);
                 thisShopHTML = thisShopHTML.replaceAll("THEPRICE", convertIntToCurrency(data[shopHTMLNames[sCount]][shopitem].base_price));
+                thisShopHTML = thisShopHTML.replaceAll("SHOPEFFECT", data[shopHTMLNames[sCount]][shopitem].effect);
 
                 shopHTML += thisShopHTML;
             }
