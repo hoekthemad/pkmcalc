@@ -205,8 +205,8 @@ let calcFana = () => {
 
     let fgain = 1 * le * ab * af;
     let dfgain = fgain*2;
-    jQuery("#fan_gain_single").text(nFormatter(fgain, 1)).attr("title", numbersWithCommas(fgain));
-    jQuery("#fan_gain_double").text(nFormatter(dfgain, 1)).attr("title", numbersWithCommas(dfgain));
+    jQuery("#fan_gain_single").text(nFormatter(fgain, 1)).attr("title", numberWithCommas(fgain));
+    jQuery("#fan_gain_double").text(nFormatter(dfgain, 1)).attr("title", numberWithCommas(dfgain));
 }
 
 let numberWithCommas = (x) => {
