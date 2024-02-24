@@ -67,3 +67,9 @@ body {
 .pc-50.left {
     border-left: none;
 }
+
+@media (min-width:961px)  {
+    #nav-talents {
+        padding: 0 20%;
+    }
+}
