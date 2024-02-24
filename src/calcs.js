@@ -112,7 +112,6 @@ let getSkillEffects = () => {
 }
 
 let calcIncome = () => {
-    let se = 1*getSkillEffects().toFixed(2);
     let faithEffect = getEffect(data.skillEffects.theorder.faith, (1*jQuery("#faith_skill_level").val()), getSkillEffects(), false);
     let prodEffect = getEffect(data.skillEffects.fundamentals.productivity, (1*jQuery("#productivity_skill_level").val()), getSkillEffects(), false);
     let dmEffect = getEffect(data.skillEffects.darkmagic.devoutmastery, (1*jQuery("#devoutmastery_skill_level").val()), getSkillEffects(), false);
@@ -128,12 +127,13 @@ let calcIncome = () => {
     if (adBoost && cmBoost) incBoost = 3;
     else if ((!adBoost && cmBoost) || (adBoost && !cmBoost)) incBoost = 2;
     else incBoost = 1;
+    // incboost=1;
 
     let income = 1 * faithEffect * prodEffect * dmEffect * cp * lc * bk * incBoost;
 
     let bi = getBonusIncome();
 
-    if (bi > 0) income = convertIntToCurrency(1*income.toFixed(2) + bi);
-    else income = convertIntToCurrency(Math.floor(1*income.toFixed(2)));
+    if (bi > 0) income = convertIntToCurrency(Math.floor(income) + bi);
+    else income = convertIntToCurrency(Math.floor(income));
     jQuery("#income").html(income);
 }

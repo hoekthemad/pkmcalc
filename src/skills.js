@@ -348,16 +348,8 @@ let StatPage = {
         let fdiscount = (1+Math.sqrt((1*jQuery('#current_fana').text().replaceAll(",",""))/10));
         jQuery("#current_fana").attr("title", `Current fanaticism discount: `+fdiscount.toFixed(1));
         
-        StatPage.calcIncome();
-        calcFana();
-    },
-
-    calcIncome: () => {
         calcIncome();
-    },
-
-    calcHappiness: () => {
-        return calcHappiness
+        calcFana();
     },
 
     calcShopPrice: () => {
@@ -377,9 +369,7 @@ let StatPage = {
             getEffect(
                 data.skillEffects[skillcategory][skillname], 
                 jQuery('#'+skillname+'_skill_level').val(), 
-                (
-                    1*$('#concentration_skill_effect').text() + 1*playerstats.fosbonus + getBrandBonus() + 1*playerstats.tablebonus
-                ), 
+                getSkillEffects(), 
                 skillname == "concentration" ? true : false
             )
         );
@@ -452,6 +442,6 @@ let StatPage = {
         for (let runC = 0; runC < 4; runC++) {
             StatPage.updateAll();
         }
-        StatPage.calcIncome();
+        calcIncome();
     }
 }
