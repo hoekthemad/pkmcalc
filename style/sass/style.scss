@@ -42,10 +42,6 @@ body {
 //     }
 // }
 
-.justify-content-around:not(.first) {
-    border-top: 1px solid blue;
-}
-
 .newline {
     height: 30px;
     width: 100%;
@@ -54,6 +50,10 @@ body {
 .pc-50 {
     border-left: 1px solid blue;
     width: 50%;
+}
+
+.newline > div div:not(.outsider) {
+    border-bottom: 1px solid blue;
 }
 
 .pc-33 {
