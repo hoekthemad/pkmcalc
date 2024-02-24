@@ -30,7 +30,7 @@ let calcHappiness = () => {
     let ceremonyknife = jQuery("#ceremony_knife_toggle").prop('checked') ? 1.5 : 1;
     let butler = jQuery("#butler_toggle").prop('checked') ? 1.5 : 1;
 
-    let threexhappi = jQuery("#threehappiness").prop("checked") ? 3 : 1;
+    let threexhappi = jQuery("#talent_3xhappi").prop("checked") ? 3 : 1;
     
     let hpBoost = isBoostActive(_import.stats.boosts.happiness);
 
@@ -49,7 +49,7 @@ let calcShopPrice = () => {
     let dp = 1 * jQuery("#doggedperseverance_skill_effect").text();
 
     let allprice = 1;//jQuery("#allprice").prop('checked') ? 1.5 : 1;
-    let shopprice = jQuery("#halfshop").prop('checked') ? 2 : 1;
+    let shopprice = jQuery("#talent_halfshop").prop('checked') ? 2 : 1;
 
     let woodencrown = jQuery("#wooden_crown_toggle").prop('checked') ? 2 : 1;
     let magicpebbles = jQuery("#magic_pebbles_toggle").prop('checked') ? 1.5 : 1;
@@ -67,7 +67,7 @@ let calcAllPrice = () => {
     let manacontrol = 1 * jQuery("#manacontrol_skill_effect").text();
     let zealousconviction = 1 * jQuery("#zealousconviction_skill_effect").text();
 
-    let allprice = jQuery("#allprice").prop('checked') ? 1.5 : 1;
+    let allprice = jQuery("#talent_allprice").prop('checked') ? 1.5 : 1;
 
     let silverring = jQuery("#silver_ring_toggle").prop('checked') ? 2 : 1;
     let shinylamp = jQuery("#shiny_lamp_toggle").prop('checked') ? 2 : 1;
@@ -89,4 +89,51 @@ let calculateSP = (item, itemname) => {
     if (itemname.match(/book/)) itemname = "bookeeper";
     let shopPrice = convertIntToCurrency(getShopPrice(item, _import.stats));
     jQuery(`#${itemname}_price`).html(shopPrice);
+}
+
+let getBonusIncome = () => {
+    let silverCount = 1*jQuery("#talent_repeatsilver").val();
+    if (isNaN(silverCount)) silverCount = 0;
+
+    let bonusGold = jQuery("#talent_bonusgold").prop("checked") ? 10000 : 0;
+
+    let bonusSilver = silverCount * 2500;
+
+    return bonusGold+bonusSilver;
+}
+
+let getSkillEffects = () => {
+    let se = 1*getEffect(data.skillEffects.fundamentals.concentration, (1*jQuery("#concentration_skill_level").val()), 1, true);
+    let f = 1*_import.stats.playerStats.fosbonus.toFixed(2);
+    let b = 1*_import.stats.playerStats.brandbonus.toFixed(2);
+    let t = 1*_import.stats.playerStats.tablebonus.toFixed(2);
+
+    return (se + f + b + t);
+}
+
+let calcIncome = () => {
+    let se = 1*getSkillEffects().toFixed(2);
+    let faithEffect = getEffect(data.skillEffects.theorder.faith, (1*jQuery("#faith_skill_level").val()), getSkillEffects(), false);
+    let prodEffect = getEffect(data.skillEffects.fundamentals.productivity, (1*jQuery("#productivity_skill_level").val()), getSkillEffects(), false);
+    let dmEffect = getEffect(data.skillEffects.darkmagic.devoutmastery, (1*jQuery("#devoutmastery_skill_level").val()), getSkillEffects(), false);
+    
+
+    let cp = _import.stats.shop.trinkets.coinpouch == true ? 2.5 : 1;
+    let lc = _import.stats.shop.trinkets.luckycharm == true ? 3 : 1;
+    let bk = _import.stats.shop.servants.bookkeeper == true ? 2 : 1;
+
+    let adBoost = isBoostActive(_import.stats.boosts.income.ad);
+    let cmBoost = isBoostActive(_import.stats.boosts.income.tavern);
+
+    if (adBoost && cmBoost) incBoost = 3;
+    else if ((!adBoost && cmBoost) || (adBoost && !cmBoost)) incBoost = 2;
+    else incBoost = 1;
+
+    let income = 1 * faithEffect * prodEffect * dmEffect * cp * lc * bk * incBoost;
+
+    let bi = getBonusIncome();
+
+    if (bi > 0) income = convertIntToCurrency(1*income.toFixed(2) + bi);
+    else income = convertIntToCurrency(Math.floor(1*income.toFixed(2)));
+    jQuery("#income").html(income);
 }

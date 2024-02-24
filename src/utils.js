@@ -104,7 +104,7 @@ let isBoostActive = (datetime) => {
 }
 
 let getRepeatHappiness = () => {
-    let count = 1*jQuery("#repeathappiness").val();
+    let count = 1*jQuery("#talent_repeathappiness").val();
     if (count >= 1) {
         retval = 1+(0.01*count)
     }

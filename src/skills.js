@@ -353,24 +353,7 @@ let StatPage = {
     },
 
     calcIncome: () => {
-        let faithEffect = 1*jQuery("#faith_skill_effect").text();
-        let prodEffect = 1*jQuery("#productivity_skill_effect").text();
-        let dmEffect = 1*jQuery("#devoutmastery_skill_effect").text();
-
-        let cp = _import.stats.shop.trinkets.coinpouch == true ? 2.5 : 1;
-        let lc = _import.stats.shop.trinkets.luckycharm == true ? 3 : 1;
-        let bk = _import.stats.shop.servants.bookkeeper == true ? 2 : 1;
-
-        let adBoost = isBoostActive(_import.stats.boosts.income.ad);
-        let cmBoost = isBoostActive(_import.stats.boosts.income.tavern);
-
-        if (adBoost && cmBoost) incBoost = 3;
-        else if ((!adBoost && cmBoost) || (adBoost && !cmBoost)) incBoost = 2;
-        else incBoost = 1;
-
-        let income = 1 * faithEffect * prodEffect * dmEffect * cp * lc * bk * incBoost;
-        income = convertIntToCurrency(Math.round(income) + Math.round(_import.stats.playerStats.flatincome));
-        jQuery("#income").html(income);
+        calcIncome();
     },
 
     calcHappiness: () => {

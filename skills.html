@@ -32,6 +32,14 @@
         }
 
         jQuery(document).ready(function () {
+            jQuery.ajax({
+                url: "src/html/talents.html",
+                async: false,
+                success: (res) => {
+                    jQuery("#nav-talents").html(res);
+                }
+            })
+
             StatPage.init();
         })
     </script>
@@ -170,211 +178,7 @@
                 <div class="accordion" id="shopAccordian"></div>
             </div>
             <div class="tab-pane fade" id="nav-talents" role="tabpanel" aria-labelledby="nav-talents-tab">
-                <br>
-                <div class="d-flex justify-content-evenly first">
-                    <div class="p-2 bd-highlight text-center border border-primary">
-                        <div class="form-check form-switch">
-                            2x Fanatacism
-                            <input class="form-check-input" type="checkbox" id="talent_2xfana" onchange="StatPage.updateAll()">
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex newline">
-                    <div class="d-flex pc-50 left">
-                        <div class="pc-50 left outsider"></div>
-                        <div class="pc-50 left"></div>
-                    </div>
-                    <div class="d-flex pc-50">
-                        <div class="pc-50 left"></div>
-                        <div class="pc-50 left outsider"></div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-around">
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                </div>
-                <div class="d-flex newline">
-                    <div class="d-flex pc-50 left">
-                        <div class="pc-50 left outsider d-flex">
-                            <div class="pc-50 left outsider"></div>
-                            <div class="pc-50 left"></div>
-                        </div>
-                        <div class="pc-50">
-                        </div>
-                    </div>
-                    <div class="d-flex pc-50 left">
-                        <div class="pc-50 left">
-                        </div>
-                        <div class="pc-50 outsider d-flex">
-                            <div class="pc-50 left"></div>
-                            <div class="pc-50 left outsider"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-around">
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                </div>
-                <div class="d-flex newline">
-                    <div class="d-flex pc-33 left">
-                        <div class="pc-50 left outsider d-flex">
-                            <div class="pc-50 left outsider"></div>
-                            <div class="pc-50 left"></div>
-                        </div>
-                        <div class="pc-50">
-                        </div>
-                    </div>
-                    <div class="d-flex pc-33 left">
-                        <div class="pc-50 left">
-                        </div>
-                        <div class="pc-50">
-                        </div>
-                    </div>
-                    <div class="d-flex pc-33 left">
-                        <div class="pc-50 left">
-                        </div>
-                        <div class="pc-50 outsider d-flex">
-                            <div class="pc-50 left"></div>
-                            <div class="pc-50 left outsider"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-around">
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                </div>
-                <div class="d-flex newline">
-                    <div class="d-flex pc-20 left">
-                        <div class="pc-50 left outsider">
-                        </div>
-                        <div class="pc-50">
-                        </div>
-                    </div>
-                    <div class="d-flex pc-20 left">
-                        <div class="pc-50 left">
-                        </div>
-                        <div class="pc-50">
-                        </div>
-                    </div>
-                    <div class="d-flex pc-20 left">
-                        <div class="pc-50 left">
-                        </div>
-                        <div class="pc-50">
-                        </div>
-                    </div>
-                    <div class="d-flex pc-20 left">
-                        <div class="pc-50 left">
-                        </div>
-                        <div class="pc-50">
-                        </div>
-                    </div>
-                    <div class="d-flex pc-20 left">
-                        <div class="pc-50 left">
-                        </div>
-                        <div class="pc-50 outsider">
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-around">
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                </div>
-                <div class="d-flex newline">
-                    <div class="d-flex pc-50 left">
-                        <div class="pc-50 left outsider d-flex">
-                            <div class="pc-50 left outsider"></div>
-                            <div class="pc-50 left"></div>
-                        </div>
-                        <div class="pc-50">
-                        </div>
-                    </div>
-                    <div class="d-flex pc-50 left">
-                        <div class="pc-50 left">
-                        </div>
-                        <div class="pc-50 outsider d-flex">
-                            <div class="pc-50 left"></div>
-                            <div class="pc-50 left outsider"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-around">
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                </div>
-                <div class="d-flex newline">
-                    <div class="d-flex pc-33 left">
-                        <div class="pc-50 left outsider d-flex">
-                            <div class="pc-50 left outsider"></div>
-                            <div class="pc-50 left"></div>
-                        </div>
-                        <div class="pc-50">
-                        </div>
-                    </div>
-                    <div class="d-flex pc-33 left">
-                        <div class="pc-50 left">
-                        </div>
-                        <div class="pc-50">
-                        </div>
-                    </div>
-                    <div class="d-flex pc-33 left">
-                        <div class="pc-50 left">
-                        </div>
-                        <div class="pc-50 outsider d-flex">
-                            <div class="pc-50 left"></div>
-                            <div class="pc-50 left outsider"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-around">
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                </div>
-                <div class="d-flex newline">
-                    <div class="d-flex pc-20 left">
-                        <div class="pc-50 left outsider">
-                        </div>
-                        <div class="pc-50">
-                        </div>
-                    </div>
-                    <div class="d-flex pc-20 left">
-                        <div class="pc-50 left">
-                        </div>
-                        <div class="pc-50">
-                        </div>
-                    </div>
-                    <div class="d-flex pc-20 left">
-                        <div class="pc-50 left">
-                        </div>
-                        <div class="pc-50">
-                        </div>
-                    </div>
-                    <div class="d-flex pc-20 left">
-                        <div class="pc-50 left">
-                        </div>
-                        <div class="pc-50">
-                        </div>
-                    </div>
-                    <div class="d-flex pc-20 left">
-                        <div class="pc-50 left">
-                        </div>
-                        <div class="pc-50 outsider">
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-around">
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                    <div class="p-2 bd-highlight border border-primary">Flex item 1</div>
-                </div>
-                <br>
+                
             </div>
             <div class="tab-pane fade" id="nav-stats" role="tabpanel" aria-labelledby="nav-stats-tab">
                 <div class="col">
