@@ -27,3 +27,29 @@ body div.content {
   right: 0;
   bottom: 0;
 }
+
+.justify-content-around:not(.first) {
+  border-top: 1px solid blue;
+}
+
+.newline {
+  height: 30px;
+  width: 100%;
+}
+
+.pc-50 {
+  border-left: 1px solid blue;
+  width: 50%;
+}
+
+.pc-33 {
+  width: 33.33%;
+}
+
+.pc-20 {
+  width: 20%;
+}
+
+.pc-50.left {
+  border-left: none;
+}
