@@ -110,7 +110,32 @@ let _import = {
                 smuggler:   false
             }
         },
-
+        talents: {
+            twoxfana: false,
+            extra400fana: false,
+            thresh1: false,
+            goldperday: false,
+            bonusrelic: false,
+            greed: false,
+            extraattack1: false,
+            sneak: false,
+            taxredux1: false,
+            spikes1: false,
+            relictouch1: false,
+            extra5fana: false,
+            thresh2: false,
+            halfshop: false,
+            allprice: false,
+            happiness: false,
+            extraattack2: false,
+            stealth: false,
+            taxredux2: false,
+            spikes2: false,
+            relictouch2: false,
+            repeatrelic: 0,
+            repeatsilver: 0,
+            repeathappiness: 0
+        }
     },
     
     go: (data) => {
@@ -320,6 +345,43 @@ let _import = {
                         _import.stats.playerStats.atkpower = _playerStats['atkPower'] ?? 1;
                         _import.stats.playerStats.atkresistance = _playerStats['atkResistance'] ?? 1;
                         _import.stats.playerStats.insanitythreshold = _playerStats['insanityThreshold'] ?? 1;
+                    }
+                    //#endregion
+
+                    let _talents = stats.playerData.talents;
+                    // #region talents
+                    {
+                        _import.stats.talents.twoxfana = _talents[0][0] == 1;
+
+                        _import.stats.talents.extra400fana = _talents[1][0] == 1;
+                        _import.stats.talents.thresh1 = _talents[1][1] == 1;
+
+                        _import.stats.talents.goldperday = _talents[2][0] == 1;
+                        _import.stats.talents.bonusrelic = _talents[2][1] == 1;
+                        _import.stats.talents.greed = _talents[2][2] == 1;
+
+                        _import.stats.talents.extraattack1 = _talents[3][0] == 1;
+                        _import.stats.talents.sneak = _talents[3][1] == 1;
+                        _import.stats.talents.taxredux1 = _talents[3][2] == 1;
+                        _import.stats.talents.spikes1 = _talents[3][3] == 1;
+                        _import.stats.talents.relictouch1 = _talents[3][4] == 1;
+                        
+                        _import.stats.talents.extra5fana = _talents[4][0] == 1;
+                        _import.stats.talents.thresh2 = _talents[4][1] == 1;
+
+                        _import.stats.talents.halfshop = _talents[5][0] == 1;
+                        _import.stats.talents.allprice = _talents[5][1] == 1;
+                        _import.stats.talents.happiness = _talents[5][2] == 1;
+
+                        _import.stats.talents.extraattack2 = _talents[6][0] == 1;
+                        _import.stats.talents.stealth = _talents[6][1] == 1;
+                        _import.stats.talents.taxredux2 = _talents[6][2] == 1;
+                        _import.stats.talents.spikes2 = _talents[6][3] == 1;
+                        _import.stats.talents.relictouch2 = _talents[6][4] == 1;
+
+                        _import.stats.talents.repeatrelic = _talents[7][0];
+                        _import.stats.talents.repeatsilver = _talents[7][1];
+                        _import.stats.talents.repeathappiness = _talents[7][2];
                     }
                     //#endregion
         
