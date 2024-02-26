@@ -42,9 +42,30 @@ let skills= {
                 html: "productivity", display: "Productivity", import: "productivity"
             }
         },
-        concentration: 0.01,
-        bargaining: 0.01,
-        meditation: 0.01
+        concentration: {
+            effect: effectTypes.skilleffects,
+            effectvalue: 0.01,
+            baseprice: 1,
+            io: {
+                html: "concentration", display: "Concentration", import: "concentration"
+            }
+        },
+        bargaining: {
+            effect: effectTypes.allprice,
+            effectvalue: 0.01,
+            baseprice: 1,
+            io: {
+                html: "bargaining", display: "Bargaining", import: "bargaining"
+            }
+        },
+        meditation: {
+            effect: effectTypes.happiness,
+            effectvalue: 0.01,
+            baseprice: 1,
+            io: {
+                html: "meditation", display: "Meditation", import: "meditation"
+            }
+        }
     },
     combat: {
         strength: 0.015,
