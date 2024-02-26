@@ -110,17 +110,8 @@ const Import = {
                         }
                     }
                     else {
-                        playerData = playerData['playerData'];
-
                         Import.failedAttempts = 0;
-                        Import.setBoosts(playerData['boosts']);
-                        Import.setFos(playerData['fos']);
-                        Import.setMisc(playerData['misc']);
-                        Import.setShop(playerData['shop']);
-                        Import.setSkills(playerData['skills']);
-                        Import.setStats(playerData['stats']);
-                        Import.setTalents(playerData['talents']);
-
+                        Player = playerData['playerData'];
                         console.log(Player);
                     }
                 }
