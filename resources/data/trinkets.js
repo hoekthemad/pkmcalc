@@ -9,9 +9,11 @@ const trinkets = {
     },
     wooden_crown: {
         baseprice: 166772,
-        display: "Wooden Crown",
         effect: effectTypes.shopprice,
         effectvalue: 2,
+        io: {
+            html: "wooden_crown", display: "Wooden Crown", import: "wooden crown"
+        }
     },
     dumbells: {
         baseprice: 8862938,
