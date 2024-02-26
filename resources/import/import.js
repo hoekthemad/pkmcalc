@@ -6,7 +6,7 @@ const Import = {
     /**
      * Count all failed attempts to reach the API
      */
-    failedAttempts = 0,
+    failedAttempts: 0,
 
     /**
      * Set skills from the API into the Player object
