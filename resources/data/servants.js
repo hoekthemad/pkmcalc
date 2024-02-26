@@ -1,4 +1,4 @@
-const servants = {
+const _servants = {
     squire: {
         effect: effectTypes.shopprice,
         effectvalue: 1.5,

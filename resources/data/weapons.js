@@ -1,4 +1,4 @@
-const weapons = {
+const _weapons = {
     small_shield: {
         effect: effectTypes.enattackduration,
         effectvalue: 2,

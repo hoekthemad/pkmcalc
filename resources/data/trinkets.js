@@ -1,4 +1,4 @@
-const trinkets = {
+const _trinkets = {
     coin_pouch: {
         baseprice: 59,
         effect: effectTypes.income,

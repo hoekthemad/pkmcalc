@@ -113,6 +113,9 @@ const Import = {
                         Import.failedAttempts = 0;
                         Player = playerData['playerData'];
                         console.log(Player);
+
+                        localStorage.clear();
+                        localStorage.setItem("PlayerData", JSON.stringify(Player));
                     }
                 }
             })

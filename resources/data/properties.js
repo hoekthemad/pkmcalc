@@ -1,4 +1,4 @@
-const properties = {
+const _properties = {
     tent: {
         baseprice: 0,
         effect: effectTypes.happiness,

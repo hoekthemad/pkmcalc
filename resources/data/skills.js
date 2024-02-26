@@ -1,4 +1,4 @@
-let skills= {
+let _skills = {
     theorder: {
         faith: {
             effect: effectTypes.income,
@@ -68,24 +68,129 @@ let skills= {
         }
     },
     combat: {
-        strength: 0.015,
-        battletactics: 0.01,
-        musclememory: 0.01
+        strength: {
+            effect: effectTypes.attackpower,
+            effectvalue: 0.015,
+            baseprice: 1,
+            io: {
+                html: "strength", display: "Strength", import: "strength"
+            }
+        },
+        musclememory: {
+            effect: effectTypes.attackduration,
+            effectvalue: 0.01,
+            baseprice: 1,
+            io: {
+                html: "musclememory", display: "Muscle Memory", import: "musclememory"
+            }
+        },
+        battletactics: {
+            effect: effectTypes.enattackduration,
+            effectvalue: 0.01,
+            baseprice: 1,
+            io: {
+                html: "battletactics", display: "Battle Tactics", import: "battle tactics"
+            }
+        }
     },
     magic: {
-        manacontrol: 0.01,
-        lifeessence: 0.02,
-        resilience: 0.005,
-        materialism: 0.04
+        manacontrol: {
+            effect: effectTypes.allprice,
+            effectvalue: 0.01,
+            baseprice: 1,
+            io: {
+                html: "manacontrol", display: "Mana Control", import: "mana control"
+            }
+        },
+        lifeessence: {
+            effect: effectTypes.fanatacismgain,
+            effectvalue: 0.02,
+            baseprice: 1,
+            io: {
+                html: "lifeessence", display: "Life Essence", import: "life essence"
+            }
+        },
+        resilience: {
+            effect: effectTypes.attackresistance,
+            effectvalue: 0.005,
+            baseprice: 1,
+            io: {
+                html: "resilience", display: "Resilience", import: "resilience"
+            }
+        },
+        materialism: {
+            effect: effectTypes.greed,
+            effectvalue: 0.04,
+            baseprice: 1,
+            io: {
+                html: "materialism", display: "Materialism", import: "materialism"
+            }
+        }
     },
     darkmagic: {
-        fanaticaldevotion: 0.01,
-        ardentbelief: 0.03,
-        zealousconviction: 0.01,
-        extremepiety: 0.01,
-        absolutefaith: 0.01,
-        devoutmastery: 0.002,
-        doggedperseverance: 0.003,
-        blazingfervour: 0.0027
+        fanaticaldevotion: {
+            effect: effectTypes.happiness,
+            effectvalue: 0.01,
+            baseprice: 1,
+            io: {
+                html: "fanaticaldevotion", display: "Fanatical Devotion", import: "fanatical devotion"
+            }
+        },
+        ardentbelief: {
+            effect: effectTypes.fanatacismgain,
+            effectvalue: 0.03,
+            baseprice: 1,
+            io: {
+                html: "ardentbelief", display: "Ardent Belief", import: "ardent belief"
+            }
+        },
+        zealousconviction: {
+            effect: effectTypes.allprice,
+            effectvalue: 0.01,
+            baseprice: 1,
+            io: {
+                html: "zealousconviction", display: "Zealous Conviction", import: "zealous conviction"
+            }
+        },
+        extremepiety: {
+            effect: effectTypes.happiness,
+            effectvalue: 0.01,
+            baseprice: 1,
+            io: {
+                html: "extremepiety", display: "Extreme Piety", import: "extreme piety"
+            }
+        },
+        absolutefaith: {
+            effect: effectTypes.fanatacismgain,
+            effectvalue: 0.01,
+            baseprice: 1,
+            io: {
+                html: "absolutefaith", display: "Absolute Faith", import: "absolite faith"
+            }
+        },
+        devoutmastery: {
+            effect: effectTypes.income,
+            effectvalue: 0.002,
+            baseprice: 1,
+            io: {
+                html: "devoutmastery", display: "Devout Mastery", import: "devout mastery"
+            }
+        },
+        doggedperseverance: {
+            effect: effectTypes.shopprice,
+            effectvalue: 0.003,
+            baseprice: 1,
+            io: {
+                html: "doggedperseverance", display: "Dogged Perseverance", import: "dogged perseverance"
+            }
+        },
+        blazingfervour: {
+            effect: effectTypes.greed,
+            effectvalue: 0.0027,
+            baseprice: 1,
+            io: {
+                html: "blazingfervour", display: "Blazing Fervor", import: "blazing fervor"
+            }
+        }
     }
 };
