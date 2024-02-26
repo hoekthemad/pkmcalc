@@ -13,8 +13,8 @@ const Import = {
      * @param {Object} skillData 
      */
     setSkills: (skillData) => {
-        for (let [skill, values] of Object.entries(skillData)) {
-            Player['playerData']['skills'][skill] = values;
+        for (let [skill, value] of Object.entries(skillData)) {
+            Player['playerData']['skills'][skill] = value;
         }
     },
 
@@ -33,7 +33,7 @@ const Import = {
      * @param {Object} boostData 
      */
     setBoosts: (boostData) => {
-        for (let [boost, values] of Object.entries(boostData)) {
+        for (let [boost, value] of Object.entries(boostData)) {
             Player['playerData']['boosts'][boost] = value;
         }
     },
