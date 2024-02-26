@@ -3,7 +3,7 @@ const properties = {
         baseprice: 0,
         effect: effectTypes.happiness,
         effectvalue: 1,
-        outputs: {
+        io: {
             html: "tent", display: "Tent", import: "tent"
         }
     },
@@ -12,7 +12,7 @@ const properties = {
         baseprice: 75,
         effect: effectTypes.happiness,
         effectvalue: 2,
-        outputs: {
+        io: {
             html: "wooden_hut", display: "Wooden Hut", import: "wooden hut"
         }
     },
@@ -21,7 +21,7 @@ const properties = {
         baseprice: 46875,
         effect: effectTypes.happiness,
         effectvalue: 3,
-        outputs: {
+        io: {
             html: "cottage", display: "Cottage", import: "cottage"
         }
     },
@@ -30,7 +30,7 @@ const properties = {
         baseprice: 29296875,
         effect: effectTypes.happiness,
         effectvalue: 4,
-        outputs: {
+        io: {
             html: "house", display: "House", import: "house"
         }
     },
@@ -39,7 +39,7 @@ const properties = {
         baseprice: 18310546875,
         effects: effectTypes.happiness,
         effectvalue: 5,
-        outputs: {
+        io: {
             html: "large_house", display: "Large House", import: "large house"
         }
     },
@@ -48,7 +48,7 @@ const properties = {
         baseprice: 11444091796875,
         effects: effectTypes.happiness,
         effectvalue: 6,
-        outputs: {
+        io: {
             html: "small_palace", display: "Small Palace", import: "small palace"
         }
     },
@@ -57,7 +57,7 @@ const properties = {
         baseprice: 7152557373046875,
         effects: effectTypes.happiness,
         effectvalue: 7,
-        outputs: {
+        io: {
             html: "grand_palace", display: "Grang Palace", import: "grand palace"
         }
     },
@@ -66,7 +66,7 @@ const properties = {
         baseprice: 4470348358154296300n,
         effects: effectTypes.happiness,
         effectvalue: 8,
-        outputs: {
+        io: {
             html: "town_ruler", display: "Town Ruler", import: "town ruler"
         }
     },
@@ -75,7 +75,7 @@ const properties = {
         baseprice: 2793967723846436000000n,
         effects: effectTypes.happiness,
         effectvalue: 9,
-        outputs: {
+        io: {
             html: "city_ruler", display: "City Ruler", import: "city_ruler"
         }
     },
@@ -84,7 +84,7 @@ const properties = {
         baseprice: 1746229827404022300000000n,
         effects: effectTypes.happiness,
         effectvalue: 10,
-        outputs: {
+        io: {
             html: "kingdom_minister", display: "Kingdom Minister", import: "kingdom minister"
         }
     },
@@ -93,7 +93,7 @@ const properties = {
         baseprice: 218278728425502760000000000n,
         effects: effectTypes.happiness,
         effectvalue: 11,
-        outputs: {
+        io: {
             html: "heaven", display: "Heaven", import: "heaven"
         }
     }
