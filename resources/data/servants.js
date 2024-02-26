@@ -3,7 +3,7 @@ const servants = {
         effects: effectTypes.shopprice,
         effectvalue: 1.5,
         baseprice: 3476,
-        outputs: {
+        io: {
             html: "squire", display: "Squire", import: "squire"
         }
     },
@@ -11,7 +11,7 @@ const servants = {
         effects: effectTypes.income,
         effectvalue: 2,
         baseprice: 982146,
-        outputs: {
+        io: {
             html: "bookkeeper", display: "Bookkeeper", import: "bookkeeper"
         }
     },
@@ -19,7 +19,7 @@ const servants = {
         effects: effectTypes.happiness,
         effectvalue: 1.5,
         baseprice: 277530931,
-        outputs: {
+        io: {
             html: "butler", display: "Butler", import: "butler"
         }
     },
@@ -27,7 +27,7 @@ const servants = {
         effects: effectTypes.allprice,
         effectvalue: 2,
         baseprice: 22160637303640,
-        outputs: {
+        io: {
             html: "banker", display: "Banker", import: "banker"
         }
     },
@@ -35,7 +35,7 @@ const servants = {
         effects: effectTypes.bonusreliclevel,
         effectvalue: 1,
         baseprice: 6262066462777030,
-        outputs: {
+        io: {
             html: "seer", display: "Seer", import: "seer"
         }
     },
@@ -43,7 +43,7 @@ const servants = {
         effects: effectTypes.attackresistance,
         effectvalue: 2,
         baseprice: 1769510318992327700n,
-        outputs: {
+        io: {
             html: "bodyguard", display: "Bodyguard", import: "bodyguard"
         }
     },
@@ -51,7 +51,7 @@ const servants = {
         effects: effectTypes.shopprice,
         effectvalue: 1.5,
         baseprice: 500021324850607700000n,
-        outputs: {
+        io: {
             html: "holyman", display: "Holy Man", import: "holyman"
         }
     },
@@ -59,7 +59,7 @@ const servants = {
         effects: effectTypes.greed,
         effectvalue: 1.5,
         baseprice: 141294075893117760000000n,
-        outputs: {
+        io: {
             html: "smuggler", display: "Smuggler", import: "smuggler"
         }
     }
