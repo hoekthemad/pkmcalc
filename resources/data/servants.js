@@ -52,7 +52,7 @@ const servants = {
         effectvalue: 1.5,
         baseprice: 500021324850607700000n,
         io: {
-            html: "holyman", display: "Holy Man", import: "holyman"
+            html: "holyman", display: "Holy Man", import: "holy man"
         }
     },
     smuggler: {
