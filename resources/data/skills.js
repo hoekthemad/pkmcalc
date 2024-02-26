@@ -1,7 +1,7 @@
 let skills= {
     theorder: {
         faith: {
-            effects: effectTypes.income,
+            effect: effectTypes.income,
             effectvalue: 0.205,
             baseprice: 1,
             io: {
@@ -9,18 +9,39 @@ let skills= {
             }
         },
         zeal: {
-            effects: effectTypes.allprice,
+            effect: effectTypes.allprice,
             effectvalue: 0.12,
             baseprice: 1,
             io: {
-                html: "zeal", "display": "Zeal", import: "zeal"
+                html: "zeal", display: "Zeal", import: "zeal"
             }
         },
-        devotion: 0.135,
-        fervour: 0.0135
+        devotion: {
+            effect: effectTypes.happiness,
+            effectvalue: 0.135,
+            baseprice: 1,
+            io: {
+                html: "devotion", display: "Zeal", import: "zeal"
+            }
+        },
+        fervour: {
+            effect: effectTypes.shopprice,
+            effectvalue: 0.0135,
+            baseprice: 1,
+            io: {
+                html: "fervour", display: "Fervour", import: "fervour"
+            }
+        }
     },
     fundamentals: {
-        productivity: 0.03,
+        productivity: {
+            effect: effectTypes.income,
+            effectvalue: 0.03,
+            baseprice: 1,
+            io: {
+                html: "productivity", display: "Productivity", import: "productivity"
+            }
+        },
         concentration: 0.01,
         bargaining: 0.01,
         meditation: 0.01
