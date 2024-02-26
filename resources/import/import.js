@@ -92,7 +92,7 @@ const Import = {
             }
         }
         else {
-            const importURL = `https://https://api.ezagdev.net/player-data/${userID}`;
+            const importURL = `https://api.ezagdev.net/player-data/${userID}`;
             jQuery.ajax({
                 url: importURL,
                 async: false,
@@ -101,7 +101,7 @@ const Import = {
                     /**
                      * If for some reason, the player data is null, that's an error!
                      */
-                    if (null == playerData) {
+                    if (null == playerData['playerData']) {
                         Import.failedAttempts++;
                         if (Import.failedAttempts > 3) {
                             alert("Something seems to be going wrong, please email themad@hoek.uk with details of what you are trying to do");
@@ -110,6 +110,8 @@ const Import = {
                         }
                     }
                     else {
+                        playerData = playerData['playerData'];
+
                         Import.failedAttempts = 0;
                         Import.setBoosts(playerData['boosts']);
                         Import.setFos(playerData['fos']);
