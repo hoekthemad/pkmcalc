@@ -78,7 +78,7 @@ const Import = {
      * Collect and set data from the API into Players data
      * @param {int} userID 
      */
-    import: (userID) => {
+    getData: (userID) => {
         userID = userID || false;
         /**
          * If the user ID is not numeric, this will cause a fail - this should be caught before here, but lets be safe
