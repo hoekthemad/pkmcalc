@@ -1,6 +1,6 @@
 const servants = {
     squire: {
-        effects: effectTypes.shopprice,
+        effect: effectTypes.shopprice,
         effectvalue: 1.5,
         baseprice: 3476,
         io: {
@@ -8,7 +8,7 @@ const servants = {
         }
     },
     bookkeeper: {
-        effects: effectTypes.income,
+        effect: effectTypes.income,
         effectvalue: 2,
         baseprice: 982146,
         io: {
@@ -16,7 +16,7 @@ const servants = {
         }
     },
     butler: {
-        effects: effectTypes.happiness,
+        effect: effectTypes.happiness,
         effectvalue: 1.5,
         baseprice: 277530931,
         io: {
@@ -24,7 +24,7 @@ const servants = {
         }
     },
     banker: {
-        effects: effectTypes.allprice,
+        effect: effectTypes.allprice,
         effectvalue: 2,
         baseprice: 22160637303640,
         io: {
@@ -32,7 +32,7 @@ const servants = {
         }
     },
     seer: {
-        effects: effectTypes.bonusreliclevel,
+        effect: effectTypes.bonusreliclevel,
         effectvalue: 1,
         baseprice: 6262066462777030,
         io: {
@@ -40,7 +40,7 @@ const servants = {
         }
     },
     bodyguard: {
-        effects: effectTypes.attackresistance,
+        effect: effectTypes.attackresistance,
         effectvalue: 2,
         baseprice: 1769510318992327700n,
         io: {
@@ -48,7 +48,7 @@ const servants = {
         }
     },
     holyman: {
-        effects: effectTypes.shopprice,
+        effect: effectTypes.shopprice,
         effectvalue: 1.5,
         baseprice: 500021324850607700000n,
         io: {
@@ -56,7 +56,7 @@ const servants = {
         }
     },
     smuggler: {
-        effects: effectTypes.greed,
+        effect: effectTypes.greed,
         effectvalue: 1.5,
         baseprice: 141294075893117760000000n,
         io: {
