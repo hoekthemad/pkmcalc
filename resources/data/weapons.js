@@ -3,7 +3,7 @@ const weapons = {
         effects: effectTypes.enattackduration,
         effectvalue: 2,
         baseprice: 626,
-        outputs: {
+        io: {
             html: "small_shield", display: "Small Shield", import: "small shield"
         }
     },
@@ -11,7 +11,7 @@ const weapons = {
         effects: effectTypes.attackresistance,
         effectvalue: 1.5,
         baseprice: 130434,
-        outputs: {
+        io: {
             html: "war_paint", display: "War Paint", import: "war paint"
         }
     },
@@ -19,7 +19,7 @@ const weapons = {
         effects: effectTypes.enattackduration,
         effectvalue: 2,
         baseprice: 27197214,
-        outputs: {
+        io: {
             html: "short_bow", display: "Sshort Bow", import: "short bow"
         }
     },
@@ -27,7 +27,7 @@ const weapons = {
         effects: effectTypes.attackduration,
         effectvalue: 2,
         baseprice: 5670988944,
-        outputs: {
+        io: {
             html: "steel_longsword", display: "Steel Longsword", import: "steel longsword"
         }
     },
@@ -35,7 +35,7 @@ const weapons = {
         effects: effectTypes.attackresistance,
         effectvalue: 1.5,
         baseprice: 1182478320247,
-        outputs: {
+        io: {
             html: "knight_armor", display: "Knight Armor", import: "knight armor"
         }
     },
@@ -43,7 +43,7 @@ const weapons = {
         effects: effectTypes.attackpower,
         effectvalue: 2,
         baseprice: 246562811476569,
-        outputs: {
+        io: {
             html: "war_horse", display: "War Horse", import: "war horse"
         }
     },
@@ -51,7 +51,7 @@ const weapons = {
         effects: effectTypes.shopprice,
         effectvalue: 1.5,
         baseprice: 51411699447100780n,
-        outputs: {
+        io: {
             html: "magic_sword", display: "Magic Sword", import: "magic sword"
         }
     }
