@@ -1,6 +1,6 @@
 const weapons = {
     small_shield: {
-        effects: effectTypes.enattackduration,
+        effect: effectTypes.enattackduration,
         effectvalue: 2,
         baseprice: 626,
         io: {
@@ -8,7 +8,7 @@ const weapons = {
         }
     },
     war_paint: {
-        effects: effectTypes.attackresistance,
+        effect: effectTypes.attackresistance,
         effectvalue: 1.5,
         baseprice: 130434,
         io: {
@@ -16,7 +16,7 @@ const weapons = {
         }
     },
     short_bow: {
-        effects: effectTypes.enattackduration,
+        effect: effectTypes.enattackduration,
         effectvalue: 2,
         baseprice: 27197214,
         io: {
@@ -24,7 +24,7 @@ const weapons = {
         }
     },
     steel_longsword: {
-        effects: effectTypes.attackduration,
+        effect: effectTypes.attackduration,
         effectvalue: 2,
         baseprice: 5670988944,
         io: {
@@ -32,7 +32,7 @@ const weapons = {
         }
     },
     knight_armor: {
-        effects: effectTypes.attackresistance,
+        effect: effectTypes.attackresistance,
         effectvalue: 1.5,
         baseprice: 1182478320247,
         io: {
@@ -40,7 +40,7 @@ const weapons = {
         }
     },
     war_horse: {
-        effects: effectTypes.attackpower,
+        effect: effectTypes.attackpower,
         effectvalue: 2,
         baseprice: 246562811476569,
         io: {
@@ -48,7 +48,7 @@ const weapons = {
         }
     },
     magic_sword: {
-        effects: effectTypes.shopprice,
+        effect: effectTypes.shopprice,
         effectvalue: 1.5,
         baseprice: 51411699447100780n,
         io: {
