@@ -30,3 +30,15 @@ const getEffect = (baseValue, level, skillEffects, isSkillEffects) => {
             (level - 1)),
         0.6))).toFixed(2)
 }
+
+const insanityThreshold = (brands, thresholdDecrease) => {
+    const threshold = 7200
+
+    return Math.floor(1000 +
+        (brands > 1 ?
+            (threshold - 1000) +
+            (brands - 2) *
+            threshold :
+            0)
+        * 1 / thresholdDecrease)
+}
