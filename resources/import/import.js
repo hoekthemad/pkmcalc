@@ -120,6 +120,8 @@ const Import = {
                         Import.setSkills(playerData['skills']);
                         Import.setStats(playerData['stats']);
                         Import.setTalents(playerData['talents']);
+
+                        console.log(Player);
                     }
                 }
             })
