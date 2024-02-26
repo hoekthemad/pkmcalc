@@ -37,7 +37,7 @@ const properties = {
 
     large_house: {
         baseprice: 18310546875,
-        effects: effectTypes.happiness,
+        effect: effectTypes.happiness,
         effectvalue: 5,
         io: {
             html: "large_house", display: "Large House", import: "large house"
@@ -46,7 +46,7 @@ const properties = {
 
     small_palace: {
         baseprice: 11444091796875,
-        effects: effectTypes.happiness,
+        effect: effectTypes.happiness,
         effectvalue: 6,
         io: {
             html: "small_palace", display: "Small Palace", import: "small palace"
@@ -55,7 +55,7 @@ const properties = {
 
     grand_palace: {
         baseprice: 7152557373046875,
-        effects: effectTypes.happiness,
+        effect: effectTypes.happiness,
         effectvalue: 7,
         io: {
             html: "grand_palace", display: "Grang Palace", import: "grand palace"
@@ -64,7 +64,7 @@ const properties = {
 
     town_ruler: {
         baseprice: 4470348358154296300n,
-        effects: effectTypes.happiness,
+        effect: effectTypes.happiness,
         effectvalue: 8,
         io: {
             html: "town_ruler", display: "Town Ruler", import: "town ruler"
@@ -73,16 +73,16 @@ const properties = {
 
     city_ruler: {
         baseprice: 2793967723846436000000n,
-        effects: effectTypes.happiness,
+        effect: effectTypes.happiness,
         effectvalue: 9,
         io: {
-            html: "city_ruler", display: "City Ruler", import: "city_ruler"
+            html: "city_ruler", display: "City Ruler", import: "city ruler"
         }
     },
 
     kingdom_minister: {
         baseprice: 1746229827404022300000000n,
-        effects: effectTypes.happiness,
+        effect: effectTypes.happiness,
         effectvalue: 10,
         io: {
             html: "kingdom_minister", display: "Kingdom Minister", import: "kingdom minister"
@@ -91,7 +91,7 @@ const properties = {
 
     heaven: {
         baseprice: 218278728425502760000000000n,
-        effects: effectTypes.happiness,
+        effect: effectTypes.happiness,
         effectvalue: 11,
         io: {
             html: "heaven", display: "Heaven", import: "heaven"
