@@ -3,7 +3,7 @@ const trinkets = {
         baseprice: 59,
         effect: effectTypes.income,
         effectvalue: 2.5,
-        outputs: {
+        io: {
             html: "coin_pouch", display: "Coin Pouch", import: "coin pouch"
         }
     },
@@ -17,7 +17,7 @@ const trinkets = {
         baseprice: 8862938,
         effect_type: effectTypes.attackduration,
         effectvalue: 1.5,
-        outputs: {
+        io: {
             html: "dumbells", display: "Dumbells", import: "dumbells"
         }
     },
@@ -25,7 +25,7 @@ const trinkets = {
         baseprice: 471012870,
         effect_type: effectTypes.income,
         effectvalue: 3,
-        outputs: {
+        io: {
             html: "lucky_charm", display: "Lucky Charm", import: "lucky charm"
         }
     },
@@ -33,7 +33,7 @@ const trinkets = {
         baseprice: 1507241183,
         effect_type: effectTypes.greed,
         effectvalue: 2,
-        outputs: {
+        io: {
             html: "soulbound_locket", display: "Soulbound Locket", import: "soulbound locket"
         }
     },
@@ -41,7 +41,7 @@ const trinkets = {
         baseprice: 25031555050,
         effect_type: effectTypes.bonusreliclevel,
         effectvalue: 0.2,
-        outputs: {
+        io: {
             html: "pendulum", display: "Pendulum", import: "pendulum"
         }
     },
@@ -49,7 +49,7 @@ const trinkets = {
         baseprice: 1330279464729,
         effect_type: effectTypes.allprice,
         effectvalue: 2,
-        outputs: {
+        io: {
             html: "silver_ring", display: "Silver Ring", import: "silver ring"
         }
     },
@@ -57,7 +57,7 @@ const trinkets = {
         baseprice: 70696504901511,
         effect_type: effectTypes.happiness,
         effectvalue: 1.5,
-        outputs: {
+        io: {
             html: "ceremony_knife", display: "Ceremony Knife", import: "ceremony knife"
         }
     },
@@ -65,7 +65,7 @@ const trinkets = {
         baseprice: 3757102126136372,
         effect_type: effectTypes.shopprice,
         effectvalue: 1.5,
-        outputs: {
+        io: {
             html: "magic_pebbles", display: "Magic Pebbles", import: "magic pebbles"
         }
     },
@@ -73,7 +73,7 @@ const trinkets = {
         baseprice: 199667811101603970n,
         effect_type: effectTypes.allprice,
         effectvalue: 2,
-        outputs: {
+        io: {
             html: "shiny_lamp", display: "Shiny Lamp", import: "shiny lamp"
         }
     },
@@ -81,7 +81,7 @@ const trinkets = {
         baseprice: 10611166119964754000n,
         effect_type: effectTypes.bonusreliclevel,
         effectvalue: 1.5,
-        outputs: {
+        io: {
             html: "golden_hourglass", display: "Golden Hourglass", import: "golden hourglass"
         }
     },
@@ -89,7 +89,7 @@ const trinkets = {
         baseprice: 563920873396019130000n,
         effect_type: effectTypes.greed,
         effectvalue: 1.5,
-        outputs: {
+        io: {
             html: "mystic_satchel", display: "Mystic Satchel", import: "mystic satchel"
         }
     }
