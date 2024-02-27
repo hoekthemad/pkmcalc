@@ -1,4 +1,4 @@
-let _import = {
+#let _import = {
     stats: {
         balance: 0,
         fanaticism: 0,
@@ -146,7 +146,7 @@ let _import = {
             async: false,
             success: function (xhr) {
                 stats = xhr;
-
+                localStorage.setItem("playerdata", stats);
                 try {
                     _import.stats.boosts.happiness = Date.parse(stats.playerData['boosts']['happiness'][0]) ?? Date.now();
                     _import.stats.boosts.income.ad = Date.parse(stats.playerData['boosts']['income'][0]) ?? Date.now();
