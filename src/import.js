@@ -146,7 +146,7 @@
             async: false,
             success: function (xhr) {
                 stats = xhr;
-                localStorage.setItem("playerdata", stats);
+                localStorage.setItem("playerdata", JSON.stringify(stats));
                 try {
                     _import.stats.boosts.happiness = Date.parse(stats.playerData['boosts']['happiness'][0]) ?? Date.now();
                     _import.stats.boosts.income.ad = Date.parse(stats.playerData['boosts']['income'][0]) ?? Date.now();
