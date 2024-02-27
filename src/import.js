@@ -146,7 +146,7 @@
             async: false,
             success: function (xhr) {
                 stats = xhr;
-                localStorage.setItem("playerdata", JSON.stringify(stats));
+
                 try {
                     _import.stats.boosts.happiness = Date.parse(stats.playerData['boosts']['happiness'][0]) ?? Date.now();
                     _import.stats.boosts.income.ad = Date.parse(stats.playerData['boosts']['income'][0]) ?? Date.now();
@@ -384,7 +384,7 @@
                         _import.stats.talents.repeathappiness = _talents[7][2];
                     }
                     //#endregion
-        
+                localStorage.setItem("playerdata", JSON.stringify(_import));
                     console.log(_import.stats);
                 }
                 catch (e) {
