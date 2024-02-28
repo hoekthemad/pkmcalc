@@ -74,6 +74,15 @@ const Import = {
         Player['playerData']['fos'] = fosData;
     },
 
+    importFailed: () => {
+        Import.failedAttempts++;
+        if (Import.failedAttempts >= 3) {
+            alert("Something seems to be going wrong, please email themad@hoek.uk with details of what you are trying to do");
+        } else {
+            alert("Something went wrong, please try again");
+        }
+    },
+
     /**
      * Collect and set data from the API into Players data
      * @param {int} userID 
@@ -84,12 +93,7 @@ const Import = {
          * If the user ID is not numeric, this will cause a fail - this should be caught before here, but lets be safe
          */
         if (isNaN(userID)) {
-            Import.failedAttempts++;
-            if (Import.failedAttempts > 3) {
-                alert("Something seems to be going wrong, please email themad@hoek.uk with details of what you are trying to do");
-            } else {
-                alert("Please make sure you enter a valid User ID\r\nThis is found in the menu of the game")
-            }
+            Import.importFailed();
         }
         else {
             const importURL = `https://api.ezagdev.net/player-data/${userID}`;
@@ -102,12 +106,7 @@ const Import = {
                      * If for some reason, the player data is null, that's an error!
                      */
                     if (null == playerData['playerData']) {
-                        Import.failedAttempts++;
-                        if (Import.failedAttempts > 3) {
-                            alert("Something seems to be going wrong, please email themad@hoek.uk with details of what you are trying to do");
-                        } else {
-                            alert("Something went wrong, please try again");
-                        }
+                        Import.importFailed();
                     }
                     else {
                         Import.failedAttempts = 0;
@@ -117,6 +116,10 @@ const Import = {
                         localStorage.clear();
                         localStorage.setItem("PlayerData", JSON.stringify(Player));
                     }
+                },
+                error: (request, status, error) => {
+                    console.error({'request': request, 'status': status, 'error': error});
+                    Import.importFailed();
                 }
             })
         }
