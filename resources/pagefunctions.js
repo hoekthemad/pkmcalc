@@ -7,6 +7,10 @@ const getSetPage = (page) => {
     })
 }
 
+const toggleGroup = (name) => {
+    jQuery(`div#${name}`).toggleClass("collapse")
+}
+
 const changeActiveLink = (element) => {
     jQuery(".nav-link.active").removeClass("active");
     jQuery(element).addClass("active");
