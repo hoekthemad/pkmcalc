@@ -38,9 +38,15 @@
                 success: (res) => {
                     jQuery("#nav-talents").html(res);
                 }
-            })
-
+            });
             StatPage.init();
+            if (undefined !== localStorage.playerdata) {
+                StatPage.import();
+                let updateInterval = setInterval(() => {
+                    StatPage.updateAll();
+                }, 1000);
+            }
+
         })
     </script>
     <style>
