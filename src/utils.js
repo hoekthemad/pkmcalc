@@ -1,5 +1,4 @@
-const convertIntToCurrency = (number, displayCount) => {
-    displayCount = displayCount || 3;
+let convertIntToCurrency = (number) => {
     if (Infinity == number) return "infinity";
     let splitPrice = number.toString().split("");
 
@@ -49,12 +48,9 @@ const convertIntToCurrency = (number, displayCount) => {
 
     let fullSplit = theprice.split("</span>");
 
-    let thereturn = '';
-
-    for (let c = 0; c < displayCount; c++) {
-        if ((c+1) == fullSplit.length) break;
-        thereturn = `${thereturn}${fullSplit[c]}</span>`;
-    }
+    if (fullSplit.length >= 3) thereturn = `${fullSplit[0]}</span>${fullSplit[1]}</span>${fullSplit[2]}</span>`;
+    else if (fullSplit.length >= 2) thereturn = `${fullSplit[0]}</span>${fullSplit[1]}</span>`;
+    else if (fullSplit.length >= 1) thereturn = `${fullSplit[0]}</span>`;
 
     return thereturn;
 }
