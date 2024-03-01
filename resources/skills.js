@@ -67,5 +67,6 @@ let skills = {
             </div>
             <hr class="bg-danger   border border-1-light border border-1-top border border-1-danger" />
         `;
+        jQuery("#page-skills").html(theOrderHtml);
     }
 }
