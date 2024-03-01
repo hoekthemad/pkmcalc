@@ -18,8 +18,6 @@ let SkillPage = {
             let effectSymbol = values.effect.symbol;
             let effectType = values.effect.display;
 
-            console.log(importSkillName);
-
             let skillLevel = Player.skills[importSkillName].level;
             let relicLevel = Player.skills[importSkillName].relicLevel;
 
@@ -33,9 +31,7 @@ let SkillPage = {
                 Player.fanaticism < 1 ? 1 : Player.fanaticism,
                 getBoostStatus('happiness')
             );
-            if (groupname == "darkmagic") {
-                console.log("!!!!!!!!");
-            }
+            
             let skillEffect = getEffect(
                 baseSkillEffect,
                 skillLevel,
