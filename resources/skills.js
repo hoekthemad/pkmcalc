@@ -59,10 +59,15 @@ let skills = {
         }
 
         let theOrderHTML = `
+            <div class="row">
+                <div class="col-auto" id="header-theorder" onclick="toggleGroup('theorder')">
+                    <h2>The Order</h2>
+                </div>
+            </div>
             <div id="theorder">
                 <hr class="bg-primary   border border-1-light border border-1-top border border-1-primary" />
                 <div class="row border border-1 rounded-2 border border-1-light border border-1-primary">
-                ${orderGroupHTML}
+                    ${orderGroupHTML}
                 </div>
             </div>
             <hr class="bg-danger   border border-1-light border border-1-top border border-1-danger" />
