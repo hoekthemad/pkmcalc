@@ -122,7 +122,7 @@ const convertIntToCurrency = (number, displayCount) => {
 
     for (let c = 0; c < displayCount; c++) {
         if ((c+1) == fullSplit.length) break;
-        thereturn = `${thereturn} ${fullSplit[c]}</span>`;
+        thereturn = `${thereturn}${fullSplit[c]}</span>`;
     }
 
     return thereturn;
