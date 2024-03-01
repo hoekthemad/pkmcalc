@@ -9,7 +9,6 @@ let ShopPage = {
     shopHTML: (group, groupname) => {
         let shopHTML = ``;
         for (let [name, values] of Object.entries(group)) {
-            console.log(name, values.effect.display)
             let htmlShopName = values.io.html;
             let displayShopName = values.io.display
             let importShopName = values.io.import;

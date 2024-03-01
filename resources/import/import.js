@@ -115,6 +115,9 @@ const Import = {
 
                         localStorage.clear();
                         localStorage.setItem("PlayerData", JSON.stringify(Player));
+
+                        SkillPage.init();
+                        ShopPage.init();
                     }
                 },
                 error: (request, status, error) => {

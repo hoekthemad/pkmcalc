@@ -57,7 +57,7 @@ let SkillPage = {
                         </div>
                     </div>
                     <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl align-self-center">
-                        ${effectType} ${effectSymbol}<span id="${htmlSkillName}-skill-effect">${skillEffect}</span>
+                        ${effectType} ${effectSymbol}<span id="${htmlSkillName}-skill-effect">${skillEffect.toFixed(2)}</span>
                     </div>
                     <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl align-self-center">
                         <span id="${htmlSkillName}-skill-price">${convertIntToCurrency(Math.round(skillCost))}</span>
