@@ -33,7 +33,7 @@ let skills = {
                 false
             );
 
-            let orderGroupHTML = orderGroupHTML + `
+            orderGroupHTML = orderGroupHTML + `
                 <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl align-self-center">
                     ${displaySkillName}:
                 </div>
