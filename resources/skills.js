@@ -34,26 +34,28 @@ let skills = {
             );
 
             orderGroupHTML = orderGroupHTML + `
-                <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl align-self-center">
-                    ${displaySkillName}:
-                </div>
-                <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl">
-                    <div class="form-floating">
-                        <input type="number" class="form-control" id="${htmlSkillName}-skill-level" placeholder="1" value="${skillLevel}">
-                        <label for="${htmlSkillName}-skill-level">Skill Level</label>
+                <div class="row border border-1 rounded-2 border border-1-light border border-1-primary">
+                    <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl align-self-center">
+                        ${displaySkillName}:
                     </div>
-                </div>
-                <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl">
-                    <div class="form-floating">
-                        <input type="number" class="form-control" id="${htmlSkillName}-relic-level" placeholder="1" value="${relicLevel}">
-                        <label for="${htmlSkillName}-relic-level">Relic Level</label>
+                    <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl">
+                        <div class="form-floating">
+                            <input type="number" class="form-control" id="${htmlSkillName}-skill-level" placeholder="1" value="${skillLevel}">
+                            <label for="${htmlSkillName}-skill-level">Skill Level</label>
+                        </div>
                     </div>
-                </div>
-                <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl align-self-center">
-                    ×<span id="${htmlSkillName}-skill-effect">${skillEffect}</span>
-                </div>
-                <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl align-self-center">
-                    <span id="${htmlSkillName}-skill-price">${skillCost}</span>
+                    <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl">
+                        <div class="form-floating">
+                            <input type="number" class="form-control" id="${htmlSkillName}-relic-level" placeholder="1" value="${relicLevel}">
+                            <label for="${htmlSkillName}-relic-level">Relic Level</label>
+                        </div>
+                    </div>
+                    <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl align-self-center">
+                        ×<span id="${htmlSkillName}-skill-effect">${skillEffect}</span>
+                    </div>
+                    <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl align-self-center">
+                        <span id="${htmlSkillName}-skill-price">${skillCost}</span>
+                    </div>
                 </div><br/>
             `;
         }
@@ -66,9 +68,7 @@ let skills = {
             </div>
             <div id="theorder">
                 <hr class="bg-primary   border border-1-light border border-1-top border border-1-primary" />
-                <div class="row border border-1 rounded-2 border border-1-light border border-1-primary">
-                    ${orderGroupHTML}
-                </div>
+                ${orderGroupHTML}
             </div>
             <hr class="bg-danger   border border-1-light border border-1-top border border-1-danger" />
         `;
