@@ -91,11 +91,11 @@ let SkillPage = {
         let skillHTML = ``;
 
         skillHTML = `
-        ${SkillPage.skillHTML(theorder, 'theorder')}
-        ${SkillPage.skillHTML(fundamentals, 'fundamentals')}
-        ${SkillPage.skillHTML(combat, 'combat')}
-        ${SkillPage.skillHTML(magic, 'magic')}
-        ${SkillPage.skillHTML(darkmagic, 'darkmagic')}
+            ${SkillPage.skillHTML(theorder, 'theorder')}
+            ${SkillPage.skillHTML(fundamentals, 'fundamentals')}
+            ${SkillPage.skillHTML(combat, 'combat')}
+            ${SkillPage.skillHTML(magic, 'magic')}
+            ${SkillPage.skillHTML(darkmagic, 'darkmagic')}
         `;
         
         jQuery("#page-skills").html(`<br/>${skillHTML}`);

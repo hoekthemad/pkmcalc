@@ -6,7 +6,9 @@ const changeActiveLink = (element) => {
     jQuery(".nav-link.active").removeClass("active");
     jQuery(element).addClass("active");
 
-    jQuery(".container-fluid[id^=page-]").not(".collapse").addClass("collapse");
+    jQuery(".container[id^=page-]").not(".collapse").addClass("collapse");
     
-    jQuery(`.container-fluid#page-${jQuery(element).attr("data-toggle")}`).removeClass("collapse");
+    jQuery(`.container#page-${jQuery(element).prop("data-toggle")}`).removeClass("collapse");
+    page = `#page-${jQuery(element).attr("data-toggle")}`;
+    jQuery(page).removeClass("collapse")
 }

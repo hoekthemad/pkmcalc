@@ -9,6 +9,7 @@ jQuery(document).ready(() => {
     jQuery("a.nav-link").attr("onclick", "changeActiveLink(this)");
 
     SkillPage.init();
+    ShopPage.init();
 
     jQuery(".spinner").addClass("collapse");
     jQuery("#content").removeClass("collapse");
