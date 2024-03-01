@@ -23,17 +23,17 @@ const getBoostStatus = (type) => {
     let returnValue = false;
     switch (type) {
         case "advert" : {
-            let adBoostExpires = Player['boosts']['income'][0];
+            let adBoostExpires = Date.parse(Player['boosts']['income'][0]);
             returnValue = adBoostExpires > now;
             break
         }
         case "community" : {
-            let tavernBoostExpires = Player['boosts']['income'][1];
+            let tavernBoostExpires = Date.parse(Player['boosts']['income'][1]);
             returnValue = tavernBoostExpires > now;
             break;
         }
         case "happiness" : {
-            let happinessBoostExpires = Player['boosts']['happiness'][0];
+            let happinessBoostExpires = Date.parse(Player['boosts']['happiness'][0]);
             returnValue = happinessBoostExpires > now;
             break;
         }
