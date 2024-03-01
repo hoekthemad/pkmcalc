@@ -21,7 +21,7 @@ let _skills = {
             effectvalue: 0.135,
             baseprice: 1,
             io: {
-                html: "devotion", display: "Zeal", import: "zeal"
+                html: "devotion", display: "Devotion", import: "devotion"
             }
         },
         fervour: {
