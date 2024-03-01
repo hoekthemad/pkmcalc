@@ -54,7 +54,7 @@ let skills = {
                         ×<span id="${htmlSkillName}-skill-effect">${skillEffect}</span>
                     </div>
                     <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl align-self-center">
-                        <span id="${htmlSkillName}-skill-price">${skillCost}</span>
+                        <span id="${htmlSkillName}-skill-price">${convertIntToCurrency(skillCost)}</span>
                     </div>
                 </div><br/>
             `;
