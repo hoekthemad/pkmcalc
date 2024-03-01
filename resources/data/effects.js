@@ -1,6 +1,6 @@
 const effectTypes = {
     income: {
-        symbol: "×", html: "income", display: "Income/day"
+        symbol: "×", html: "income", display: "Income / day"
     },
     allprice: {
         symbol: "÷", html: "allprice", display: "All prices"
