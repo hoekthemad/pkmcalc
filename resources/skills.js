@@ -67,8 +67,8 @@ let SkillPage = {
         }
 
         let groupHTML = `
-            <div class="row">
-                <div class="col-auto" id="header-${groupname}" onclick="toggleGroup('${groupname}')">
+            <div class="row" onclick="toggleGroup('${groupname}')" style="cursor: pointer">
+                <div class="col-auto" id="header-${groupname}">
                     <h5 class="amethyst">${SkillPage.getGroupName[groupname]}</h5 class="amethyst">
                 </div>
             </div>
