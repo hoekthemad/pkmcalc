@@ -1,42 +1,52 @@
-let skills = {
-    init: () => {
-        let theorder = _skills.theorder;
-        let fundamentals = _skills.fundamentals;
-        let combat = _skills.combat;
-        let magic = _skills.magic;
-        let darkmagic = _skills.darkmagic;
+let SkillPage = {
+    getGroupName: {
+        'theorder': 'The Order',
+        'fundamentals': 'Fundamentals',
+        'combat': 'Combat',
+        'magic': 'Magic',
+        'darkmagic': 'Dark Magic'
+    },
 
-        let orderGroupHTML = ``;
-        for (let [name, values] of Object.entries(theorder)) {
+    skillHTML: (group, groupname) => {
+        let skillHTML = ``;
+        for (let [name, values] of Object.entries(group)) {
             let htmlSkillName = values.io.html;
             let displaySkillName = values.io.display
             let importSkillName = values.io.import;
             let baseSkillEffect = values.effectvalue;
+
+            let effectSymbol = values.effect.symbol;
+            let effectType = values.effect.display;
+
+            console.log(importSkillName);
 
             let skillLevel = Player.skills[importSkillName].level;
             let relicLevel = Player.skills[importSkillName].relicLevel;
 
             let skillCost = getSkillPrice(
                 skillLevel, 
-                true, 
+                groupname == "theorder", 
                 getAllPrice(), 
                 getHappiness(),
                 relicLevel,
-                false,
-                Player.fanatacism,
+                groupname == "darkmagic",
+                Player.fanaticism < 1 ? 1 : Player.fanaticism,
                 getBoostStatus('happiness')
             );
+            if (groupname == "darkmagic") {
+                console.log("!!!!!!!!");
+            }
             let skillEffect = getEffect(
                 baseSkillEffect,
                 skillLevel,
                 getSkillEffect(),
-                false
+                htmlSkillName == "concentration"
             );
 
-            orderGroupHTML = orderGroupHTML + `
+            skillHTML = skillHTML + `
                 <div class="row border border-1 rounded-2 border border-1-light border border-1-primary">
                     <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl align-self-center">
-                        ${displaySkillName}:
+                        ${displaySkillName}
                     </div>
                     <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl">
                         <div class="form-floating">
@@ -51,27 +61,47 @@ let skills = {
                         </div>
                     </div>
                     <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl align-self-center">
-                        ×<span id="${htmlSkillName}-skill-effect">${skillEffect}</span>
+                        ${effectType} ${effectSymbol}<span id="${htmlSkillName}-skill-effect">${skillEffect}</span>
                     </div>
                     <div class="col-auto col-xs col-3 col-sm col-md col-lg col-xl col-xxl align-self-center">
-                        <span id="${htmlSkillName}-skill-price">${convertIntToCurrency(skillCost)}</span>
+                        <span id="${htmlSkillName}-skill-price">${convertIntToCurrency(Math.round(skillCost))}</span>
                     </div>
                 </div><br/>
             `;
         }
 
-        let theOrderHTML = `
+        let groupHTML = `
             <div class="row">
-                <div class="col-auto" id="header-theorder" onclick="toggleGroup('theorder')">
-                    <h2>The Order</h2>
+                <div class="col-auto" id="header-${groupname}" onclick="toggleGroup('${groupname}')">
+                    <h2>${SkillPage.getGroupName[groupname]}</h2>
                 </div>
             </div>
-            <div id="theorder">
+            <div id="${groupname}">
                 <hr class="bg-primary border border-1-light border border-1-top border border-1-primary" />
-                ${orderGroupHTML}
+                ${skillHTML}
             </div>
             <hr class="bg-danger border border-1-light border border-1-top border border-1-danger" />
         `;
-        jQuery("#page-skills").html(theOrderHTML);
+        return groupHTML;
+    },
+
+    init: () => {
+        let theorder = _skills.theorder;
+        let fundamentals = _skills.fundamentals;
+        let combat = _skills.combat;
+        let magic = _skills.magic;
+        let darkmagic = _skills.darkmagic;
+
+        let skillHTML = ``;
+
+        skillHTML = `
+        ${SkillPage.skillHTML(theorder, 'theorder')}
+        ${SkillPage.skillHTML(fundamentals, 'fundamentals')}
+        ${SkillPage.skillHTML(combat, 'combat')}
+        ${SkillPage.skillHTML(magic, 'magic')}
+        ${SkillPage.skillHTML(darkmagic, 'darkmagic')}
+        `;
+        
+        jQuery("#page-skills").html(`<br/>${skillHTML}`);
     }
 }

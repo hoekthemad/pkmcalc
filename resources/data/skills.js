@@ -81,7 +81,7 @@ let _skills = {
             effectvalue: 0.01,
             baseprice: 1,
             io: {
-                html: "musclememory", display: "Muscle Memory", import: "musclememory"
+                html: "musclememory", display: "Muscle Memory", import: "muscle memory"
             }
         },
         battletactics: {
@@ -165,7 +165,7 @@ let _skills = {
             effectvalue: 0.01,
             baseprice: 1,
             io: {
-                html: "absolutefaith", display: "Absolute Faith", import: "absolite faith"
+                html: "absolutefaith", display: "Absolute Faith", import: "absolute faith"
             }
         },
         devoutmastery: {
