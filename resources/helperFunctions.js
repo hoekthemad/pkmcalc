@@ -67,6 +67,10 @@ const getTextValue = (name, numeric) => {
     return text;
 }
 
+let numberWithCommas = (x) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 const convertIntToCurrency = (number, displayCount) => {
     displayCount = displayCount || 3;
     if (Infinity == number) return "infinity";
