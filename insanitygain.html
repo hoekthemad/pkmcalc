@@ -21,14 +21,19 @@
               alert("You numpty, use a number for your fana...")
               return;
             }
+            fana = 1*fana;
 
             let attLen = jQuery("#attacklen").val();
             if (isNaN(attLen)) {
               alert("... did you really use text instead of number for attack length? *sigh*");
               return;
             }
+            attLen = 1*attLen;
+            let a = 0.0558713 * fana;
+            let b = Math.pow(a, 0.287738)
+            let c = b + 0.61682;
 
-            jQuery("#insanityGained").text((1*attLen)*(Math.pow(0.0558713*(1*fana))+0.61682))
+            jQuery("#insanityGained").text(c);
           }
         </script>
     </head>
