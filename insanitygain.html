@@ -44,9 +44,10 @@
               let attCount = 1*jQuery("#attackcount").val();
               let attLen = 1*jQuery("#attackcountlen").val();
 
-              let val = Math.pow(((20000/(attCount*attLen))-0.61682)/0.0558713, 1/0.278738)
-              console.log(val);
-              jQuery("#fanaNeed").text(`Fana Needed for ${attCount}x ${attLen}d for 100% insanity: ${val.toFixed(2).toLocaleString()}`)
+              let val1 = Math.pow(((20000/(attCount*attLen))-0.61682)/0.0558713, 1/0.278738)
+              console.log(val1);
+              val2 = val1.toFixed(2);
+              jQuery("#fanaNeed").text(`Fana Needed for ${attCount}x ${attLen}d for 100% insanity: ${val2.toLocaleString()}`)
           }
         </script>
     </head>
