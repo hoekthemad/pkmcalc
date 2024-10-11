@@ -34,8 +34,9 @@
             let c = b + 0.61682;
 
             let insGain = attLen*c;
+            let gainPercent = ((insGain/20000)*100);
             // 6510600.8f over 1200 = 30.2
-            jQuery("#insanityGained").text(((insGain/20000)*100)+"%");
+            jQuery("#insanityGained").text(`(Fana Gain Effect; ${insGain}) Insanity Gained over ${attLen}: ${gainPercent.toFixed(2)}%`);
           }
         </script>
     </head>
