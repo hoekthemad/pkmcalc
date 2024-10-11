@@ -33,7 +33,9 @@
             let b = 0.0558713 * Math.pow(a, 0.278738)
             let c = b + 0.61682;
 
-            jQuery("#insanityGained").text((attLen/c)+"%");
+            let insGain = attLen*c;
+
+            jQuery("#insanityGained").text((20000/insGain)+"%");
           }
         </script>
     </head>
