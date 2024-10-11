@@ -39,6 +39,14 @@
             jQuery("#insanityGained").text(`(Fana Gain Effect; ${c.toFixed(2)})
             Insanity Gained over ${attLen} (${attLen/60}mins): ${gainPercent.toFixed(2)}%`);
           }
+
+          const calcFanaNeed = () => {
+              let attCount = 1*jQuery("#attackcount").val();
+              let attLen = 1*jQuery("#attackcountlen").val();
+
+              let val = Math.pow(((20000/(attCount*attLen))-0.61682)/0.0558713, 1/0.278738)
+              console.log(val);
+          }
         </script>
     </head>
     <body> 
@@ -46,5 +54,11 @@
         Attack length: <input type="number" name="attacklen" id="attacklen"><br />
         <button onclick="calcInsGain()">Calc ins gain</button><br />
         <span id="insanityGained"></span>
+
+        <br /><br />
+
+        Attacks: <input type="number" name="attackcount" id=""attackcount" /><br />
+        Attack Length: <input type="number" name="attackcountlen" id=""attackcount" /><br />
+        <button onclick="calcFanaNeed()">Calc fana needed</button><br />
     </body>
 </html>
