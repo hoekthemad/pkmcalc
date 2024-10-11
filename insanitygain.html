@@ -34,8 +34,8 @@
             let c = b + 0.61682;
 
             let insGain = attLen*c;
-
-            jQuery("#insanityGained").text((20000/(insGain/10))+"%");
+            // 6510600.8f over 1200 = 30.2
+            jQuery("#insanityGained").text((insGain/20000)*100)+"%");
           }
         </script>
     </head>
