@@ -29,8 +29,8 @@
               return;
             }
             attLen = 1*attLen;
-            let a = 0.0558713 * fana;
-            let b = Math.pow(a, 0.278738)
+            let a = fana;
+            let b = 0.0558713 * Math.pow(a, 0.278738)
             let c = b + 0.61682;
 
             jQuery("#insanityGained").text((attLen/c)+"%");
