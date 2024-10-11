@@ -46,7 +46,7 @@
 
               let val = Math.pow(((20000/(attCount*attLen))-0.61682)/0.0558713, 1/0.278738)
               console.log(val);
-              jQuery("#fanaNeed").text(`Fana Needed for ${attCount}x ${attLen}d for 100% insanity: ${val.toFixed(2)}`)
+              jQuery("#fanaNeed").text(`Fana Needed for ${attCount}x ${attLen}d for 100% insanity: ${val.toFixed(2).toLocaleString()}`)
           }
         </script>
     </head>
